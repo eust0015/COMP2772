@@ -1,0 +1,757 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* html {
+  scroll-padding-top: 42px; //Testing First Header Fixed Error/Glitch
+} */
+
+body {
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+  /* overflow-y: scroll; */
+}
+
+/* Header - Top and Bottom */
+
+div.first-header {
+  position: none;
+  width: 100%;
+  height: 42px;
+  background-color: white;
+  border-bottom: 1px solid #dcdcdc;
+  padding-left: 100px;
+}
+
+div.second-header {
+  position: relative;
+  top: 42px;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+header.header-second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img.header2-logo {
+  display: inline-block;
+  width: 150px;
+  cursor: pointer;
+  padding-top: 8px;
+}
+
+li,
+a,
+button.header-second-my-cart-button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+ul.nav-links {
+  list-style: none;
+}
+
+ul.nav-links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+ul.nav-links li a {
+  transition: all 0.3s ease 0s;
+}
+
+ul.nav-links li a:hover {
+  color: #6a4eff;
+}
+
+input,
+input::-webkit-input-placeholder {
+  text-transform: uppercase;
+  padding-left: 0px;
+}
+
+div.second-header input[type="text"] {
+  width: 20%;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: black;
+  background-color: #f8f8f8;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background-image: url(images/search.png);
+  background-repeat: no-repeat;
+  background-size: 17px;
+  background-position-x: 180px;
+  background-position-y: 10px;
+  text-transform: none;
+  text-indent: 5px;
+  padding: 12px 10px;
+}
+
+button.header-second-my-cart-button {
+  padding: 9px 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6a4eff;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+}
+
+button.header-second-my-cart-button:hover {
+  background-color: #eb9133;
+}
+
+/* Categories - Headphones, Phones, Cameras and Computers - First Section */
+
+div.product-categories {
+  margin-left: 98px;
+}
+
+div.categories {
+  display: inline-block;
+}
+
+div.categorie {
+  position: relative;
+  display: inline-block;
+  top: 400px;
+  width: 205px;
+  height: 100px;
+  background-color: #b11127;
+  border-radius: 6px;
+  margin-left: 2px;
+}
+
+#categorie-headphones {
+  background-image: url(images/headphone.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.categorie-headphones-inline-block {
+  display: inline-block;
+  padding-left: 8px;
+  margin-top: 25px;
+}
+
+img.headphone-image {
+  vertical-align: middle;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+span.headphone-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: white;
+  padding-left: 5px;
+}
+
+#categorie-mobiles {
+  background-image: url(images/mobile.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.categorie-mobiles-inline-block {
+  display: inline-block;
+  padding-left: 32px;
+  margin-top: 25px;
+}
+
+img.mobile-image {
+  vertical-align: middle;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+span.mobile-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: white;
+}
+
+#categorie-cameras {
+  background-image: url(images/camera.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.categorie-cameras-inline-block {
+  display: inline-block;
+  padding-left: 25px;
+  margin-top: 25px;
+}
+
+img.camera-image {
+  vertical-align: middle;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+span.camera-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: white;
+  padding-left: 5px;
+}
+
+#categorie-computers {
+  background-image: url(images/computer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.categorie-computers-inline-block {
+  display: inline-block;
+  padding-left: 16px;
+  margin-top: 25px;
+}
+
+img.computer-image {
+  vertical-align: middle;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+span.computer-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  color: white;
+  padding-left: 5px;
+}
+
+/* What's Hot - Second Section */
+
+div.whats-hot-inline-block {
+  position: relative;
+  padding-left: 100px;
+  top: 470px;
+}
+
+img.whats-hot-image {
+  vertical-align: middle;
+  margin-bottom: 16px;
+}
+
+span.whats-hot-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  color: #eb9133;
+  text-transform: uppercase;
+}
+
+div.whats-hot-sections {
+  margin-left: 85px;
+}
+
+div.whats-hot-section {
+  position: relative;
+  display: inline-block;
+  top: 500px;
+  width: 154px;
+  height: 320px;
+  background-color: white;
+  border-radius: 8px;
+  margin-left: 14px;
+
+  vertical-align: middle;
+}
+
+div.whats-hot-section-image {
+  height: 200px;
+  /* background-image: url(images/bg.jpeg); */
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+img.whats-hot-section1-image {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+span.whats-hot-section-image-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+  padding: 0px 5px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+button.whats-hot-section-buy-now-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #6a4eff;
+
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 25px;
+  border-radius: 20px;
+}
+
+button.whats-hot-section-buy-now-button:hover {
+  background-color: #eb9133;
+}
+
+/* New Products Info - Third Section */
+
+div.new-products {
+  margin-left: 100px;
+}
+
+div.big-section1-left {
+  display: inline-block;
+  position: relative;
+  top: 580px;
+  width: 498px;
+  height: 350px;
+  background-image: url(images/iphone13.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: red; */
+  border-radius: 10px;
+}
+
+div.big-section1-left-headings-buttons {
+  display: block;
+  position: relative;
+  top: 210px;
+  margin-left: 60px;
+}
+
+span.big-section1-left-first-heading {
+  display: block;
+  position: relative;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  color: white;
+  padding-bottom: 12px;
+}
+
+span.big-section1-left-second-heading {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 20px;
+}
+
+button.big-section1-left-second-heading-buy-now-button {
+  width: 110px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  background-color: #eb9133;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 5px 10px;
+}
+
+button.big-section1-left-second-heading-buy-now-button:hover {
+  background-color: #6a4eff;
+}
+
+div.section-right {
+  display: block;
+  position: relative;
+  top: 110px;
+  margin-left: 515px;
+}
+
+div.section-right-top {
+  position: relative;
+  top: 120px;
+  width: 326px;
+  height: 165px;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+div.section-right-top-image {
+  position: relative;
+  width: 155px;
+  height: 165px;
+  background-image: url(images/beats.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: red;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+div.section-right-top-headings-button {
+  display: block;
+  position: relative;
+  top: -145px;
+  padding-left: 162px;
+  width: 600px;
+}
+
+span.section-right-top-first-heading {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  padding-bottom: 10px;
+}
+
+span.section-right-top-second-heading {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: black;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+button.section-right-top-buy-now-button {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border: none;
+  background-color: #eb9133;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+button.section-right-top-buy-now-button:hover {
+  background-color: #6a4eff;
+}
+
+div.section-right-bottom {
+  position: relative;
+  top: 120px;
+  width: 326px;
+  height: 165px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+div.section-right-bottom-image {
+  position: relative;
+  width: 155px;
+  height: 165px;
+  background-image: url(images/galaxywatch4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: 0px;
+  background-color: red;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+div.section-right-bottom-headings-button {
+  display: block;
+  position: relative;
+  top: 40px;
+  padding-left: 162px;
+  width: 600px;
+}
+
+span.section-right-bottom-first-heading {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  padding-bottom: 10px;
+}
+
+span.section-right-bottom-second-heading {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: black;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+button.section-right-bottom-buy-now-button {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border: none;
+  background-color: #6a4eff;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+button.section-right-bottom-buy-now-button:hover {
+  background-color: #eb9133;
+}
+
+/* Featured Products - Fourth Section */
+
+div.featured-products-inline-block {
+  position: relative;
+  padding-left: 100px;
+  top: 301px;
+}
+
+img.featured-products-image {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-bottom: 16px;
+}
+
+span.featured-products-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  color: #6a4eff;
+  text-transform: uppercase;
+}
+
+div.featured-products-sections {
+  margin-left: 85px;
+}
+
+div.featured-products-section {
+  position: relative;
+  display: inline-block;
+  top: 331px;
+  width: 154px;
+  height: 320px;
+  background-color: white;
+  border-radius: 8px;
+  margin-left: 14px;
+
+  vertical-align: middle;
+}
+
+div.featured-products-section-image {
+  height: 200px;
+  /* background-image: url(images/bg.jpeg); */
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+img.featured-products-section4-image {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+span.featured-products-section-image-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+  padding: 0px 5px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+button.featured-products-section-buy-now-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #eb9133;
+
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 25px;
+  border-radius: 20px;
+}
+
+button.featured-products-section-buy-now-button:hover {
+  background-color: #6a4eff;
+}
+
+/* Sharing Our Values - Fifth Section */
+
+span.sharing-our-values-text {
+  display: block;
+  position: relative;
+  top: -9px;
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  color: black;
+  text-transform: uppercase;
+}
+
+div.sharing-our-values-section {
+  display: inline-block;
+  padding-left: 100px;
+  padding-top: 400px;
+}
+
+div.sharing-values-left {
+  display: inline-block;
+  position: relative;
+  top: 35px;
+  width: 410px;
+  height: 370px;
+  background-color: white;
+  border: 1px solid #cfcfd0;
+  box-shadow: 5px 10px 8px #cfcfd0;
+  border-radius: 8px;
+}
+
+div.sharing-values-left-image {
+  height: 230px;
+  width: 409px;
+  background-image: url(images/forest.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+div.sharing-values-left-headings-button {
+  display: block;
+  padding-left: 45px;
+}
+
+span.sharing-values-left-first-heading {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+span.sharing-values-left-second-heading {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  padding-bottom: 30px;
+  font-weight: 300;
+}
+
+button.sharing-values-left-learn-more-button {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 10px;
+  padding: 8px 20px;
+  background-color: #6a4eff;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+button.sharing-values-left-learn-more-button:hover {
+  background-color: #5d3fd3;
+}
+
+div.sharing-values-right {
+  display: inline-block;
+  position: relative;
+  top: 35px;
+  left: 16px;
+  width: 410px;
+  height: 370px;
+  background-color: white;
+  border: 1px solid #cfcfd0;
+  box-shadow: 5px 10px 8px #cfcfd0;
+  border-radius: 8px;
+}
+
+div.sharing-values-right-image {
+  height: 230px;
+  width: 409px;
+  background-image: url(images/blm.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+div.sharing-values-right-headings-button {
+  display: block;
+  padding-left: 45px;
+}
+
+span.sharing-values-right-first-heading {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+span.sharing-values-right-second-heading {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  padding-bottom: 30px;
+  font-weight: 300;
+}
+
+button.sharing-values-right-learn-more-button {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 10px;
+  padding: 8px 20px;
+  background-color: #ff4655;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+button.sharing-values-right-learn-more-button:hover {
+  background-color: #de3163;
+}
+
+h6 {
+  display: block;
+  position: relative;
+  top: 2000px;
+}
