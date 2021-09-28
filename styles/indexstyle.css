@@ -96,7 +96,7 @@ div.second-header input[type="text"] {
   border: none;
   outline: none;
   border-radius: 4px;
-  background-image: url(images/search.png);
+  background-image: url(..//images/search.png);
   background-repeat: no-repeat;
   background-size: 17px;
   background-position-x: 180px;
@@ -142,7 +142,7 @@ div.categorie {
 }
 
 #categorie-headphones {
-  background-image: url(images/headphone.jpg);
+  background-image: url(..//images/headphone.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -168,7 +168,7 @@ span.headphone-text {
 }
 
 #categorie-mobiles {
-  background-image: url(images/mobile.jpeg);
+  background-image: url(..//images/mobile.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -193,7 +193,7 @@ span.mobile-text {
 }
 
 #categorie-cameras {
-  background-image: url(images/camera.jpg);
+  background-image: url(..//images/camera.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -219,7 +219,7 @@ span.camera-text {
 }
 
 #categorie-computers {
-  background-image: url(images/computer.png);
+  background-image: url(..//images/computer.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -342,7 +342,7 @@ div.big-section1-left {
   top: 580px;
   width: 498px;
   height: 350px;
-  background-image: url(images/iphone13.jpg);
+  background-image: url(..//images/iphone13.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -413,7 +413,7 @@ div.section-right-top-image {
   position: relative;
   width: 155px;
   height: 165px;
-  background-image: url(images/beats.jpeg);
+  background-image: url(..//images/beats.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -473,7 +473,7 @@ div.section-right-bottom-image {
   position: relative;
   width: 155px;
   height: 165px;
-  background-image: url(images/galaxywatch4.jpg);
+  background-image: url(..//images/galaxywatch4.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -642,7 +642,7 @@ div.sharing-values-left {
 div.sharing-values-left-image {
   height: 230px;
   width: 409px;
-  background-image: url(images/forest.jpeg);
+  background-image: url(..//images/forest.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -704,7 +704,7 @@ div.sharing-values-right {
 div.sharing-values-right-image {
   height: 230px;
   width: 409px;
-  background-image: url(images/blm.jpeg);
+  background-image: url(..//images/blm.jpeg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
