@@ -21,6 +21,11 @@ SET time_zone = "+00:00";
 -- Database: `comp2772`
 --
 
+DROP DATABASE IF EXISTS comp2772;
+CREATE DATABASE comp2772;
+
+USE comp2772;
+
 -- --------------------------------------------------------
 
 --
@@ -37,6 +42,13 @@ CREATE TABLE `product` (
   `category` varchar(255) NOT NULL,
   `keyWord` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Add User
+--
+
+CREATE user IF NOT EXISTS dbadmin@localhost;
+GRANT all privileges ON comp2772.product TO dbadmin@localhost;
 
 --
 -- Dumping data for table `product`

@@ -1,0 +1,72 @@
+<?php
+
+    function get_conn() {
+        // comment out the following line when using in production
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+        $dbhost = "localhost";
+        $dbuser = "dbadmin";
+        $dbpassword = "";
+        $db = "comp2772";  
+
+        $conn = @mysqli_connect($dbhost, $dbuser, $dbpassword, $db);
+        
+        if (!$conn) {
+            echo "Database connection failed!";
+            error_log(mysqli_connect_error());
+        }
+        else {
+            mysqli_set_charset($conn, "utf8mb4");
+        }
+        return $conn;  
+    }
+
+    function get_product($conn, $product_id) {
+        $stmt = mysqli_prepare($conn, "SELECT * from product where id=?");
+        
+        mysqli_stmt_bind_param($stmt, "i", $product_id);
+
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $id, $name, $description, $image, $price, $recommendedRetailPrice, $category, $keyWord);
+            if (mysqli_stmt_fetch($stmt)) {
+                $result = array();
+                $result["id"] = $id;
+                $result["name"] = $name;
+                $result["description"] = $description;
+                $result["image"] = $image;
+                $result["price"] = $price;
+                $result["recommendedRetailPrice"] = $recommendedRetailPrice;
+                $result["category"] = $category;
+                $result["keyWord"] = $keyWord;
+            }
+        }
+        mysqli_stmt_close($stmt);
+        return $result;
+    }
+
+    function get_products($conn, $category, $keyWord) {
+        $stmt = mysqli_prepare($conn, "SELECT * from product where id=?");
+        
+        mysqli_stmt_bind_param($stmt, "i", $product_id);
+
+        $results = array();
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $id, $name, $description, $image, $price, $recommendedRetailPrice, $category, $keyWord);
+            while (mysqli_stmt_fetch($stmt)) {
+                $row = array();
+                $row["id"] = $id;
+                $row["name"] = $name;
+                $row["description"] = $description;
+                $row["image"] = $image;
+                $row["price"] = $price;
+                $row["recommendedRetailPrice"] = $recommendedRetailPrice;
+                $row["category"] = $category;
+                $row["keyWord"] = $keyWord;
+                
+                $results[] = $row;
+            }
+        }
+        mysqli_stmt_close($stmt);
+        return $results;
+    }
+?>
