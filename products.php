@@ -10,8 +10,19 @@
     <body>       
         <ul id="menu">
             <li id="list">
-                <form action="products.html" id="formSearch" name="formSearch" method="GET">
-                    <input type="text" id="textSearch" name="textSearch" placeholder="Search" >
+                <form action="products.php" id="formSearch" name="formSearch" method="POST">
+                    <input type="text" id="textSearch" name="search" placeholder="Search">
+                    <select id="selectCategory" name="category">
+                        <option value="all categories">All Categories</option>
+                        <option value="cable">Cable</option>
+                        <option value="case">Case</option>
+                        <option value="charger">Charger</option>
+                        <option value="earphone">Earphone</option>
+                        <option value="headphone">Headphone</option>
+                        <option value="holder">Holder</option>
+                        <option value="power bank">Power Bank</option>
+                        <option value="screen protector">Screen Protector</option>
+                    </select>
                     <input type="submit" value="Search"/>
                 </form>
             </li>
@@ -33,16 +44,40 @@
         </ul>
         <br>
         <br>
-        <h1>Product</h1>
+        <h1>Products</h1>
         <?php
             include_once 'db_functions.php';
             $conn = get_conn();
-            
-            // Category Example
+
             if($conn){
-                $results = get_products_with_category($conn, "case");
+
+                $hasCategory = false;
+                $hasSearch = false;
+                if (isset($_POST["category"])){
+                    if ($_POST["category"] !== "all categories"){
+                        $hasCategory = true;
+                    }
+                }
+                if (isset($_POST["search"])){
+                    $hasSearch = true;
+                }
+
+                if($hasCategory && $hasSearch){ // Category and Key Word
+                    $results = get_products_with_category_and_keyWord($conn, $_POST["category"], $_POST["search"]);
+                }
+                elseif($hasCategory){ // Category only
+                    $results = get_products_with_category($conn, $_POST["category"]);
+                }
+                elseif($hasSearch){ // Search only
+                    $results = get_products_with_keyWord($conn, $_POST["search"]);
+                }
+                else{ // All products
+                    $results = get_products($conn);
+                }
+
                 if ($results) { 
                     foreach ($results as $row) {
+                        echo "<br/>---------------------------------------<br/>";
                         echo $row["id"]."<br/>";
                         echo $row["name"]."<br/>";
                         echo $row["description"]."<br/>";
@@ -53,41 +88,8 @@
                         echo $row["keyWord"]."<br/>";
                       }
                 }
+                mysqli_close($conn);
             }
-            
-            // Key Word Example
-            // if($conn){
-            //     $results = get_products_with_keyWord($conn, "case usb");
-            //     if ($results) { 
-            //         foreach ($results as $row) {
-            //             echo $row["id"]."<br/>";
-            //             echo $row["name"]."<br/>";
-            //             echo $row["description"]."<br/>";
-            //             echo $row["image"]."<br/>";
-            //             echo $row["price"]."<br/>";
-            //             echo $row["recommendedRetailPrice"]."<br/>";
-            //             echo $row["category"]."<br/>";
-            //             echo $row["keyWord"]."<br/>";
-            //           }
-            //     }
-            // } 
-
-            // Category and Key Word Example
-            // if($conn){
-            //     $results = get_products_with_category_and_keyWord($conn, "case", "leather");
-            //     if ($results) { 
-            //         foreach ($results as $row) {
-            //             echo $row["id"]."<br/>";
-            //             echo $row["name"]."<br/>";
-            //             echo $row["description"]."<br/>";
-            //             echo $row["image"]."<br/>";
-            //             echo $row["price"]."<br/>";
-            //             echo $row["recommendedRetailPrice"]."<br/>";
-            //             echo $row["category"]."<br/>";
-            //             echo $row["keyWord"]."<br/>";
-            //           }
-            //     }
-            // } 
             
         ?>
     </body>
