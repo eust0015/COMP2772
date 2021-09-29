@@ -37,8 +37,10 @@
         <?php
             include_once 'db_functions.php';
             $conn = get_conn();
+            
+            // Category Example
             if($conn){
-                $results = get_products_with_keyWord($conn, "case usb");
+                $results = get_products_with_category($conn, "case");
                 if ($results) { 
                     foreach ($results as $row) {
                         echo $row["id"]."<br/>";
@@ -51,7 +53,24 @@
                         echo $row["keyWord"]."<br/>";
                       }
                 }
-            } 
+            }
+            
+            // Key Word Example
+            // if($conn){
+            //     $results = get_products_with_keyWord($conn, "case usb");
+            //     if ($results) { 
+            //         foreach ($results as $row) {
+            //             echo $row["id"]."<br/>";
+            //             echo $row["name"]."<br/>";
+            //             echo $row["description"]."<br/>";
+            //             echo $row["image"]."<br/>";
+            //             echo $row["price"]."<br/>";
+            //             echo $row["recommendedRetailPrice"]."<br/>";
+            //             echo $row["category"]."<br/>";
+            //             echo $row["keyWord"]."<br/>";
+            //           }
+            //     }
+            // } 
         ?>
     </body>
 </html>
