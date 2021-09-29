@@ -44,8 +44,36 @@
         return $result;
     }
 
+    function get_products($conn) {
+      
+        $stmt = mysqli_prepare($conn, "SELECT * from product");
+        
+        $results = array();
+        $rowCount = 0;
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $id, $name, $description, $image, $price, $recommendedRetailPrice, $category, $keyWord);
+            while (mysqli_stmt_fetch($stmt)) {
+                $row = array();
+                $row["id"] = $id;
+                $row["name"] = $name;
+                $row["description"] = $description;
+                $row["image"] = $image;
+                $row["price"] = $price;
+                $row["recommendedRetailPrice"] = $recommendedRetailPrice;
+                $row["category"] = $category;
+                $row["keyWord"] = $keyWord;
+                
+                $results[$rowCount] = $row;
+                $rowCount++;
+            }
+        }
+        mysqli_stmt_close($stmt);
+        return $results;
+    }
+
     function get_products_with_category($conn, $product_category) {
       
+        $product_category = strtolower($product_category);
         $stmt = mysqli_prepare($conn, "SELECT * from product WHERE category = ?");
         
         mysqli_stmt_bind_param($stmt, "s", $product_category);
@@ -78,7 +106,7 @@
         $keyWordList = explode(" ", $product_keyWord);
         
         for ($x = 0; $x < count($keyWordList); $x++) {
-            $keyWordList[$x] = "%".$keyWordList[$x]."%";
+            $keyWordList[$x] = "%".strtolower($keyWordList[$x])."%";
         }
 
         $sql = "SELECT * from product WHERE keyWord LIKE ?";
@@ -113,4 +141,51 @@
         mysqli_stmt_close($stmt);
         return $results;
     }
+
+    function get_products_with_category_and_keyWord($conn, $product_category, $product_keyWord) {
+
+        $product_category = strtolower($product_category);
+        $keyWordList = explode(" ", $product_keyWord);
+        
+        for ($x = 0; $x < count($keyWordList); $x++) {
+            $keyWordList[$x] = "%".strtolower($keyWordList[$x])."%";
+        }
+
+        $sql = "SELECT * from product WHERE category = ? AND (keyWord LIKE ?";
+        $type = "ss";
+        for ($x = 1; $x < count($keyWordList); $x++) {
+            $sql .= " OR keyWord LIKE ?";
+            $type .= "s";
+        }
+        $sql .= ")";
+
+        // Put the category at the front of keyWordList and most all the existing elements up one place
+        array_unshift($keyWordList, $product_category);
+
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, $type, ...$keyWordList);
+    
+        $results = array();
+        $rowCount = 0;
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $id, $name, $description, $image, $price, $recommendedRetailPrice, $category, $keyWord);
+            while (mysqli_stmt_fetch($stmt)) {
+                $row = array();
+                $row["id"] = $id;
+                $row["name"] = $name;
+                $row["description"] = $description;
+                $row["image"] = $image;
+                $row["price"] = $price;
+                $row["recommendedRetailPrice"] = $recommendedRetailPrice;
+                $row["category"] = $category;
+                $row["keyWord"] = $keyWord;
+                
+                $results[$rowCount] = $row;
+                $rowCount++;
+            }
+        }
+        mysqli_stmt_close($stmt);
+        return $results;
+    }
+
 ?>

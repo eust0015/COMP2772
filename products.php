@@ -71,6 +71,24 @@
             //           }
             //     }
             // } 
+
+            // Category and Key Word Example
+            // if($conn){
+            //     $results = get_products_with_category_and_keyWord($conn, "case", "leather");
+            //     if ($results) { 
+            //         foreach ($results as $row) {
+            //             echo $row["id"]."<br/>";
+            //             echo $row["name"]."<br/>";
+            //             echo $row["description"]."<br/>";
+            //             echo $row["image"]."<br/>";
+            //             echo $row["price"]."<br/>";
+            //             echo $row["recommendedRetailPrice"]."<br/>";
+            //             echo $row["category"]."<br/>";
+            //             echo $row["keyWord"]."<br/>";
+            //           }
+            //     }
+            // } 
+            
         ?>
     </body>
 </html>
