@@ -1,86 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/productstyle.css">
+        <meta charset="utf-8">
+        <meta name="author" content="Group-07" />
+        <meta name="description" content="Assignment02" />
         <title>Products</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald:wght@500&family=Roboto:wght@700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="styles/productstyle.css" />
     </head>
-    <body>
-        <!-- Header - Top and Bottom -->
-        <div class="first-header" id="first-header"></div>
-        <div class="second-header" id="second-header">
-          <header class="header-second">
-            <a href="index.html"> <img class="header2-logo" src="images/header-logo.png" alt="logo" /> </a>
-            <nav>
-              <ul class="nav-links">
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Gift-Cards</a></li>
-                <li><a href="#">Support</a></li>
-              </ul>
-            </nav>
-            <input type="text" placeholder="Search" />
-            <a class="my-cart" href="#"><button class="header-second-my-cart-button">My Cart</button></a>
-          </header>
-        </div>
-
-        <!-- Products Title -->
-       <div class="products-main" id="products-main">
-        <div class="products" id="products">
-            <!-- <img class="products" id="products" src="images/purpleflame.png" alt="#" /> -->
-            <span class="products" id="products">Categories</span>
-          </div>           
-       </div>
-
-       <!-- Product Categories -->
-       <div class="product-categories" id="product categories">
-           <div class="categories" id="categories">
-               <a href="">
-                   <div class="categorie" id="categorie-headphones">
-                       <div class="categorie-headphones-inline-block">
-                           <img class="headphone-image" src="images/headphones-8-32.png" alt="#" />
-                           <span class="headphone-text">Headphones</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="categorie" id="categorie-mobiles">
-                        <div class="categorie-mobiles-inline-block">
-                            <img class="mobile-image" src="images/iphone-32.png" alt="#" />
-                            <span class="mobile-text">Phones</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="categorie" id="categorie-cameras">
-                        <div class="categorie-cameras-inline-block">
-                            <img class="camera-image" src="images/camera-4-32.png" alt="#" />
-                            <span class="camera-text">Cameras</span>
-                        </div>
-                    </div>
-                </a>
-                <a href="">
-                    <div class="categorie" id="categorie-computers">
-                        <div class="categorie-computers-inline-block">
-                            <img class="computer-image" src="images/laptop-3-32.png" alt="#" />
-                            <span class="computer-text">Computers</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Display All Products -->
-        <br><br><br><br><br>
-
+    <body>       
+        <ul id="menu">
+            <li id="list">
+                <form action="products.html" id="formSearch" name="formSearch" method="GET">
+                    <input type="text" id="textSearch" name="textSearch" placeholder="Search" >
+                    <input type="submit" value="Search"/>
+                </form>
+            </li>
+            <li id="list">
+                <a href="index.html">Home</a>
+            </li>
+            <li id="list">
+                <a href="products.html">Products</a>
+            </li>
+            <li id="list">
+                <a href="about.html">About</a>
+            </li>
+            <li id="list">
+                <a href="cart.html">Shopping Cart</a>
+            </li>
+            <li id="list">
+                <a href="login.html">Account Login</a>
+            </li>
+        </ul>
+        <br>
+        <br>
         <h1>Products</h1>
 
-        <div class="products-list">
+        <div class="products">
             <ul class="items">
                 <li class="product-item"><div id="item"><a href="">USB to Lightning Cable</a></div>
                 <div id="item1" class="item-height"><a href=""><img src="images/USB to Lightning Cable.png" alt="USB Lightning"></a></div>
@@ -193,23 +148,7 @@
                 </div></li>
             </ul>
         </div>
-        <br><br>
 
-        further products to add <br><br>
-
-lg tv <br>
-samsung galaxy s21 <br>
-samsung galaxy watch <br>
-bose quietcomfort 45 headphones <br>
-macbook air m1 <br>
-iphone 13 <br>
-beats sutdio buds <br>
-galaxy watch 4 <br>
-go pro hero 10 <br>
-vacuum <br>
-nintendo switch <br>
-airpods pro <br>
-razer mini keyboard <br>
 
     </body>
 </html>
