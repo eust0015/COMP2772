@@ -164,7 +164,7 @@ div.product-categories {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* add background image */
+    background-image: url(..//images/headphone.jpg);
   }
   
   div.categorie-headphones-inline-block {
@@ -191,7 +191,7 @@ div.product-categories {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* add background image */
+    background-image: url(..//images/mobile.jpeg);
 
   }
   
@@ -219,7 +219,7 @@ div.product-categories {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* add background image */
+    background-image: url(..//images/camera.jpg);
 
   }
   
@@ -247,8 +247,8 @@ div.product-categories {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* add background image */
-  }
+    background-image: url(..//images/computer.png);
+}
   
   div.categorie-computers-inline-block {
     display: inline-block;
