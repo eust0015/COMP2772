@@ -1,154 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" href="styles/style.css">
-        <meta charset="utf-8">
-        <meta name="author" content="Group-07" />
-        <meta name="description" content="Assignment02" />
-        <title>Products</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Products2</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Oswald:wght@500&family=Roboto:wght@700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="styles/productstyle.css" />
     </head>
-    <body>       
-        <ul id="menu">
-            <li id="list">
-                <form action="products.html" id="formSearch" name="formSearch" method="GET">
-                    <input type="text" id="textSearch" name="textSearch" placeholder="Search" >
-                    <input type="submit" value="Search"/>
-                </form>
-            </li>
-            <li id="list">
-                <a href="index.html">Home</a>
-            </li>
-            <li id="list">
-                <a href="products.html">Products</a>
-            </li>
-            <li id="list">
-                <a href="about.html">About</a>
-            </li>
-            <li id="list">
-                <a href="cart.html">Shopping Cart</a>
-            </li>
-            <li id="list">
-                <a href="login.html">Account Login</a>
-            </li>
-        </ul>
-        <br>
-        <br>
-        <h1>Products</h1>
-
-        <div class="products">
-            <ul class="items">
-                <li class="product-item"><div id="item"><a href="">USB to Lightning Cable</a></div>
-                <div id="item1" class="item-height"><a href=""><img src="images/USB to Lightning Cable.png" alt="USB Lightning"></a></div>
-                <div id="product-details">
-                    <span class="price-label">Price:</span> <br>
-                    <span class="price">$45.00</span>
-                </div>
-                <div class="add">
-                    <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                    <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                </div></li>
-
-                <li class="product-item"><div id="item2"><a href="">10W Wireless Charging Pad</a></div>
-                    <div id="item2" class="item-height"><a href=""><img src="images/Charging Pad.png" alt="Charging Pad"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$49.95</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                    </div></li>
-
-                <li class="product-item"><div id="item3"><a href="">5W USB Power Adapter</a></div>
-                    <div id="item3" class="item-height"><a href=""><img src="images/5W USB Power Adapter.png" alt="5W USB Power Adapter"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$29.00</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                    </div></li>
-
-                <li class="product-item"><div id="item4"><a href="">Headphones</a>
-                    <div id="item4" class="item-height"><a href=""><img src="images/Headphones.png" alt="Headphones"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$349.00</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                </div></li>
-
-                <li class="product-item"><div id="item5"><a href="">Earphones</a>
-                    <div id="item5" class="item-height"><a href=""><img src="images/Earphones.png" alt="Earphones"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$249.00</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                </div></li>
-
-                <li class="product-item"><div id="item6"><a href="">Power Bank</a>
-                    <div id="item6" class="item-height"><a href=""><img src="images/Power Bank.png" alt="Power Bank"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$79.95</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                </div></li>
-
-                <li class="product-item"><div id="item7"><a href="">Silicone Case</a>
-                    <div id="item7" class="item-height"><a href=""><img src="images/Silicone Case.png" alt="Silicone Case"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$29.95</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                </div></li>
-
-                <li class="product-item"><div id="item8"><a href="">Leather Case</a>
-                    <div id="item8" class="item-height"><a href=""><img src="images/Leather Case.png" alt="Leather Case"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$59.00</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                </div></li>
-
-                <li class="product-item"><div id="item9"><a href="">Screen Protector</a>
-                    <div id="item9" class="item-height"><a href=""><img src="images/Screen Protector.png" alt="Screen Protector"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$35.00</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                </div></li>
-
-                <li class="product-item"><div id="item10"><a href="">Phone Holder</a>
-                    <div id="item10" class="item-height"><a href=""><img src="images/Phone Holder.png" alt="Phone Holder"></a></div>
-                    <div id="product-details">
-                        <span class="price-label">Price:</span> <br>
-                        <span class="price">$49.00</span>
-                    </div>
-                    <div class="add">
-                        <a href="" id="button1"><input id="button" class="add-to-cart" type="button" value="Add To Cart"/></a>
-                        <a href="" id="button1"><input id="button" class="add-to-wishlist" type="button" value="Add To Wishlist"/></a>
-                </div></li>
-            </ul>
+    <body>
+        <!-- Header - Top and Bottom -->
+        <div class="first-header" id="first-header"></div>
+        <div class="second-header" id="second-header">
+          <header class="header-second">
+            <a href="index.html"> <img class="header2-logo" src="images/header-logo.png" alt="logo" /> </a>
+            <nav>
+              <ul class="nav-links">
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Gift-Cards</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </nav>
+            <input type="text" placeholder="Search" />
+            <a class="my-cart" href="#"><button class="header-second-my-cart-button">My Cart</button></a>
+          </header>
         </div>
 
+        <!-- Products Title -->
+       <div class="products-main" id="products-main">
+        <div class="products" id="products">
+            <!-- <img class="products" id="products" src="images/purpleflame.png" alt="#" /> -->
+            <span class="products" id="products">Categories</span>
+          </div>           
+       </div>
 
+       <!-- Product Categories -->
+       <div class="product-categories" id="product categories">
+           <div class="categories" id="categories">
+               <a href="">
+                   <div class="categorie" id="categorie-headphones">
+                       <div class="categorie-headphones-inline-block">
+                           <img class="headphone-image" src="images/headphones-8-32.png" alt="#" />
+                           <span class="headphone-text">Headphones</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="categorie" id="categorie-mobiles">
+                        <div class="categorie-mobiles-inline-block">
+                            <img class="mobile-image" src="images/iphone-32.png" alt="#" />
+                            <span class="mobile-text">Phones</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="categorie" id="categorie-cameras">
+                        <div class="categorie-cameras-inline-block">
+                            <img class="camera-image" src="images/camera-4-32.png" alt="#" />
+                            <span class="camera-text">Cameras</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="categorie" id="categorie-computers">
+                        <div class="categorie-computers-inline-block">
+                            <img class="computer-image" src="images/laptop-3-32.png" alt="#" />
+                            <span class="computer-text">Computers</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Display All Products -->
+        <div class="all-products" id="all-products">
+            <!-- display plan -->
+            <div>product 1 
+                <div>product image</div>
+                <div>product description</div>
+                <div>price</div>
+                <div>buy now</div>
+            </div>
+            
+        </div>
     </body>
 </html>
