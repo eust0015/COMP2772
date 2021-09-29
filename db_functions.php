@@ -74,19 +74,23 @@
     }
 
     function get_products_with_keyWord($conn, $product_keyWord) {
-      
-        keyWordList = explode(" ", $product_keyWord);
+
+        $keyWordList = explode(" ", $product_keyWord);
+        
+        for ($x = 0; $x < count($keyWordList); $x++) {
+            $keyWordList[$x] = "%".$keyWordList[$x]."%";
+        }
+
         $sql = "SELECT * from product WHERE keyWord LIKE ?";
-        for ($x = 1; $x < count(keyWordList); $x++) {
-            sql += " OR keyWord LIKE ?";
+        $type = "s";
+        for ($x = 1; $x < count($keyWordList); $x++) {
+            $sql .= " OR keyWord LIKE ?";
+            $type .= "s";
         }
         
         $stmt = mysqli_prepare($conn, $sql);
-
-        foreach ($keyWordList as $word) {
-            mysqli_stmt_bind_param($stmt, "s", "%" + $word + "%");
-        }
-        
+        mysqli_stmt_bind_param($stmt, $type, ...$keyWordList);
+    
         $results = array();
         $rowCount = 0;
         if (mysqli_stmt_execute($stmt)) {

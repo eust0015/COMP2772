@@ -4,8 +4,8 @@
         <link rel="stylesheet" href="styles/style.css">
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
-        <meta name="description" content="Assignment02" />
-        <title>Product</title>
+        <meta name="products" content="Assignment02" />
+        <title>Products</title>
     </head>
     <body>       
         <ul id="menu">
@@ -38,7 +38,7 @@
             include_once 'db_functions.php';
             $conn = get_conn();
             if($conn){
-                $results = get_products_with_category($conn, "case");
+                $results = get_products_with_keyWord($conn, "case usb");
                 if ($results) { 
                     foreach ($results as $row) {
                         echo $row["id"]."<br/>";
