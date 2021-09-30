@@ -2,7 +2,6 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="styles/productstyle.css">
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="products" content="Assignment02" />
