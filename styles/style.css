@@ -28,7 +28,7 @@ html{
     color: black;
   }
   
-  ul#menu li {
+  ul #menu li {
     display:inline;
   }
   
@@ -83,4 +83,10 @@ html{
   }
   .item-height{
     height: 270px;
+  }
+  .cart-container{
+    border: 1px solid #9e9e9e;
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
   }
