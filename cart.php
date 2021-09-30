@@ -85,6 +85,7 @@
                     <button type='button' name='update-cart-action' class='empty-cart'><span>Clear Cart</span></button>
                     <button type='submit' name='update-cart-action' class='update-cart'>Update Cart</button>
                 </div>
+                <input type='submit' value='Proceed To Checkout'>
             </form>
             <div class='cart-summary'>
                <div class='cart-totals'>
@@ -111,7 +112,7 @@
                       </tbody>  
                    </table>
                </div>
-               <input type='submit' value='Proceed To Checkout'>
+               
             </div>
         </div>
 
