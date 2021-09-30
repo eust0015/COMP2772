@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/productstyle.css">
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="products" content="Assignment02" />
@@ -75,19 +76,39 @@
                     $results = get_products($conn);
                 }
 
+                // if ($results) { 
+                //     foreach ($results as $row) {
+                //         echo "<br/>---------------------------------------<br/>";
+                //         echo $row["id"]."<br/>";
+                //         echo $row["name"]."<br/>";
+                //         echo $row["description"]."<br/>";
+                //         echo $row["image"]."<br/>";
+                //         echo $row["price"]."<br/>";
+                //         echo $row["recommendedRetailPrice"]."<br/>";
+                //         echo $row["category"]."<br/>";
+                //         echo $row["keyWord"]."<br/>";
+                //       }
+                // }
+
                 if ($results) { 
                     foreach ($results as $row) {
-                        echo "<br/>---------------------------------------<br/>";
-                        echo $row["id"]."<br/>";
-                        echo $row["name"]."<br/>";
-                        echo $row["description"]."<br/>";
-                        echo $row["image"]."<br/>";
-                        echo $row["price"]."<br/>";
-                        echo $row["recommendedRetailPrice"]."<br/>";
-                        echo $row["category"]."<br/>";
-                        echo $row["keyWord"]."<br/>";
+                        echo "<div class='products'>";
+                        echo "<ul class='items'>";
+                        echo "<li class='product-item'><div id='item'><a href='product.php?name=".$row["name"]."'>".$row["name"]."</a></div>";
+                        echo "<div id='item1' class='item-height'><a href='product.php?name=".$row["name"]."'><img src='images/".$row["image"]."' alt='".$row["name"]."'></a></div>";
+                        echo "<div id='product-details'>";
+                        echo "<span class='price-label'>Price:</span> <br>";
+                        echo "<span class='price'>".$row["price"]."</span>";
+                        echo "</div>";
+                        echo "<div class='add'>";
+                        echo "<a href='' id='button1'><input id='button' class='add-to-cart' type='button' value='Add To Cart'/></a>";
+                        echo "<a href='' id='button1'><input id='button' class='add-to-wishlist' type='button' value='Add To Wishlist'/></a>";
+                        echo "</div></li>";
+                        echo "</ul>";
+                        echo "</div>";
                       }
                 }
+
                 mysqli_close($conn);
             }
             

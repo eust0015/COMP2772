@@ -21,10 +21,10 @@
         return $conn;  
     }
 
-    function get_product($conn, $product_id) {
-        $stmt = mysqli_prepare($conn, "SELECT * from product where id = ?");
+    function get_product($conn, $product_name) {
+        $stmt = mysqli_prepare($conn, "SELECT * from product where name = ?");
         
-        mysqli_stmt_bind_param($stmt, "s", $product_id);
+        mysqli_stmt_bind_param($stmt, "s", $product_name);
 
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_bind_result($stmt, $id, $name, $description, $image, $price, $recommendedRetailPrice, $category, $keyWord);
