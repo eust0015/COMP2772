@@ -112,15 +112,9 @@
                </div>
             </div>
             <div id='proceed-to-checkout-button'>
-                <input type='submit' id='proceed-to-checkout' value='Proceed To Checkout'>
+                <a href="checkout.php"><input type='submit' id='proceed-to-checkout' value='Proceed To Checkout'></a>
             </div>
             </form>
         </div>
-        <?php 
-        
-        // php here
-        
-        
-        ?>
     </body>
 </html>
