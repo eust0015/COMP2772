@@ -91,7 +91,7 @@ ul #menu li {
 }
 .cart-container{
   border: 1px solid #9e9e9e;
-  width: 850px;
+  width: 791px;
   margin: auto;
   margin-top: 50px;
 }
@@ -140,4 +140,10 @@ ul #menu li {
 }
 #cart-totals{
   padding: 30px 80px;
+}
+#quantity-amount{
+  width: 60px;
+}
+.table-head{
+  padding-top: 10px;
 }

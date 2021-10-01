@@ -51,8 +51,8 @@
             <form action='checkout.php' method='POST' id='cart-form' class='cart-form'>
                 <div id='cart-table' class='cart-table'>
                     <table id='shopping-cart-table' class='shopping-cart-table'>
-                        <div class='table-header'>
-                            <thead class='table-head'>
+                        <div class='table-head'>
+                            <thead>
                                 <tr>
                                     <th class='col-item'><span>Item</span></th>
                                     <th class='col-item-description'><span>Description</span></th>
@@ -66,13 +66,13 @@
                             <tr class='item-info'> <!-- THIS WILL NEED TO BE DYNAMIC PENDING NUMBER OF ITEMS IN CART-->
                                 <td class='col-item' data-th='Item'>
                                     <div class='product-item-details'> <!-- PULL THIS FROM DB -->
-                                        <img src="images/Headphones.png" alt="Headphones">                                    </div>
+                                        <img src="images/Headphones.png" alt="Headphones"></div>
                                 </td>
                                 <td class='col-item-description'><strong class='product-item-name'>Headphones</strong></td>
                                 <td class='col-price' data-th='Price' id='product-price'>349.00</td> <!-- PULL THIS FROM DB -->
                                 <td class='col-quantity' data-th='Quantity'>
                                     <div class='quantity-control'>
-                                    <input type="number" size='4' class='quantity-amount' id='quantity-amount' min='0' value='1'>
+                                    <input type="number" class='quantity-amount' id='quantity-amount' min='0' value='1'>
                                     </div>
                                 </td>
                                 <td class='col-subtotal' data-th='Subtotal' id='diaplayProductSubtotal'>Product Subtotal</td>
