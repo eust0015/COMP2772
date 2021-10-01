@@ -1,3 +1,5 @@
+// Functions
+
 function getProductPrice(){
     productPrice = document.querySelector('#product-price').textContent;
 }
@@ -9,9 +11,28 @@ function getQuantity(){
 function displaySubtotal(){
     getProductPrice();
     getQuantity();
-    subtotal = document.querySelector('#diaplayProductSubtotal').textContent = "$" + productPrice * productQuantity;
+    subtotal = productPrice * productQuantity;
+    document.querySelector('#diaplayProductSubtotal').textContent = "$" + subtotal;
 }
 displaySubtotal();
 
+function updateSummarySubtotal(){
+    document.querySelector('#summarySubtotal').textContent = "$" + subtotal;
+}
+updateSummarySubtotal();
+
+function updateSummaryGST(){
+    document.querySelector('#summaryGST').textContent = "$" + subtotal / 10;
+}
+
+function updateSummaryTotal(){
+    document.querySelector('#summaryTotal').textContent = "$" + subtotal;
+}
+
+
+// Event Listners
 
 document.querySelector('#update-cart').addEventListener("click", displaySubtotal);
+document.querySelector('#update-cart').addEventListener("click", updateSummarySubtotal);
+document.querySelector('#update-cart').addEventListener("click", updateSummaryGST);
+document.querySelector('#update-cart').addEventListener("click", updateSummaryTotal);

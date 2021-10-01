@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/style.css">
+        <script src="scripts/script.js" defer></script>
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="products" content="Assignment02" />
@@ -100,8 +101,8 @@
                         echo "<span class='price'>".$row["price"]."</span>";
                         echo "</div>";
                         echo "<div class='add'>";
-                        echo "<a href='' id='button1'><input id='button' class='add-to-cart' type='button' value='Add To Cart'/></a>";
-                        echo "<a href='' id='button1'><input id='button' class='add-to-wishlist' type='button' value='Add To Wishlist'/></a>";
+                        echo "<a href='' id='button1'><input id='add-to-cart' class='add-to-cart' type='button' value='Add To Cart'/></a>";
+                        echo "<a href='' id='button1'><input id='add-to-wishlist' class='add-to-wishlist' type='button' value='Add To Wishlist'/></a>";
                         echo "</div></li>";
                         echo "</ul>";
                         echo "</div>";

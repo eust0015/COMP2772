@@ -92,19 +92,19 @@
                           <tr class='sub-total'>
                               <th class='amount-label'>Sub Total</th>
                               <td class='amount'>
-                                  <span class='price'>349.00</span>
+                                  <span class='price' id='summarySubtotal'>JS to generate</span>
                               </td>
                           </tr>
                           <tr class='gst'>
                               <th class='amount-label'>GST Included</th>
                                 <td class='amount'>
-                                    <span class='price'>34.90</span>
+                                    <span class='price' id='summaryGST'>$0</span>
                                 </td>
                           </tr>
                           <tr class='total-amount'>
                                 <th class='amount-label'>Total Amount</th>
                                 <td class='amount'>
-                                    <span class='price'>349.00</span>
+                                    <span class='price' id='summaryTotal'>$0</span>
                                 </td>
                           </tr>
                       </tbody>  
