@@ -22,7 +22,8 @@ function updateSummarySubtotal(){
 updateSummarySubtotal();
 
 function updateSummaryGST(){
-    document.querySelector('#summaryGST').textContent = "$" + subtotal / 10;
+    let gst = subtotal / 10;
+    document.querySelector('#summaryGST').textContent = "$" + gst;
 }
 
 function updateSummaryTotal(){

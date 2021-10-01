@@ -80,38 +80,40 @@
                         </tbody>
                     </table>
                 </div>
-                <div class='cart-actions'>
-                    <input type="button" name='update-cart-action' id='empty-cart' value='Clear Cart'>
-                    <input type="button" name='update-cart-action' id='update-cart' value='Update Cart'>
-                </div>
                 
-                <div class='cart-summary'>
-               <div class='cart-totals'>
-                   <table class='data-totals'>
-                      <tbody>
-                          <tr class='sub-total'>
-                              <th class='amount-label'>Sub Total</th>
-                              <td class='amount'>
-                                  <span class='price' id='summarySubtotal'>JS to generate</span>
-                              </td>
-                          </tr>
-                          <tr class='gst'>
-                              <th class='amount-label'>GST Included</th>
+                <div class='cart-summary' id='cart-summary'>
+                    <div class='cart-buttons'>
+                        <input type="button" name='update-cart-action' id='empty-cart' value='Clear Cart'>
+                        <input type="button" name='update-cart-action' id='update-cart' value='Update Cart'>
+                    </div>
+                    <div class='cart-totals' id='cart-totals'>
+                        <table class='data-totals' id='summaryTotals'>
+                        <tbody>
+                            <tr class='sub-total'>
+                                <th class='amount-label'>Sub Total</th>
+                                <td class='amount'>
+                                    <span class='price' id='summarySubtotal'>JS to generate</span>
+                                </td>
+                            </tr>
+                            <tr class='gst'>
+                                <th class='amount-label'>GST Included</th>
                                 <td class='amount'>
                                     <span class='price' id='summaryGST'>$0</span>
                                 </td>
-                          </tr>
-                          <tr class='total-amount'>
+                            </tr>
+                            <tr class='total-amount'>
                                 <th class='amount-label'>Total Amount</th>
                                 <td class='amount'>
                                     <span class='price' id='summaryTotal'>$0</span>
                                 </td>
-                          </tr>
-                      </tbody>  
-                   </table>
+                            </tr>
+                        </tbody>  
+                    </table>
                </div>
             </div>
-            <input type='submit' value='Proceed To Checkout'>
+            <div id='proceed-to-checkout-button'>
+                <input type='submit' id='proceed-to-checkout' value='Proceed To Checkout'>
+            </div>
             </form>
         </div>
         <?php 
