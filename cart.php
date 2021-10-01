@@ -69,7 +69,7 @@
                                         <strong class='product-item-name'>Headphones</strong>
                                     </div>
                                 </td>
-                                <td class='col-price' data-th='Price'><span class='price' id='product-price'>349.00</span></td> <!-- PULL THIS FROM DB -->
+                                <td class='col-price' data-th='Price' id='product-price'>349.00</td> <!-- PULL THIS FROM DB -->
                                 <td class='col-quantity' data-th='Quantity'>
                                     <div class='quantity-control'>
                                     <input type="number" size='4' class='quantity-amount' id='quantity-amount' min='0'>
