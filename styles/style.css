@@ -90,3 +90,7 @@ html{
     margin: auto;
     margin-top: 50px;
   }
+  .shopping-cart-table{
+    border-collapse: separate;
+    border-spacing: 50px 0;
+  }

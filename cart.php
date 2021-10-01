@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/style.css">
+        <script src="scripts/script.js" defer></script>
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="description" content="Assignment02" />
@@ -56,7 +57,7 @@
                                     <th class='col-item'><span>Item</span></th>
                                     <th class='col-price'><span>Price</span></th>
                                     <th class='col-quantity'><span>Quantity</span></th>
-                                    <th class='col-subtotal'><span>Subtotal</span></th>
+                                    <th class='col-subtotal'><span>Sub Total</span></th>
                                 </tr>
                             </thead>
                         </div>
@@ -68,53 +69,56 @@
                                         <strong class='product-item-name'>Headphones</strong>
                                     </div>
                                 </td>
-                                <td class='col-price' data-th='Price'><span class='price'>$349.00</span></td> <!-- PULL THIS FROM DB -->
+                                <td class='col-price' data-th='Price'><span class='price' id='product-price'>349.00</span></td> <!-- PULL THIS FROM DB -->
                                 <td class='col-quantity' data-th='Quantity'>
                                     <div class='quantity-control'>
-                                        <!-- <button type="button" class='qty-decrement'>-</button> -->
-                                        <input type="number" size='4' class='quantity-amount' min='0'>
-                                        <!-- <button type="button" class='qty-increment'>+</button> -->
+                                    <input type="number" size='4' class='quantity-amount' id='quantity-amount' min='0'>
                                     </div>
                                 </td>
-                                <td class='col-subtotal' data-th='Subtotal'><span class='price'>$349.00 (js to do this)</span></td>
+                                <td class='col-subtotal' data-th='Subtotal' id='diaplayProductSubtotal'>Product Subtotal</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class='cart-actions'>
-                    <button type='button' name='update-cart-action' class='empty-cart'><span>Clear Cart</span></button>
-                    <button type='submit' name='update-cart-action' class='update-cart'>Update Cart</button>
+                    <input type="button" name='update-cart-action' id='empty-cart' value='Clear Cart'>
+                    <input type="button" name='update-cart-action' id='update-cart' value='Update Cart'>
                 </div>
-                <input type='submit' value='Proceed To Checkout'>
-            </form>
-            <div class='cart-summary'>
+                
+                <div class='cart-summary'>
                <div class='cart-totals'>
                    <table class='data-totals'>
                       <tbody>
                           <tr class='sub-total'>
                               <th class='amount-label'>Sub Total</th>
                               <td class='amount'>
-                                  <span class='price'>$349.00</span>
+                                  <span class='price'>349.00</span>
                               </td>
                           </tr>
                           <tr class='gst'>
                               <th class='amount-label'>GST Included</th>
                                 <td class='amount'>
-                                    <span class='price'>$34.90</span>
+                                    <span class='price'>34.90</span>
                                 </td>
                           </tr>
                           <tr class='total-amount'>
                                 <th class='amount-label'>Total Amount</th>
                                 <td class='amount'>
-                                    <span class='price'>$349.00</span>
+                                    <span class='price'>349.00</span>
                                 </td>
                           </tr>
                       </tbody>  
                    </table>
                </div>
-               
             </div>
+            <input type='submit' value='Proceed To Checkout'>
+            </form>
         </div>
-
+        <?php 
+        
+        // php here
+        
+        
+        ?>
     </body>
 </html>
