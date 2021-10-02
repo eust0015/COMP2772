@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once 'cart_functions.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,7 +42,7 @@
                 <a href="about.html">About</a>
             </li>
             <li id="list">
-                <a href="cart.php">Shopping Cart</a>
+                <a id="menuCartLink" href="cart.php">Shopping Cart<?php echo ((isset($_SESSION["products"])) ? " (" . count($_SESSION["products"]) . ")" : "") ?></a>
             </li>
             <li id="list">
                 <a href="login.html">Account Login</a>
@@ -101,7 +106,18 @@
                         echo "<span class='price'>".$row["price"]."</span>";
                         echo "</div>";
                         echo "<div class='add'>";
-                        echo "<a href='' id='button1'><input id='add-to-cart' class='add-to-cart' type='button' value='Add To Cart'/></a>";
+                        echo "<form action='products.php' id='formAddToCart' name='formAddToCart' method='POST'>";
+                        echo "<input type='hidden' id='cartProductId' name='cartProductId' value='".$row["id"]."'>";
+                        echo "<input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='1'>";
+                        if (isset($_SESSION["products"][$row["id"]])) {
+                            echo "<input type='hidden' id='cartAction' name='cartAction' value='remove'>";
+                            echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Remove From Cart'/>";
+                        }
+                        else{
+                            echo "<input type='hidden' id='cartAction' name='cartAction' value='update'>";
+                            echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Add To Cart'/>";                           
+                        }
+                        echo "</form>";
                         echo "<a href='' id='button1'><input id='add-to-wishlist' class='add-to-wishlist' type='button' value='Add To Wishlist'/></a>";
                         echo "</div></li>";
                         echo "</ul>";
