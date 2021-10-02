@@ -49,7 +49,7 @@
             include_once 'db_functions.php';
             $conn = get_conn();
             if($conn){
-                $result = get_product($conn, htmlspecialchars($_GET["name"]));
+                $result = get_product_by_name($conn, htmlspecialchars($_GET["name"]));
                 if ($result) { 
                     echo $result["id"]."<br/>";
                     echo $result["name"]."<br/>";

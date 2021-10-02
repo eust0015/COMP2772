@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -63,20 +67,37 @@
                             </thead>
                         </div>
                         <tbody>
-                            <tr class='item-info'> <!-- THIS WILL NEED TO BE DYNAMIC PENDING NUMBER OF ITEMS IN CART-->
-                                <td class='col-item' data-th='Item'>
-                                    <div class='product-item-details'> <!-- PULL THIS FROM DB -->
-                                        <img src="images/Headphones.png" alt="Headphones"></div>
-                                </td>
-                                <td class='col-item-description'><strong class='product-item-name'>Headphones</strong></td>
-                                <td class='col-price' data-th='Price' id='product-price'>349.00</td> <!-- PULL THIS FROM DB -->
-                                <td class='col-quantity' data-th='Quantity'>
-                                    <div class='quantity-control'>
-                                    <input type="number" class='quantity-amount' id='quantity-amount' min='0' value='1'>
-                                    </div>
-                                </td>
-                                <td class='col-subtotal' data-th='Subtotal' id='diaplayProductSubtotal'>Product Subtotal</td>
-                            </tr>
+                            <?php
+                                include_once 'db_functions.php';
+                                $conn = get_conn();
+                                $total = 0;
+
+                                if($conn){
+                                    if (isset($_SESSION["products"])) {
+                                        foreach($_SESSION["products"] as $productId => $productQuantity) {
+                                            $result = get_product_by_id($conn, htmlspecialchars($productId));
+                                            if ($result) { 
+                                                $subTotal = $productQuantity * $result["price"];
+                                                $total += $subTotal;
+                                                echo "<tr class='item-info'>";
+                                                echo "<td class='col-item' data-th='Item'>";
+                                                echo "<div class='product-item-details'>";
+                                                echo "<img src='images/" . $result["image"] . "' alt='" . $result["name"] . "'></div>";
+                                                echo "</td>";
+                                                echo "<td class='col-item-description'><strong class='product-item-name'>" . $result["name"] . "</strong></td>";
+                                                echo "<td class='col-price' data-th='Price' id='product-price'>$" . $result["price"] . "</td>";
+                                                echo "<td class='col-quantity' data-th='Quantity'>";
+                                                echo "<div class='quantity-control'>";
+                                                echo "<input type='number' class='quantity-amount' id='quantity-amount' min='0' value='" . $productQuantity . "'>";
+                                                echo "</div>";
+                                                echo "</td>";
+                                                echo "<td class='col-subtotal' data-th='Subtotal' id='displayProductSubtotal'>$" . $subTotal ."</td>";
+                                                echo "</tr>";
+                                            }
+                                        }
+                                    }
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -104,7 +125,7 @@
                             <tr class='total-amount'>
                                 <th class='amount-label'>Total Amount</th>
                                 <td class='amount'>
-                                    <span class='price' id='summaryTotal'>$0</span>
+                                    <span class='price' id='summaryTotal'>$<?php echo $total ?></span>
                                 </td>
                             </tr>
                         </tbody>  
@@ -116,5 +137,6 @@
             </div>
             </form>
         </div>
+
     </body>
 </html>

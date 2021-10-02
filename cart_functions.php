@@ -10,6 +10,9 @@ function update(){
         if (isset($_SESSION["products"])) {
             if (isset($_SESSION["products"][$_POST["cartProductId"]])) {
                 $_SESSION["products"][$_POST["cartProductId"]] += $_POST["cartProductQuantity"];
+                if ($_SESSION["products"][$_POST["cartProductId"]] === 0){
+                    remove();
+                }
             } 
             else{
                 $_SESSION["products"][$_POST["cartProductId"]] = $_POST["cartProductQuantity"];
@@ -46,6 +49,4 @@ if (isset($_POST["cartAction"])){
             break;
     }
 }
-print_r($_SESSION["products"]);
-echo count($_SESSION["products"]);
 ?>

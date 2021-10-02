@@ -21,7 +21,30 @@
         return $conn;  
     }
 
-    function get_product($conn, $product_name) {
+    function get_product_by_id($conn, $product_id) {
+        $stmt = mysqli_prepare($conn, "SELECT * from product where id = ?");
+        
+        mysqli_stmt_bind_param($stmt, "s", $product_id);
+
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $id, $name, $description, $image, $price, $recommendedRetailPrice, $category, $keyWord);
+            if (mysqli_stmt_fetch($stmt)) {
+                $result = array();
+                $result["id"] = $id;
+                $result["name"] = $name;
+                $result["description"] = $description;
+                $result["image"] = $image;
+                $result["price"] = $price;
+                $result["recommendedRetailPrice"] = $recommendedRetailPrice;
+                $result["category"] = $category;
+                $result["keyWord"] = $keyWord;
+            }
+        }
+        mysqli_stmt_close($stmt);
+        return $result;
+    }
+
+    function get_product_by_name($conn, $product_name) {
         $stmt = mysqli_prepare($conn, "SELECT * from product where name = ?");
         
         mysqli_stmt_bind_param($stmt, "s", $product_name);
