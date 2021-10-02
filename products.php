@@ -103,7 +103,7 @@ include_once 'cart_functions.php';
                         echo "<div id='item1' class='item-height'><a href='product.php?name=".$row["name"]."'><img src='images/".$row["image"]."' alt='".$row["name"]."'></a></div>";
                         echo "<div id='product-details'>";
                         echo "<span class='price-label'>Price:</span> <br>";
-                        echo "<span class='price'>".$row["price"]."</span>";
+                        echo "<span class='price'>$".$row["price"]."</span>";
                         echo "</div>";
                         echo "<div class='add'>";
                         echo "<form action='products.php' id='formAddToCart' name='formAddToCart' method='POST'>";
