@@ -30,13 +30,13 @@
                 <a href="index.html">Home</a>
             </li>
             <li id="list">
-                <a href="products.html">Products</a>
+                <a href="products.php">Products</a>
             </li>
             <li id="list">
                 <a href="about.html">About</a>
             </li>
             <li id="list">
-                <a href="cart.html">Shopping Cart</a>
+                <a href="cart.php">Shopping Cart</a>
             </li>
             <li id="list">
                 <a href="login.html">Account Login</a>

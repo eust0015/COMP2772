@@ -1,3 +1,8 @@
+<?php
+session_start();
+include_once 'cart_functions.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,8 +10,8 @@
         <script src="scripts/script.js" defer></script>
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
-        <meta name="description" content="Assignment02" />
-        <title>Shopping Cart</title>
+        <meta name="products" content="Assignment02" />
+        <title>Products</title>
     </head>
     <body>       
         <ul id="menu">
@@ -37,7 +42,7 @@
                 <a href="about.html">About</a>
             </li>
             <li id="list">
-                <a href="cart.php">Shopping Cart</a>
+                <a id="menuCartLink" href="cart.php">Shopping Cart<?php echo ((isset($_SESSION["products"])) ? " (" . count($_SESSION["products"]) . ")" : "") ?></a>
             </li>
             <li id="list">
                 <a href="login.html">Account Login</a>
@@ -46,5 +51,16 @@
         <br>
         <br>
         <h1>Checkout</h1>
+
+
+
+
+
     </body>
 </html>
+<script>
+    // Prevent issues if the page is refreshed
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>

@@ -42,7 +42,7 @@ include_once 'cart_functions.php';
                 <a href="about.html">About</a>
             </li>
             <li id="list">
-                <a href="cart.html">Shopping Cart</a>
+            <a id="menuCartLink" href="cart.php">Shopping Cart<?php echo ((isset($_SESSION["products"])) ? " (" . count($_SESSION["products"]) . ")" : "") ?></a>
             </li>
             <li id="list">
                 <a href="login.html">Account Login</a>
@@ -79,7 +79,7 @@ include_once 'cart_functions.php';
                                         if ($result) { 
                                             $subTotal = $productQuantity * $result["price"];
                                             $total += $subTotal;
-                                            $gst += $subTotal / 10;
+                                            $gst = $total / 10;
                                             echo "<tr class='item-info'>";
                                             echo "<td class='col-item' data-th='Item'>";
                                             echo "<div class='product-item-details'>";
