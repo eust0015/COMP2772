@@ -131,3 +131,9 @@ include_once 'cart_functions.php';
         ?>
     </body>
 </html>
+<script>
+    // Prevent issues if the page is refreshed
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>

@@ -10,7 +10,7 @@ function update(){
         if (isset($_SESSION["products"])) {
             if (isset($_SESSION["products"][$_POST["cartProductId"]])) {
                 $_SESSION["products"][$_POST["cartProductId"]] += $_POST["cartProductQuantity"];
-                if ($_SESSION["products"][$_POST["cartProductId"]] === 0){
+                if ($_SESSION["products"][$_POST["cartProductId"]] <= 0){
                     remove();
                 }
             } 
