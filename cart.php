@@ -7,7 +7,7 @@ include_once 'cart_functions.php';
 <html>
     <head>
         <link rel="stylesheet" href="styles/style.css">
-        <script src="scripts/script.js" defer></script>
+        <!-- <script src="scripts/script.js" defer></script> -->
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="description" content="Assignment02" />
@@ -79,6 +79,7 @@ include_once 'cart_functions.php';
                                         if ($result) { 
                                             $subTotal = $productQuantity * $result["price"];
                                             $total += $subTotal;
+                                            $gst += $subTotal / 10;
                                             echo "<tr class='item-info'>";
                                             echo "<td class='col-item' data-th='Item'>";
                                             echo "<div class='product-item-details'>";
@@ -103,7 +104,7 @@ include_once 'cart_functions.php';
                                             echo "</form>";
                                             echo "</div>";
                                             echo "</td>";
-                                            echo "<td class='col-subtotal' data-th='Subtotal' id='displayProductSubtotal'>$" . $subTotal ."</td>";
+                                            echo "<td class='col-subtotal' data-th='Subtotal' id='displayProductSubtotal'>$" . number_format((float)$subTotal, 2, '.', '') ."</td>";
                                             echo "</tr>";
                                         }
                                     }
@@ -127,19 +128,19 @@ include_once 'cart_functions.php';
                         <tr class='sub-total'>
                             <th class='amount-label'>Sub Total</th>
                             <td class='amount'>
-                                <span class='price' id='summarySubtotal'>$0</span>
+                                <span class='price' id='summarySubtotal'>$<?php echo number_format((float)$total, 2, '.', '') ?></span>
                             </td>
                         </tr>
                         <tr class='gst'>
                             <th class='amount-label'>GST Included</th>
                             <td class='amount'>
-                                <span class='price' id='summaryGST'>$0</span>
+                                <span class='price' id='summaryGST'>$<?php echo number_format((float)$gst, 2, '.', '') ?></span>
                             </td>
                         </tr>
                         <tr class='total-amount'>
                             <th class='amount-label'>Total Amount</th>
                             <td class='amount'>
-                                <span class='price' id='summaryTotal'>$<?php echo $total ?></span>
+                                <span class='price' id='summaryTotal'>$<?php echo number_format((float)$total, 2, '.', '') ?></span>
                             </td>
                         </tr>
                     </tbody>  

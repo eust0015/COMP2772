@@ -24,7 +24,6 @@ updateSummarySubtotal();
 function updateSummaryGST(){
     gst = subtotal / 10;
     document.querySelector('#summaryGST').textContent = "$" + gst.toFixed(2);
-    console.log(typeof gst);
 }
 updateSummaryGST();
 
