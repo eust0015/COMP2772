@@ -11,7 +11,7 @@ include_once 'cart_functions.php';
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="products" content="Assignment02" />
-        <title>Products</title>
+        <title>Checkout</title>
     </head>
     <body>       
         <ul id="menu">
