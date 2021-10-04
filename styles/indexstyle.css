@@ -750,6 +750,196 @@ button.sharing-values-right-learn-more-button:hover {
   background-color: #de3163;
 }
 
+/* What's New Products - Fifth Section */
+
+div.whats-new-products-inline-block {
+  position: relative;
+  padding-left: 100px;
+  top: 106px;
+}
+
+img.whats-new-products-image {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-bottom: 16px;
+}
+
+span.whats-new-products-text {
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  color: #ff4655;
+  text-transform: uppercase;
+}
+
+div.whats-new-products-sections {
+  margin-left: 85px;
+}
+
+div.whats-new-products-section {
+  position: relative;
+  display: inline-block;
+  top: 136px;
+  width: 154px;
+  height: 320px;
+  background-color: white;
+  border-radius: 8px;
+  margin-left: 14px;
+
+  vertical-align: middle;
+}
+
+div.whats-new-products-section-image {
+  height: 200px;
+  /* background-image: url(images/bg.jpeg); */
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+img.whats-new-products-section5-image {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+span.whats-new-products-section-image-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+  padding: 0px 5px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+button.whats-new-products-section-buy-now-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #eb9133;
+
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 25px;
+  border-radius: 20px;
+}
+
+button.whats-new-products-section-buy-now-button:hover {
+  background-color: #6a4eff;
+}
+
+div.sixth-section-information {
+  display: flex;
+  position: relative;
+  margin-left: 100px;
+  top: 218px;
+}
+
+div.section1-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  width: 267px;
+  height: 100px;
+  padding: 0px 20px;
+  border-right: 1px solid #c5cbd5;
+}
+
+img.section1-left-image {
+  width: auto;
+  height: auto;
+}
+
+span.section1-left-image-text {
+  position: relative;
+  left: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+div.section2-middle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  width: 267px;
+  height: 100px;
+  padding: 0px 20px;
+  border-right: 1px solid #c5cbd5;
+}
+
+img.section2-middle-image {
+  width: auto;
+  height: auto;
+}
+
+div.section2-middle-image-text {
+  position: relative;
+  left: 10px;
+}
+
+span.section2-middle-image-text {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+span.section2-middle-image-text-bottom {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: none;
+}
+
+div.section3-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  width: 267px;
+  height: 100px;
+  padding: 0px 20px;
+}
+
+img.section3-right-image {
+  width: auto;
+  height: auto;
+}
+
+div.section3-right-image-text {
+  position: relative;
+  left: 10px;
+}
+
+span.section3-right-image-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+span.section3-right-image-text-bottom {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: none;
+}
+
 h6 {
   display: block;
   position: relative;
