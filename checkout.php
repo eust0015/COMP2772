@@ -57,8 +57,8 @@ include_once 'cart_functions.php';
 
         if($conn){
             if(isset($_SESSION["products"])){
-                // Billing Information
-
+                
+                // Billing Information - fix BR with styling
                 echo "<h3>Billing Information</h3>";
                 echo "<form action='payment.php' method='POST' name='customerDetails>";
 
@@ -72,10 +72,10 @@ include_once 'cart_functions.php';
                 echo "<li><label id='suburb' for='suburb'>Suburb: <input type='text' name='suburb' placeholder='Required'></label></li>";
                 echo "<li><label id='postcode' for='postcode'>Post Code: <input type='text' postcode='postcode' placeholder='Required' required></label></li>";
                 echo "<li><label id='state'for='state'> State: <select name='state'>
-                <option value='QLD'>QLD</option>
                 <option value='NSW'>NSW</option>
                 <option value='ACT'>ACT</option>
                 <option value='VIC'>VIC</option>
+                <option value='QLD'>QLD</option>
                 <option value='TAS'>TAS</option>
                 <option value='NT'>NT</option>
                 <option value='SA'>SA</option>
@@ -83,8 +83,8 @@ include_once 'cart_functions.php';
                 echo "</ul>";
                 echo "</div>";
 
-                // Shipping Information
-                echo "<h3><br><br><br><br><br><br><br>Shipping Information</h3>";
+                // Shipping Information - fix BR with styling
+                echo "<h3><br><br><br><br><br><br>Shipping Information</h3>";
                 echo "<div name='shippingAddress'>";
                 echo "<li><input type='checkbox' id='shippingAddress'><label id='shippingAddress' for='shippingAddress'>Shipping Address Same As Billing Address</li>";
                 echo "<div name='customerDetails'>";
@@ -97,10 +97,10 @@ include_once 'cart_functions.php';
                 echo "<li><label id='suburb' for='suburb'>Suburb: <input type='text' name='suburb' placeholder='Required'></label></li>";
                 echo "<li><label id='postcode' for='postcode'>Post Code: <input type='text' postcode='postcode' placeholder='Required' required></label></li>";
                 echo "<li><label id='state'for='state'> State: <select name='state'>
-                <option value='QLD'>QLD</option>
                 <option value='NSW'>NSW</option>
                 <option value='ACT'>ACT</option>
                 <option value='VIC'>VIC</option>
+                <option value='QLD'>QLD</option>
                 <option value='TAS'>TAS</option>
                 <option value='NT'>NT</option>
                 <option value='SA'>SA</option>
@@ -108,18 +108,28 @@ include_once 'cart_functions.php';
                 echo "</div>";
                 echo "</ul>";
 
-               
+                // Postage Options - fix BR with styling
+                echo "<h3><br><br><br><br><br><br>Postage Option</h3>";
+                echo "<div name='postageOptions'>";
+                echo "<input id='expressPost' type='radio' name='postage'>";
+                echo "<label for='expressPost'> Express Delivery: <span>$</span><span id='expressPrice'>12.00<br><br></span></label>";
+                echo "<input id='standardPost' type='radio' name='postage'>";
+                echo "<label for='standardPost'> Standard Delivery: <span>$</span><span id='standardPrice'>9.00</span></label>";
+                echo "</div>";
+
+                // Order Summary - inc updated total with postage option
+                echo "<h3><br>Order Summary</h3>";
                 
-                // Postage Options
 
                 echo "</form>";
-
-                // Order Summary
-                // Proceed To Payment
                 }
             }
         ?>
-
+        <form action='payment.php' method='POST' id='checkout-form' class='checkout-form'><br><br><br><br>
+            <div id='proceed-to-checkout-button'>
+                <a href="payment.php"><input type='submit' id='proceed-to-payment' value='Proceed To Payment'></a>
+            </div>
+        </form>
     </body>
 </html>
 <script>
