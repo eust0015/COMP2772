@@ -7,7 +7,6 @@ include_once 'cart_functions.php';
 <html>
     <head>
         <link rel="stylesheet" href="styles/style.css">
-        <script src="scripts/script.js" defer></script>
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="products" content="Assignment02" />
@@ -52,9 +51,36 @@ include_once 'cart_functions.php';
         <br>
         <h1>Checkout</h1>
 
+        <?php 
+        include_once 'db_functions.php';
+        $conn = get_conn();
 
-
-
+        if($conn){
+            if(isset($_SESSION["products"])){
+                echo "********** TO DO: display a small order summary **************";
+                echo "<form action='payment.php' method='POST' name='customerDetails>";
+                echo "<ul class='customerDetails'>";
+                echo "<li><label id='fname' for='fname'>First Name: <input type='text' fname='fname' placeholder='Required' required></label></li>";
+                echo "<li><label id='lname' for='lname'>Last Name: <input type='text' fname='lname' placeholder='Required' required></label></li>";
+                echo "<li><label id='mobilenumber' for='mobilenumber'>Mobile number: <input type='text' name='mobilenumber' placeholder='Required' required></label></li>";
+                echo "<li><label id='email' for='email'>Email Address: <input type='email' name='email' placeholder='Required' required></label></li>";
+                echo "<li><label id='streetAddress' for='streetAddress'>Street Address: <input type='text' name='streetAddress' placeholder='Required'></label></li>";
+                echo "<li><label id='suburb' for='suburb'>Suburb: <input type='text' name='suburb' placeholder='Required'></label></li>";
+                echo "<li><label id='postcode' for='postcode'>Post Code: <input type='text' postcode='postcode' placeholder='Required' required></label></li>";
+                echo "<li><label id='state'for='state'> State: <select name='state'>
+                    <option value='QLD'>QLD</option>
+                    <option value='NSW'>NSW</option>
+                    <option value='ACT'>ACT</option>
+                    <option value='VIC'>VIC</option>
+                    <option value='TAS'>TAS</option>
+                    <option value='NT'>NT</option>
+                    <option value='SA'>SA</option>
+                    <option value='WA'>WA</option>";
+                echo "</ul>";
+                echo "</form>";
+                }
+            }
+        ?>
 
     </body>
 </html>
