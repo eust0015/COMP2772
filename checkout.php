@@ -57,8 +57,12 @@ include_once 'cart_functions.php';
 
         if($conn){
             if(isset($_SESSION["products"])){
-                echo "********** TO DO: display a small order summary **************";
+                // Billing Information
+
+                echo "<h3>Billing Information</h3>";
                 echo "<form action='payment.php' method='POST' name='customerDetails>";
+
+                echo "<div name='customerDetails'>";
                 echo "<ul class='customerDetails'>";
                 echo "<li><label id='fname' for='fname'>First Name: <input type='text' fname='fname' placeholder='Required' required></label></li>";
                 echo "<li><label id='lname' for='lname'>Last Name: <input type='text' fname='lname' placeholder='Required' required></label></li>";
@@ -68,16 +72,50 @@ include_once 'cart_functions.php';
                 echo "<li><label id='suburb' for='suburb'>Suburb: <input type='text' name='suburb' placeholder='Required'></label></li>";
                 echo "<li><label id='postcode' for='postcode'>Post Code: <input type='text' postcode='postcode' placeholder='Required' required></label></li>";
                 echo "<li><label id='state'for='state'> State: <select name='state'>
-                    <option value='QLD'>QLD</option>
-                    <option value='NSW'>NSW</option>
-                    <option value='ACT'>ACT</option>
-                    <option value='VIC'>VIC</option>
-                    <option value='TAS'>TAS</option>
-                    <option value='NT'>NT</option>
-                    <option value='SA'>SA</option>
-                    <option value='WA'>WA</option>";
+                <option value='QLD'>QLD</option>
+                <option value='NSW'>NSW</option>
+                <option value='ACT'>ACT</option>
+                <option value='VIC'>VIC</option>
+                <option value='TAS'>TAS</option>
+                <option value='NT'>NT</option>
+                <option value='SA'>SA</option>
+                <option value='WA'>WA</option></select>";
                 echo "</ul>";
+                echo "</div>";
+
+                // Shipping Information
+                echo "<h3><br><br><br><br><br><br><br>Shipping Information</h3>";
+                echo "<div name='shippingAddress'>";
+                echo "<li><input type='checkbox' id='shippingAddress'><label id='shippingAddress' for='shippingAddress'>Shipping Address Same As Billing Address</li>";
+                echo "<div name='customerDetails'>";
+                echo "<ul class='customerDetails'>";
+                echo "<li><label id='fname' for='fname'>First Name: <input type='text' fname='fname' placeholder='Required' required></label></li>";
+                echo "<li><label id='lname' for='lname'>Last Name: <input type='text' fname='lname' placeholder='Required' required></label></li>";
+                echo "<li><label id='mobilenumber' for='mobilenumber'>Mobile number: <input type='text' name='mobilenumber' placeholder='Required' required></label></li>";
+                echo "<li><label id='email' for='email'>Email Address: <input type='email' name='email' placeholder='Required' required></label></li>";
+                echo "<li><label id='streetAddress' for='streetAddress'>Street Address: <input type='text' name='streetAddress' placeholder='Required'></label></li>";
+                echo "<li><label id='suburb' for='suburb'>Suburb: <input type='text' name='suburb' placeholder='Required'></label></li>";
+                echo "<li><label id='postcode' for='postcode'>Post Code: <input type='text' postcode='postcode' placeholder='Required' required></label></li>";
+                echo "<li><label id='state'for='state'> State: <select name='state'>
+                <option value='QLD'>QLD</option>
+                <option value='NSW'>NSW</option>
+                <option value='ACT'>ACT</option>
+                <option value='VIC'>VIC</option>
+                <option value='TAS'>TAS</option>
+                <option value='NT'>NT</option>
+                <option value='SA'>SA</option>
+                <option value='WA'>WA</option></select>";
+                echo "</div>";
+                echo "</ul>";
+
+               
+                
+                // Postage Options
+
                 echo "</form>";
+
+                // Order Summary
+                // Proceed To Payment
                 }
             }
         ?>
