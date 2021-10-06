@@ -49,16 +49,35 @@
             include_once 'db_functions.php';
             $conn = get_conn();
             if($conn){
+                
                 $result = get_product_by_name($conn, htmlspecialchars($_GET["name"]));
                 if ($result) { 
-                    echo $result["id"]."<br/>";
-                    echo $result["name"]."<br/>";
+                    echo "<center>","<br/>","<br/>";
+
+          
+                    
+                    
+                    echo "<img src='images/".$result["image"]."' alt='".$result["name"]."'></a></div>", "</br>";
+                    echo  "Product id:  " , $result["id"]."<br/>";
+                    echo  $result["name"]."<br/>";
                     echo $result["description"]."<br/>";
-                    echo $result["image"]."<br/>";
-                    echo $result["price"]."<br/>";
-                    echo $result["recommendedRetailPrice"]."<br/>";
-                    echo $result["category"]."<br/>";
-                    echo $result["keyWord"]."<br/>";
+                    echo "Price : " , $result["price"]."<br/>";
+                    echo "Recommended Retail Price : " , $result["recommendedRetailPrice"]."<br/>";
+                    echo "Category: ", $result["category"]."<br/>";
+                    echo "Description:", $result["keyWord"]."<br/>";
+                    echo "</center>";
+                    echo "<form action='product.php' id='formAddToCart' name='formAddToCart' method='POST'>";
+                        echo "<input type='hidden' id='cartProductId' name='cartProductId' value='".$result["id"]."'>";
+                        echo "<input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='1'>";
+                        if (isset($_SESSION["products"][$result["id"]])) {
+                            echo "<input type='hidden' id='cartAction' name='cartAction' value='remove'>";
+                            echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Remove From Cart'/>";
+                        }
+                        else{
+                            echo "<input type='hidden' id='cartAction' name='cartAction' value='update'>";
+                            echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Add To Cart'/>";                           
+                        }
+                        echo "</form>";
                 }
             } 
         ?>
