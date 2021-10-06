@@ -62,7 +62,7 @@ include_once 'cart_functions.php';
                                 <th class='col-item-description'><span>Description</span></th>
                                 <th class='col-price'><span>Price</span></th>
                                 <th class='col-quantity'><span>Quantity</span></th>
-                                <th class='col-subtotal'><span>Sub Total</span></th>
+                                <th class='col-subtotal'><span>Subtotal</span></th>
                             </tr>
                         </thead>
                     </div>

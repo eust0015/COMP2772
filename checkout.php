@@ -119,13 +119,33 @@ include_once 'cart_functions.php';
 
                 // Order Summary - inc updated total with postage option
                 echo "<h3><br>Order Summary</h3>";
-                
-
-                echo "</form>";
+                foreach($_SESSION["products"] as $productId => $productQuantity) {
+                    $result = get_product_by_id($conn, htmlspecialchars($productId));
+                    if ($result) {
+                        echo "<div id='checkoutSummary>";
+                        $subTotal = $productQuantity * $result["price"];
+                        $total += $subTotal; // need to add postage to this
+                        echo "<div id=checkoutProductDetails>";
+                        echo "<div class='product-item-details'>";
+                        echo "<img src='images/" . $result["image"] . "' alt='" . $result["name"] . ">";
+                        echo "</div>";
+                        echo "<div id='productItemName>";
+                        echo "<strong class='product-item-name'><br>" . $result["name"] . "</strong><br>";
+                        echo "<strong>Item Price: $" . $result["price"];
+                        echo "<div id='checkoutQuantity'>";
+                        echo "<strong>Quantity: </strong>" . $productQuantity;
+                        echo "</div>";
+                        echo "<strong>Subtotal: </strong>$" . number_format((float)$subTotal, 2);
+                    }
+                }
+                echo "<div id='totalAmount'>";
+                echo "<br><br><strong>Total Amount: $</strong>";
+                echo "<strong>" . number_format((float)$total, 2, '.', '') . "</strong> // NOTE: i need to add postage to this //";
+                echo "</div>";
                 }
             }
         ?>
-        <form action='payment.php' method='POST' id='checkout-form' class='checkout-form'><br><br><br><br>
+        <form action='payment.php' method='POST' id='checkout-form' class='checkout-form'><br><br>
             <div id='proceed-to-checkout-button'>
                 <a href="payment.php"><input type='submit' id='proceed-to-payment' value='Proceed To Payment'></a>
             </div>
