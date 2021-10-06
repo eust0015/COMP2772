@@ -62,7 +62,7 @@ include_once 'cart_functions.php';
                                 <th class='col-item-description'><span>Description</span></th>
                                 <th class='col-price'><span>Price</span></th>
                                 <th class='col-quantity'><span>Quantity</span></th>
-                                <th class='col-subtotal'><span>Sub Total</span></th>
+                                <th class='col-subtotal'><span>Subtotal</span></th>
                             </tr>
                         </thead>
                     </div>
@@ -126,19 +126,19 @@ include_once 'cart_functions.php';
                     <table class='data-totals' id='summaryTotals'>
                     <tbody>
                         <tr class='sub-total'>
-                            <th class='amount-label'>Sub Total</th>
+                            <th class='amount-label'>Sub Total:</th>
                             <td class='amount'>
                                 <span class='price' id='summarySubtotal'>$<?php echo number_format((float)$total, 2, '.', '') ?></span>
                             </td>
                         </tr>
                         <tr class='gst'>
-                            <th class='amount-label'>GST Included</th>
+                            <th class='amount-label'>GST Included:</th>
                             <td class='amount'>
                                 <span class='price' id='summaryGST'>$<?php echo number_format((float)$gst, 2, '.', '') ?></span>
                             </td>
                         </tr>
                         <tr class='total-amount'>
-                            <th class='amount-label'>Total Amount</th>
+                            <th class='amount-label'>Total Amount:</th>
                             <td class='amount'>
                                 <span class='price' id='summaryTotal'>$<?php echo number_format((float)$total, 2, '.', '') ?></span>
                             </td>
@@ -146,7 +146,7 @@ include_once 'cart_functions.php';
                     </tbody>  
                 </table>
             </div>
-            </div>
+        </div>
             <form action='checkout.php' method='POST' id='cart-form' class='cart-form'>
                 <div id='proceed-to-checkout-button'>
                     <a href="checkout.php"><input type='submit' id='proceed-to-checkout' value='Proceed To Checkout'></a>

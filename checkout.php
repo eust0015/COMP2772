@@ -7,7 +7,6 @@ include_once 'cart_functions.php';
 <html>
     <head>
         <link rel="stylesheet" href="styles/style.css">
-        <script src="scripts/script.js" defer></script>
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="products" content="Assignment02" />
@@ -52,15 +51,125 @@ include_once 'cart_functions.php';
         <br>
         <h1>Checkout</h1>
 
+        <?php 
+        include_once 'db_functions.php';
+        $conn = get_conn();
 
+        if($conn){
+            if(isset($_SESSION["products"])){
+                
+                // Billing Information - fix BR with styling
+                echo "<h3>Billing Information</h3>";
+                echo "<form action='payment.php' method='POST' name='customerDetails>";
 
+                echo "<div name='customerDetails'>";
+                echo "<ul class='customerDetails'>";
+                echo "<li><label id='billing-fname' for='billing-fname'>First Name: <input type='text' name='billing-fname' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-lname' for='billing-lname'>Last Name: <input type='text' name='billing-lname' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-mobilenumber' for='billing-mobilenumber'>Mobile number: <input type='text' name='billing-mobilenumber' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-email' for='billing-email'>Email Address: <input type='email' name='billing-email' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-streetAddress' for='billing-streetAddress'>Street Address: <input type='text' name='billing-streetAddress' placeholder='Required'></label></li>";
+                echo "<li><label id='billing-suburb' for='billing-suburb'>Suburb: <input type='text' name='billing-suburb' placeholder='Required'></label></li>";
+                echo "<li><label id='billing-postcode' for='billing-postcode'>Post Code: <input type='text' name='billing-postcode' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-state'for='billing-state'> State: <select name='billing-state'>
+                <option value='NSW'>NSW</option>
+                <option value='ACT'>ACT</option>
+                <option value='VIC'>VIC</option>
+                <option value='QLD'>QLD</option>
+                <option value='TAS'>TAS</option>
+                <option value='NT'>NT</option>
+                <option value='SA'>SA</option>
+                <option value='WA'>WA</option></select>";
+                echo "</ul>";
+                echo "</div>";
 
+                // Shipping Information - fix BR with styling
+                echo "<h3><br><br><br><br><br><br>Shipping Information</h3>";
+                echo "<div name='shippingAddress'>";
+                echo "<li><input type='checkbox' name='shippingAddress' onclick='fillShippingDetails(this.form)'><label id='shippingAddress' for='shippingAddress'>Shipping Address Same As Billing Address</li>";
+                echo "<div name='customerDetails'>";
+                echo "<ul class='customerDetails'>";
+                echo "<li><label id='shipping-fname' for='shipping-fname'>First Name: <input type='text' name='shipping-fname' placeholder='Required' required id='1'></label></li>";
+                echo "<li><label id='shipping-lname' for='shipping-lname'>Last Name: <input type='text' name='shipping-lname' placeholder='Required' required id='2'></label></li>";
+                echo "<li><label id='shipping-mobilenumber' for='shipping-mobilenumber'>Mobile number: <input type='text' name='shipping-mobilenumber' placeholder='Required' required id='3'></label></li>";
+                echo "<li><label id='shipping-email' for='shipping-email'>Email Address: <input type='email' name='shipping-email' placeholder='Required' required id='4'></label></li>";
+                echo "<li><label id='shipping-streetAddress' for='shipping-streetAddress'>Street Address: <input type='text' name='shipping-streetAddress' placeholder='Required' required id='5'></label></li>";
+                echo "<li><label id='shipping-suburb' for='shipping-suburb'>Suburb: <input type='text' name='shipping-suburb' placeholder='Required' required id='6'></label></li>";
+                echo "<li><label id='shipping-postcode' for='shipping-postcode'>Post Code: <input type='text' name='shipping-postcode' placeholder='Required' required id='7'></label></li>";
+                echo "<li><label id='shipping-state'for='state'> State: <select name='shipping-state' id='8'>
+                <option value='NSW'>NSW</option>
+                <option value='ACT'>ACT</option>
+                <option value='VIC'>VIC</option>
+                <option value='QLD'>QLD</option>
+                <option value='TAS'>TAS</option>
+                <option value='NT'>NT</option>
+                <option value='SA'>SA</option>
+                <option value='WA'>WA</option></select>";
+                echo "</div>";
+                echo "</ul>";
 
+                // Postage Options - fix BR with styling
+                echo "<h3><br><br><br><br><br><br>Postage Option</h3>";
+                echo "<div name='postageOptions'>";
+                echo "<input id='expressPost' type='radio' name='postage'>";
+                echo "<label for='expressPost'> Express Delivery: <span>$</span><span id='expressPrice'>12.00<br><br></span></label>";
+                echo "<input id='standardPost' type='radio' name='postage'>";
+                echo "<label for='standardPost'> Standard Delivery: <span>$</span><span id='standardPrice'>9.00</span></label>";
+                echo "</div>";
+
+                // Order Summary - inc updated total with postage option
+                echo "<h3><br>Order Summary</h3>";
+                foreach($_SESSION["products"] as $productId => $productQuantity) {
+                    $result = get_product_by_id($conn, htmlspecialchars($productId));
+                    if ($result) {
+                        echo "<div id='checkoutSummary>";
+                        $subTotal = $productQuantity * $result["price"];
+                        $total += $subTotal; // need to add postage to this
+                        echo "<div id=checkoutProductDetails>";
+                        echo "<div class='product-item-details'>";
+                        echo "<img src='images/" . $result["image"] . "' alt='" . $result["name"] . ">";
+                        echo "</div>";
+                        echo "<div id='productItemName>";
+                        echo "<strong class='product-item-name'><br>" . $result["name"] . "</strong><br>";
+                        echo "<strong>Item Price: $" . $result["price"];
+                        echo "<div id='checkoutQuantity'>";
+                        echo "<strong>Quantity: </strong>" . $productQuantity;
+                        echo "</div>";
+                        echo "<strong>Subtotal: </strong>$" . number_format((float)$subTotal, 2);
+                    }
+                }
+                echo "<div id='totalAmount'>";
+                echo "<br><br><strong>Total Amount: $</strong>";
+                echo "<strong>" . number_format((float)$total, 2, '.', '') . "</strong> // NOTE: i need to add postage to this //";
+                echo "</div>";
+                }
+            }
+        ?>
+        <form action='payment.php' method='POST' id='checkout-form' class='checkout-form'><br><br>
+            <div id='proceed-to-checkout-button'>
+                <a href="payment.php"><input type='submit' id='proceed-to-payment' value='Proceed To Payment'></a>
+            </div>
+        </form>
     </body>
 </html>
 <script>
     // Prevent issues if the page is refreshed
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
+<script>
+    function fillShippingDetails(f){
+        if(f.shippingAddress.checked == true){
+            document.getElementById("1").disabled = true;
+            document.getElementById("2").disabled = true;
+            document.getElementById("3").disabled = true;
+            document.getElementById("4").disabled = true;
+            document.getElementById("5").disabled = true;
+            document.getElementById("6").disabled = true;
+            document.getElementById("7").disabled = true;
+            document.getElementById("8").disabled = true;
+        }
     }
 </script>
