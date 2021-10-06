@@ -64,14 +64,14 @@ include_once 'cart_functions.php';
 
                 echo "<div name='customerDetails'>";
                 echo "<ul class='customerDetails'>";
-                echo "<li><label id='fname' for='fname'>First Name: <input type='text' fname='fname' placeholder='Required' required></label></li>";
-                echo "<li><label id='lname' for='lname'>Last Name: <input type='text' fname='lname' placeholder='Required' required></label></li>";
-                echo "<li><label id='mobilenumber' for='mobilenumber'>Mobile number: <input type='text' name='mobilenumber' placeholder='Required' required></label></li>";
-                echo "<li><label id='email' for='email'>Email Address: <input type='email' name='email' placeholder='Required' required></label></li>";
-                echo "<li><label id='streetAddress' for='streetAddress'>Street Address: <input type='text' name='streetAddress' placeholder='Required'></label></li>";
-                echo "<li><label id='suburb' for='suburb'>Suburb: <input type='text' name='suburb' placeholder='Required'></label></li>";
-                echo "<li><label id='postcode' for='postcode'>Post Code: <input type='text' postcode='postcode' placeholder='Required' required></label></li>";
-                echo "<li><label id='state'for='state'> State: <select name='state'>
+                echo "<li><label id='billing-fname' for='billing-fname'>First Name: <input type='text' name='billing-fname' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-lname' for='billing-lname'>Last Name: <input type='text' name='billing-lname' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-mobilenumber' for='billing-mobilenumber'>Mobile number: <input type='text' name='billing-mobilenumber' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-email' for='billing-email'>Email Address: <input type='email' name='billing-email' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-streetAddress' for='billing-streetAddress'>Street Address: <input type='text' name='billing-streetAddress' placeholder='Required'></label></li>";
+                echo "<li><label id='billing-suburb' for='billing-suburb'>Suburb: <input type='text' name='billing-suburb' placeholder='Required'></label></li>";
+                echo "<li><label id='billing-postcode' for='billing-postcode'>Post Code: <input type='text' name='billing-postcode' placeholder='Required' required></label></li>";
+                echo "<li><label id='billing-state'for='billing-state'> State: <select name='billing-state'>
                 <option value='NSW'>NSW</option>
                 <option value='ACT'>ACT</option>
                 <option value='VIC'>VIC</option>
@@ -86,17 +86,17 @@ include_once 'cart_functions.php';
                 // Shipping Information - fix BR with styling
                 echo "<h3><br><br><br><br><br><br>Shipping Information</h3>";
                 echo "<div name='shippingAddress'>";
-                echo "<li><input type='checkbox' id='shippingAddress'><label id='shippingAddress' for='shippingAddress'>Shipping Address Same As Billing Address</li>";
+                echo "<li><input type='checkbox' name='shippingAddress' onclick='fillShippingDetails(this.form)'><label id='shippingAddress' for='shippingAddress'>Shipping Address Same As Billing Address</li>";
                 echo "<div name='customerDetails'>";
                 echo "<ul class='customerDetails'>";
-                echo "<li><label id='fname' for='fname'>First Name: <input type='text' fname='fname' placeholder='Required' required></label></li>";
-                echo "<li><label id='lname' for='lname'>Last Name: <input type='text' fname='lname' placeholder='Required' required></label></li>";
-                echo "<li><label id='mobilenumber' for='mobilenumber'>Mobile number: <input type='text' name='mobilenumber' placeholder='Required' required></label></li>";
-                echo "<li><label id='email' for='email'>Email Address: <input type='email' name='email' placeholder='Required' required></label></li>";
-                echo "<li><label id='streetAddress' for='streetAddress'>Street Address: <input type='text' name='streetAddress' placeholder='Required'></label></li>";
-                echo "<li><label id='suburb' for='suburb'>Suburb: <input type='text' name='suburb' placeholder='Required'></label></li>";
-                echo "<li><label id='postcode' for='postcode'>Post Code: <input type='text' postcode='postcode' placeholder='Required' required></label></li>";
-                echo "<li><label id='state'for='state'> State: <select name='state'>
+                echo "<li><label id='shipping-fname' for='shipping-fname'>First Name: <input type='text' name='shipping-fname' placeholder='Required' required id='1'></label></li>";
+                echo "<li><label id='shipping-lname' for='shipping-lname'>Last Name: <input type='text' name='shipping-lname' placeholder='Required' required id='2'></label></li>";
+                echo "<li><label id='shipping-mobilenumber' for='shipping-mobilenumber'>Mobile number: <input type='text' name='shipping-mobilenumber' placeholder='Required' required id='3'></label></li>";
+                echo "<li><label id='shipping-email' for='shipping-email'>Email Address: <input type='email' name='shipping-email' placeholder='Required' required id='4'></label></li>";
+                echo "<li><label id='shipping-streetAddress' for='shipping-streetAddress'>Street Address: <input type='text' name='shipping-streetAddress' placeholder='Required' required id='5'></label></li>";
+                echo "<li><label id='shipping-suburb' for='shipping-suburb'>Suburb: <input type='text' name='shipping-suburb' placeholder='Required' required id='6'></label></li>";
+                echo "<li><label id='shipping-postcode' for='shipping-postcode'>Post Code: <input type='text' name='shipping-postcode' placeholder='Required' required id='7'></label></li>";
+                echo "<li><label id='shipping-state'for='state'> State: <select name='shipping-state' id='8'>
                 <option value='NSW'>NSW</option>
                 <option value='ACT'>ACT</option>
                 <option value='VIC'>VIC</option>
@@ -136,5 +136,20 @@ include_once 'cart_functions.php';
     // Prevent issues if the page is refreshed
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
+<script>
+    function fillShippingDetails(f){
+        if(f.shippingAddress.checked == true){
+            document.getElementById("1").disabled = true;
+            document.getElementById("2").disabled = true;
+            document.getElementById("3").disabled = true;
+            document.getElementById("4").disabled = true;
+            document.getElementById("5").disabled = true;
+            document.getElementById("6").disabled = true;
+            document.getElementById("7").disabled = true;
+            document.getElementById("8").disabled = true;
+        }
     }
 </script>

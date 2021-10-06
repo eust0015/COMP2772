@@ -146,7 +146,7 @@ include_once 'cart_functions.php';
                     </tbody>  
                 </table>
             </div>
-            </div>
+        </div>
             <form action='checkout.php' method='POST' id='cart-form' class='cart-form'>
                 <div id='proceed-to-checkout-button'>
                     <a href="checkout.php"><input type='submit' id='proceed-to-checkout' value='Proceed To Checkout'></a>
