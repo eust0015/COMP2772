@@ -118,7 +118,7 @@ include_once 'cart_functions.php';
                             echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Add To Cart'/>";                           
                         }
                         echo "</form>";
-                        echo "<a href='' id='button1'><input id='add-to-wishlist' class='add-to-wishlist' type='button' value='Add To Wishlist'/></a>";
+                        // echo "<a href='' id='button1'><input id='add-to-wishlist' class='add-to-wishlist' type='button' value='Add To Wishlist'/></a>";
                         echo "</div></li>";
                         echo "</ul>";
                         echo "</div>";
