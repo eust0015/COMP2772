@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once 'cart_functions.php';
+    include_once 'account_functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,9 @@
         <br>
         <br>
         <h1>Payment</h1>
-
+        <?php 
+            echo $_POST["billing-fname"];
+        ?> 
     </body>
 </html>
 <script>

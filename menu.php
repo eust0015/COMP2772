@@ -26,7 +26,7 @@
         <a href="about.php">About</a>
     </li>
     <li id="list">
-        <a id="menuCartLink" href="cart.php">Shopping Cart<?php echo ((isset($_SESSION["products"])) ? " (" . count($_SESSION["products"]) . ")" : "") ?></a>
+        <a id="menuCartLink" href="cart.php">Shopping Cart<?php echo (isset($_SESSION["products"]) ? " (" . count($_SESSION["products"]) . ")" : ""); ?></a>
     </li>
     <li id="list">
         <a href="login.php">Account Login</a>
