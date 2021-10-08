@@ -1,6 +1,5 @@
 <?php
     session_start();
-    include_once 'cart_functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,11 +7,10 @@
     <head>
         <link rel="stylesheet" href="styles/menu.css">
         <link rel="stylesheet" href="styles/style.css">
-        <!-- <script src="scripts/script.js" defer></script> -->
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="description" content="Assignment02" />
-        <title>Payment</title>
+        <title>Account Login</title>
     </head>
     <body>
         <?php 
@@ -20,13 +18,6 @@
         ?>       
         <br>
         <br>
-        <h1>Payment</h1>
-
+        <h1>Account Login</h1>
     </body>
 </html>
-<script>
-    // Prevent issues if the page is refreshed
-    if ( window.history.replaceState ) {
-        window.history.replaceState( null, null, window.location.href );
-    }
-</script>

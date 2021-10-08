@@ -27,15 +27,7 @@ a:hover{
 #h1:hover{
   color: black;
 }
-ul #menu li {
-  display:inline;
-}
-#formSearch{
-  display: inline;
-}
-#textSearch{
-  width: 400px;
-}
+
 .products{
   width: 75%;
   margin: auto;
