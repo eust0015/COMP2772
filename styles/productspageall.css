@@ -99,4 +99,70 @@ body {
   background-position: center;
   border-radius: 10px;
 }
+
+.all-products__detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+}
+
+.all-products__heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.all-products__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-top: 25px;
+  padding-left: 0px;
+}
+
+.all-products__old-price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding-right: 5px;
+  padding-top: 7px;
+  text-decoration: line-through;
+}
+
+.all-products__new-price {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding-right: 8px;
+  padding-top: 7px;
+  color: #6a4eff;
+  font-weight: bold;
+}
+
+.all-products__add-to-cart-button {
+  width: 100px;
+  height: 30px;
+  background-color: #ff4655;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.all-products__add-to-cart-button:hover {
+  background-color: #6a4eff;
+  color: white;
+}
 /*# sourceMappingURL=productspageall.css.map */

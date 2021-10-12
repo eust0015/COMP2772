@@ -81,4 +81,60 @@ body {
     // background-size: cover;
     border-radius: 10px;
   }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  &__heading {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    padding-top: 25px;
+    padding-left: 0px;
+  }
+
+  &__old-price {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding-right: 5px;
+    padding-top: 7px;
+    text-decoration: line-through;
+  }
+
+  &__new-price {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding-right: 8px;
+    padding-top: 7px;
+    color: #6a4eff;
+    font-weight: bold;
+  }
+
+  &__add-to-cart-button {
+    width: 100px;
+    height: 30px;
+    background-color: #ff4655;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__add-to-cart-button:hover {
+    background-color: #6a4eff;
+    color: white;
+  }
 }
