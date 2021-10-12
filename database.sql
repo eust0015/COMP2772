@@ -80,3 +80,25 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+-- DROP TABLE `postage`;
+
+CREATE TABLE `postage` (
+  `postID` varchar(10) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `cost` decimal(7,2) NOT NULL,
+  primary key (`postID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE user IF NOT EXISTS dbadmin@localhost;
+GRANT all privileges ON comp2772.postage TO dbadmin@localhost;
+
+
+
+INSERT INTO `postage` (`postID`, `type`, `cost`) VALUES
+('POST001', 'standard', '12.00'),
+('POST002', 'standard', '9.00');
