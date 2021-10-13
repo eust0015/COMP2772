@@ -25,7 +25,7 @@
         <h3>Customer Details</h3>
 
         <div name='customerDetails'>
-            <ul class='customerDetail'>
+            <ul class='customerDetails'>
                 <li>First Name: <?php echo $_POST["billing-fname"] ?></li>
                 <li>Last Name: <?php echo $_POST["billing-lname"] ?></li>
                 <li>Mobile Number: <?php echo $_POST["billing-mobilenumber"] ?></li>
@@ -54,12 +54,10 @@
         <br><br><br><br>
         <div id='confirm-payment'>
                 <input type='hidden' id='accountAction' name='accountAction' value='update'>
-                <input type='submit' id='confirm-payment' value='Confirm Payment'>
+                <input type='submit' id='confirm-payment' value='Confirm Payment'<?php session_destroy();?>>
+                               
             </div>
         </form>
-
-
-
     </body>
 </html>
 <script>

@@ -25,9 +25,8 @@
         <h3>THANK YOU FOR YOUR ORDER!!</h3>
         
         <br><br>
-
+    
         WE NEED GENERATE AN ORDER CONFIRMATION NUMBER FROM DATABASE
-
     </body>
 </html>
 <script>
