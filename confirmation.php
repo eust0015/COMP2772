@@ -22,9 +22,10 @@
         <br>
         <h1>Payment Confirmation</h1>
         <br><br>
+        <h3>THANK YOU FOR YOUR ORDER!!</h3>
         
-        THANK YOU FOR YOUR ORDER!!
         <br><br>
+
         WE NEED GENERATE AN ORDER CONFIRMATION NUMBER FROM DATABASE
 
     </body>
