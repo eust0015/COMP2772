@@ -54,8 +54,7 @@
         <br><br><br><br>
         <div id='confirm-payment'>
                 <input type='hidden' id='accountAction' name='accountAction' value='update'>
-                <input type='submit' id='confirm-payment' value='Confirm Payment'<?php session_destroy();?>>
-                               
+                <input type='submit' id='confirm-payment' value='Confirm Payment'>            
             </div>
         </form>
     </body>

@@ -27,10 +27,6 @@
                 $result = get_product_by_name($conn, htmlspecialchars($_GET["name"]));
                 if ($result) { 
                     echo "<center>","<br/>","<br/>";
-
-          
-                    
-                    
                     echo "<img src='images/".$result["image"]."' alt='".$result["name"]."'></a></div>", "</br>";
                     echo  "Product id:  " , $result["id"]."<br/>";
                     echo  $result["name"]."<br/>";
