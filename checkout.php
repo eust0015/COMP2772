@@ -27,35 +27,34 @@
             if($conn){
                 if(isset($_SESSION["products"])){
                 
-                // Billing Information - fix BR with styling
         ?>
-                <h3>Billing Information</h3>
-                <form id='checkout-form' name='customerDetails' class='checkout-form' action='payment.php' method='POST'>
+        
+        <!-- Billing informormation -->
+        <form id='checkout-form' name='customerDetails' class='checkout-form' action='payment.php' method='POST'>
+            <h3 id='billing'>Billing Information</h3>
+                <div name='customerDetails'>
+                    <ul class='customerDetails'>
+                        <li><label id='billing-fname' for='billing-fname'>First Name: </label><input type='text' name='billing-fname' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-fname"]) ? $_SESSION["account"]["billing-fname"] : ""); ?>'></li>
+                        <li><label id='billing-lname' for='billing-lname'>Last Name: </label><input type='text' name='billing-lname' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-lname"]) ? $_SESSION["account"]["billing-lname"] : ""); ?>'></li>
+                        <li><label id='billing-mobilenumber' for='billing-mobilenumber'>Mobile number: </label><input type='text' name='billing-mobilenumber' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-mobilenumber"]) ? $_SESSION["account"]["billing-mobilenumber"] : ""); ?>'></li>
+                        <li><label id='billing-email' for='billing-email'>Email Address: </label><input type='email' name='billing-email' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-email"]) ? $_SESSION["account"]["billing-email"] : ""); ?>'></li><br><br><br><br>
+                        <li><label id='billing-streetAddress' for='billing-streetAddress'>Street Address: </label><input type='text' name='billing-streetAddress' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-streetAddress"]) ? $_SESSION["account"]["billing-streetAddress"] : ""); ?>'></li>
+                        <li><label id='billing-suburb' for='billing-suburb'>Suburb: </label><input type='text' name='billing-suburb' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-suburb"]) ? $_SESSION["account"]["billing-suburb"] : ""); ?>'></li>
+                        <li><label id='billing-state'for='billing-state'> State: </label><select name='billing-state' class='billing-address' value='<?php echo (isset($_SESSION["account"]["billing-state"]) ? $_SESSION["account"]["billing-state"] : ""); ?>'>
+                        <option value='NSW'>NSW</option>
+                        <option value='ACT'>ACT</option>
+                        <option value='VIC'>VIC</option>
+                        <option value='QLD'>QLD</option>
+                        <option value='TAS'>TAS</option>
+                        <option value='NT'>NT</option>
+                        <option value='SA'>SA</option>
+                        <option value='WA'>WA</option></select>
+                        <li><label id='billing-postcode' for='billing-postcode'>Post Code: <input type='text' name='billing-postcode' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-postcode"]) ? $_SESSION["account"]["billing-postcode"] : ""); ?>'></label></li>
+                    </ul>
+                </div>
 
-                    <div name='customerDetails'>
-                        <ul class='customerDetails'>
-                            <li><label id='billing-fname' for='billing-fname'>First Name: </label><input type='text' name='billing-fname' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-fname"]) ? $_SESSION["account"]["billing-fname"] : ""); ?>'></li>
-                            <li><label id='billing-lname' for='billing-lname'>Last Name: </label><input type='text' name='billing-lname' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-lname"]) ? $_SESSION["account"]["billing-lname"] : ""); ?>'></li>
-                            <li><label id='billing-mobilenumber' for='billing-mobilenumber'>Mobile number: </label><input type='text' name='billing-mobilenumber' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-mobilenumber"]) ? $_SESSION["account"]["billing-mobilenumber"] : ""); ?>'></li>
-                            <li><label id='billing-email' for='billing-email'>Email Address: </label><input type='email' name='billing-email' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-email"]) ? $_SESSION["account"]["billing-email"] : ""); ?>'></li><br><br><br><br>
-                            <li><label id='billing-streetAddress' for='billing-streetAddress'>Street Address: </label><input type='text' name='billing-streetAddress' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-streetAddress"]) ? $_SESSION["account"]["billing-streetAddress"] : ""); ?>'></li>
-                            <li><label id='billing-suburb' for='billing-suburb'>Suburb: </label><input type='text' name='billing-suburb' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-suburb"]) ? $_SESSION["account"]["billing-suburb"] : ""); ?>'></li>
-                            <li><label id='billing-state'for='billing-state'> State: </label><select name='billing-state' class='billing-address' value='<?php echo (isset($_SESSION["account"]["billing-state"]) ? $_SESSION["account"]["billing-state"] : ""); ?>'>
-                            <option value='NSW'>NSW</option>
-                            <option value='ACT'>ACT</option>
-                            <option value='VIC'>VIC</option>
-                            <option value='QLD'>QLD</option>
-                            <option value='TAS'>TAS</option>
-                            <option value='NT'>NT</option>
-                            <option value='SA'>SA</option>
-                            <option value='WA'>WA</option></select>
-                            <li><label id='billing-postcode' for='billing-postcode'>Post Code: <input type='text' name='billing-postcode' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-postcode"]) ? $_SESSION["account"]["billing-postcode"] : ""); ?>'></label></li>
-                        </ul>
-                    </div>
-
-                <!-- Shipping Information - fix BR with styling -->
-                <br><br><br>
-                <h3>Shipping Information</h3>
+            <!-- Shipping information -->
+            <h3 id='shipping-header'>Shipping Information</h3>
                 <li><input type='checkbox' id='shippingAddressCheckBox' name='shipToBillingAddress' <?php echo (isset($_SESSION["account"]["shipToBillingAddress"]) && $_SESSION["account"]["shipToBillingAddress"] ? "checked" : ""); ?>><label id='shippingAddress' for='shippingAddress'>Shipping Address Same As Billing Address</li><br><br><br>
                 <div id='shippingAddressDiv' name='shippingAddressDiv'>
                     <div name='customerDetails'>
@@ -80,20 +79,18 @@
                     </div>
                 </div>
 
-                <!-- Postage Options - fix BR with styling -->
-                <br><br><br>
-                <h3>Postage Option</h3>
+            <!-- Postage options -->
+            <h3 id='postage-header'>Postage Option</h3>
                 <div name='postageOptions'>
                     <input id='expressPost' type='radio' name='postage' value='express' <?php echo (isset($_SESSION["account"]["postage"]) && $_SESSION["account"]["postage"] === 'express' ? "checked" : ""); ?>>
                     <label for='expressPost'> Express Delivery: <span>$</span><span id='expressPrice'>12.00<br><br></span></label>
-                    <input id='standardPost' type='radio' name='postage' value='standard'  <?php echo (!isset($_SESSION["account"]["postage"]) || $_SESSION["account"]["postage"] === 'standard' ? "checked" : ""); ?>>
+                    <input id='standardPost' type='radio' name='postage' value='standard' <?php echo (!isset($_SESSION["account"]["postage"]) || $_SESSION["account"]["postage"] === 'standard' ? "checked" : ""); ?>>
                     <label for='standardPost'> Standard Delivery: <span>$</span><span id='standardPrice'>9.00</span></label>
                 </div>
 
-                <br>
-                <h3>Order Summary</h3>
-                <?php 
-                // Order Summary - inc updated total with postage option
+            <!-- Order summary -->
+            <h3>Order Summary</h3>
+                <?php
                 foreach($_SESSION["products"] as $productId => $productQuantity) {
                     $result = get_product_by_id($conn, htmlspecialchars($productId));
                     if ($result) {
@@ -119,8 +116,7 @@
                 echo "</div>";
                 }
             }
-        ?>
-        <br><br>
+            ?>
             <div id='proceed-to-checkout-button'>
                 <input type='hidden' id='accountAction' name='accountAction' value='update'>
                 <input type='submit' id='proceed-to-payment' value='Proceed To Payment'>
