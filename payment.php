@@ -35,7 +35,7 @@
                 <li>State: <?php echo $_POST["billing-state"] ?></li>
                 <li>Post Code: <?php echo $_POST["billing-postcode"] ?></li>
             </ul>
-        </div> <br><br><br><br>
+        </div><br><br><br><br>
 
         <h3>Payment Details</h3>
 
@@ -43,11 +43,10 @@
 
         <div name='paymentDetails'>
             <ul class='paymentDetails'>
-                <li>
-                    <label id='name-on-card' for='name-on-card'></label>Name On Card: <input type='name' class='name-on-card' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["name-on-card"]) ? $_SESSION["account"]["name-on-card"] : ""); ?>'></li>
-                    <label id='card-number' for='card-number'></label>Card Number: <input type='text' class='card-number' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["card-number"]) ? $_SESSION["account"]["card-number"] : ""); ?>'></li>
-                    <label id='expiration-date' for='expiration-date'></label>Expiration Date: <input type='date' class='expiration-date' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["expiration-date"]) ? $_SESSION["account"]["expiration-date"] : ""); ?>'></li>
-                    <label id='cvc' for='cvc'></label>CVC: <input type='text' class='cvc' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["cvc"]) ? $_SESSION["account"]["cvc"] : ""); ?>'></li>
+                <li><label id='name-on-card' for='name-on-card'>Name On Card: </label><input type='name' id='name-on-card' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["name-on-card"]) ? $_SESSION["account"]["name-on-card"] : ""); ?>'></li>
+                <li><label id='card-number' for='card-number'>Card Number: </label><input type='text' id='card-number' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["card-number"]) ? $_SESSION["account"]["card-number"] : ""); ?>'></li>
+                <li><label id='expiration-date' for='expiration-date'>Expiration Date: </label><input type='date' id='expiration-date' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["expiration-date"]) ? $_SESSION["account"]["expiration-date"] : ""); ?>'></li>
+                <li><label id='cvc' for='cvc'>CVC: </label><input type='text' id='cvc' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["cvc"]) ? $_SESSION["account"]["cvc"] : ""); ?>'></li>
             </ul>
         </div>
 
