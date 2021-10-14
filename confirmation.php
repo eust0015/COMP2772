@@ -18,9 +18,8 @@
         <?php 
             include_once 'menu.php'; 
         ?>       
-        <br>
-        <br>
-        <h1>Payment Confirmation</h1>
+       <div id='heading'><h1>Payment Confirmation</h1></div>
+        
         <br><br>
         <h3>THANK YOU FOR YOUR ORDER!!</h3>
         

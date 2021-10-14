@@ -19,9 +19,8 @@
         <?php 
             include_once 'menu.php'; 
         ?>
-        <br>
-        <br>
-        <h1>Products</h1>
+        
+        <div id='heading'><h1>Products</h1></div>
         <?php
             include_once 'db_functions.php';
             $conn = get_conn();
