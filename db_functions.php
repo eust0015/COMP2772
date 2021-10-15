@@ -211,4 +211,43 @@
         return $results;
     }
 
+    function get_postages($conn) {
+      
+        $stmt = mysqli_prepare($conn, "SELECT * from postage");
+        
+        $results = array();
+        $rowCount = 0;
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $id, $name, $cost);
+            while (mysqli_stmt_fetch($stmt)) {
+                $row = array();
+                $row["id"] = $id;
+                $row["name"] = $name;
+                $row["cost"] = $cost;
+                $results[$rowCount] = $row;
+                $rowCount++;
+            }
+        }
+        mysqli_stmt_close($stmt);
+        return $results;
+    }
+
+    function get_postage_by_id($conn, $postage_id) {
+        $stmt = mysqli_prepare($conn, "SELECT * from postage where id = ?");
+        
+        mysqli_stmt_bind_param($stmt, "s", $postage_id);
+
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $id, $name, $price);
+            if (mysqli_stmt_fetch($stmt)) {
+                $result = array();
+                $result["id"] = $id;
+                $result["name"] = $name;
+                $result["price"] = $price;
+            }
+        }
+        mysqli_stmt_close($stmt);
+        return $result;
+    }
+
 ?>

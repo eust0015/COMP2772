@@ -86,10 +86,10 @@ COMMIT;
 -- DROP TABLE `postage`;
 
 CREATE TABLE `postage` (
-  `postID` varchar(10) NOT NULL,
+  `id` varchar(10) NOT NULL,
   `name` varchar(255) NOT NULL,
   `cost` decimal(7,2) NOT NULL,
-  primary key (`postID`)
+  primary key (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -99,6 +99,6 @@ GRANT all privileges ON comp2772.postage TO dbadmin@localhost;
 
 
 
-INSERT INTO `postage` (`postID`, `name`, `cost`) VALUES
+INSERT INTO `postage` (`id`, `name`, `cost`) VALUES
 ('POST001', 'Express Delivery', '12.00'),
 ('POST002', 'Standard Delivery', '9.00');

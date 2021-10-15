@@ -12,16 +12,6 @@ function fillShippingDetails(){
 
         shippingAddressDiv.style.display = "none";
 
-        /*
-        document.getElementById("shipping-fname").disabled = true;
-        document.getElementById("shipping-lname").disabled = true;
-        document.getElementById("shipping-mobilenumber").disabled = true;
-        document.getElementById("shipping-email").disabled = true;
-        document.getElementById("shipping-streetAddress").disabled = true;
-        document.getElementById("shipping-suburb").disabled = true;
-        document.getElementById("shipping-state").disabled = true;
-        document.getElementById("shipping-postcode").disabled = true;
-        */
     }
     else{
         for (i = 0; i < shippingAddressItems.length; ++i) {
@@ -31,7 +21,20 @@ function fillShippingDetails(){
     }
 }
 
-const shippingAddressCheckBox = document.querySelector("#shippingAddressCheckBox");
+function updateTotalCost(event){
+    let id = event.target.value;
+    let postageCost = document.querySelector("#cost_" + id).value;
+    grandTotalCost.innerHTML = "Total Amount: $" + (parseFloat(cartTotalCost.value) + parseFloat(postageCost)).toFixed(2);
+}
 
+const shippingAddressCheckBox = document.querySelector("#shippingAddressCheckBox");
 shippingAddressCheckBox.addEventListener('change', fillShippingDetails);
 fillShippingDetails();
+
+const cartTotalCost = document.querySelector("#cartTotalCost");
+const grandTotalCost = document.querySelector("#grandTotalCost");
+
+const postageRadioButtons = document.getElementsByName("postage");
+for (i = 0; i < postageRadioButtons.length; ++i) {
+    postageRadioButtons[i].addEventListener("change", updateTotalCost);
+}

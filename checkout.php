@@ -26,6 +26,7 @@
 
             if($conn){
                 if(isset($_SESSION["products"])){
+                    $postageCost = 0;
                 
         ?>
         
@@ -78,14 +79,29 @@
                         </ul>
                     </div>
                 </div>
-
-            <!-- Postage options -->
-            <h3 id='postage-header'>Postage Option</h3>
+                <!-- Postage options -->
+                <h3 id='postage-header'>Postage Option</h3>
                 <div name='postageOptions'>
-                    <input id='expressPost' type='radio' name='postage' value='express' <?php echo (isset($_SESSION["account"]["postage"]) && $_SESSION["account"]["postage"] === 'express' ? "checked" : ""); ?>>
-                    <label for='expressPost'> Express Delivery: <span>$</span><span id='expressPrice'>12.00<br><br></span></label>
-                    <input id='standardPost' type='radio' name='postage' value='standard' <?php echo (!isset($_SESSION["account"]["postage"]) || $_SESSION["account"]["postage"] === 'standard' ? "checked" : ""); ?>>
-                    <label for='standardPost'> Standard Delivery: <span>$</span><span id='standardPrice'>9.00</span></label>
+                    <?php
+                        $results = get_postages($conn);
+                        if ($results) { 
+                            $alreadyChecked = false;
+                            $lengthOfResults = count($results);
+                            $lastResult = $lengthOfResults - 1;
+                            for ($row = 0; $row < $lengthOfResults; $row++) {
+                                if (($postageCost === 0 && $row + 1 === $lastResult) || (isset($_SESSION["account"]["postage"]) && $_SESSION["account"]["postage"] === $results[$row]["id"])){
+                                    echo "<input id='" . $results[$row]["id"] . "' type='radio' name='postage' value='" . $results[$row]["id"] . "' checked>";
+                                    $postageCost = $results[$row]["cost"];
+                                }
+                                else{
+                                    echo "<input id='" . $results[$row]["id"] . "' type='radio' name='postage' value='" . $results[$row]["id"] . "'>";
+                                }
+                                echo "<label for='" . $results[$row]["id"] . "'>" . $results[$row]["name"] . ": $" . $results[$row]["cost"] . "</label>";
+                                echo "<input type='hidden' id='cost_" . $results[$row]["id"] . "' value='" . $results[$row]["cost"] . "'>";
+                                echo "<br><br>";
+                            }
+                        }
+                    ?>
                 </div>
 
             <!-- Order summary -->
@@ -96,7 +112,7 @@
                     if ($result) {
                         echo "<div id='checkoutSummary>";
                         $subTotal = $productQuantity * $result["price"];
-                        $total += $subTotal; // need to add postage to this
+                        $total += $subTotal;
                         echo "<div id=checkoutProductDetails>";
                         echo "<div class='product-item-details'>";
                         echo "<img src='images/" . $result["image"] . "' alt='" . $result["name"] . ">";
@@ -111,8 +127,8 @@
                     }
                 }
                 echo "<div id='totalAmount'>";
-                echo "<br><br><strong>Total Amount: $</strong>";
-                echo "<strong>" . number_format((float)$total, 2, '.', '') . "</strong> // NOTE: i need to add postage to this //";
+                echo "<input type='hidden' id='cartTotalCost' name='cartTotalCost' value='" . $total . "'>";
+                echo "<br><br><strong id='grandTotalCost'>Total Amount: $" . number_format((float)$total + (float)$postageCost, 2, '.', '') . "</strong>";
                 echo "</div>";
                 }
             }
