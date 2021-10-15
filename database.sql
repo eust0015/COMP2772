@@ -64,7 +64,8 @@ INSERT INTO `product` (`id`, `name`, `description`, `image`, `price`, `recommend
 ('P000000007', 'Silicone Case', '', 'Silicone Case.png', '29.95', '29.95', 'case', 'silicone, case'),
 ('P000000008', 'Leather Case', '', 'Leather Case.png', '59.00', '59.00', 'case', 'leather, case'),
 ('P000000009', 'Screen Protector', '', 'Screen Protector.png', '35.00', '35.00', 'screen protector', 'screen, protector'),
-('P000000010', 'Phone Holder', '', 'Phone Holder.png', '49.00', '49.00', 'holder', 'holder');
+('P000000010', 'Phone Holder', '', 'Phone Holder.png', '49.00', '49.00', 'holder', 'holder'),
+('P000000011', 'Airpods Pro', '', 'appleairpodsproduct.png', '299.00', '299.00', 'earphone', 'earphone`, `earphone`, `wireless`, `audio`, `apple');
 
 --
 -- Indexes for dumped tables
