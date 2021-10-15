@@ -6,7 +6,7 @@
     <nav>
         <ul class="nav-links">
         <li><a href="index.php">Home</a></li>  
-        <li><a href="products.php">Shop</a></li>
+        <li><a href="products.php">Products</a></li>
         </ul>
     </nav>
     <form action="products.php" id="formSearch" name="formSearch" method="POST">
