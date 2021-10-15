@@ -21,7 +21,7 @@
       
       <div id='heading'><h1>Payment</h1></div>
 
-      <h3>Customer Details</h3>
+      <h3>Billing Details</h3>
 
         <div name='customerDetails'>
             <ul class='customerDetails'>
@@ -34,8 +34,37 @@
                 <li>State: <?php echo $_POST["billing-state"] ?></li>
                 <li>Post Code: <?php echo $_POST["billing-postcode"] ?></li>
             </ul>
-        </div><br><br><br><br>
+        </div>
+        <br><br><br>
 
+        <h3>Payment Amount</h3>
+        <?php
+            include_once 'db_functions.php';
+            $conn = get_conn();
+            $postageCost = 0;
+            $total = 0;
+            if($conn){
+                
+                $result = get_postage_by_id($conn, htmlspecialchars($_SESSION["account"]["postage"]));
+                if ($result) { 
+                    $postageCost = $result["cost"];
+                }
+
+                foreach($_SESSION["products"] as $productId => $productQuantity) {
+                    $result = get_product_by_id($conn, htmlspecialchars($productId));
+                    if ($result) {
+                        $subTotal = $productQuantity * $result["price"];
+                        $total += $subTotal;
+                    }
+                }
+                echo "<ul class='paymentAmount'>";
+                echo "<li>";
+                echo "$" . number_format((float)$total + (float)$postageCost, 2, '.', '');
+                echo "</li>";
+                echo "</ul>";
+            }
+        ?>
+        <br><br>
         <h3>Payment Details</h3>
 
         <form id='payment-form' name='paymentDetails' class='payment-form' action="confirmation.php" method="POST">
@@ -51,7 +80,8 @@
 
             <br><br><br><br>
             <div id='confirm-payment'>
-                <input type='hidden' id='accountAction' name='accountAction' value='update'>
+                <input type='hidden' id='orderAction' name='orderAction' value='insert'>
+                <input type='hidden' id='cartAction' name='cartAction' value='clear'>
                 <input type='submit' id='confirm-payment' value='Confirm Payment'>            
             </div>
         </form>
