@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +15,11 @@
     <link rel="stylesheet" href="styles/indexstyle.css" />
   </head>
   <body>
+    <?php 
+              include_once 'menu.php'; 
+    ?>  
     <!-- Header - Top and Bottom -->
+    <!--
     <div class="first-header" id="first-header"></div>
     <div class="second-header" id="second-header">
       <header class="header-second">
@@ -28,6 +36,7 @@
         <a class="my-cart" href="#"><button class="header-second-my-cart-button">My Cart</button></a>
       </header>
     </div>
+    -->
 
     <!-- Categories - Headphones, Phones, Cameras and Computers -- First Section  -->
     <div class="product-categories" id="product categories">

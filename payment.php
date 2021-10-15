@@ -18,12 +18,43 @@
         <?php 
             include_once 'menu.php'; 
         ?>       
-        <br>
-        <br>
-        <h1>Payment</h1>
-        <?php 
-            echo $_POST["billing-fname"];
-        ?> 
+      
+      <div id='heading'><h1>Payment</h1></div>
+
+      <h3>Customer Details</h3>
+
+        <div name='customerDetails'>
+            <ul class='customerDetails'>
+                <li>First Name: <?php echo $_POST["billing-fname"] ?></li>
+                <li>Last Name: <?php echo $_POST["billing-lname"] ?></li>
+                <li>Mobile Number: <?php echo $_POST["billing-mobilenumber"] ?></li>
+                <li>Email Address: <?php echo $_POST["billing-email"] ?></li>
+                <li>Street Address: <?php echo $_POST["billing-streetAddress"] ?></li>
+                <li>Suburb: <?php echo $_POST["billing-suburb"] ?></li>
+                <li>State: <?php echo $_POST["billing-state"] ?></li>
+                <li>Post Code: <?php echo $_POST["billing-postcode"] ?></li>
+            </ul>
+        </div><br><br><br><br>
+
+        <h3>Payment Details</h3>
+
+        <form id='payment-form' name='paymentDetails' class='payment-form' action="confirmation.php" method="POST">
+
+            <div name='paymentDetails'>
+                <ul class='paymentDetails'>
+                    <li><label id='name-on-card' for='name-on-card'>Name On Card: </label><input type='name' id='name-on-card' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["name-on-card"]) ? $_SESSION["account"]["name-on-card"] : ""); ?>' required value></li>
+                    <li><label id='card-number' for='card-number'>Card Number: </label><input type='text' id='card-number' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["card-number"]) ? $_SESSION["account"]["card-number"] : ""); ?>'required value></li>
+                    <li><label id='expiration-date' for='expiration-date'>Expiration Date: </label><input type='date' id='expiration-date' required placeholder='Required' value='<?php echo (isset($_SESSION["account"]["expiration-date"]) ? $_SESSION["account"]["expiration-date"] : ""); ?>'required value></li>
+                    <li><label id='cvc' for='cvc'>CVC: </label><input type='text' id='cvc' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["cvc"]) ? $_SESSION["account"]["cvc"] : ""); ?>'></li>
+                </ul>
+            </div>
+
+            <br><br><br><br>
+            <div id='confirm-payment'>
+                <input type='hidden' id='accountAction' name='accountAction' value='update'>
+                <input type='submit' id='confirm-payment' value='Confirm Payment'>            
+            </div>
+        </form>
     </body>
 </html>
 <script>

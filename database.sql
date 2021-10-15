@@ -64,7 +64,8 @@ INSERT INTO `product` (`id`, `name`, `description`, `image`, `price`, `recommend
 ('P000000007', 'Silicone Case', '', 'Silicone Case.png', '29.95', '29.95', 'case', 'silicone, case'),
 ('P000000008', 'Leather Case', '', 'Leather Case.png', '59.00', '59.00', 'case', 'leather, case'),
 ('P000000009', 'Screen Protector', '', 'Screen Protector.png', '35.00', '35.00', 'screen protector', 'screen, protector'),
-('P000000010', 'Phone Holder', '', 'Phone Holder.png', '49.00', '49.00', 'holder', 'holder');
+('P000000010', 'Phone Holder', '', 'Phone Holder.png', '49.00', '49.00', 'holder', 'holder'),
+('P000000011', 'Airpods Pro', '', 'appleairpodsproduct.png', '299.00', '299.00', 'earphone', 'earphone`, `earphone`, `wireless`, `audio`, `apple');
 
 --
 -- Indexes for dumped tables
@@ -80,3 +81,25 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+-- DROP TABLE `postage`;
+
+CREATE TABLE `postage` (
+  `id` varchar(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `cost` decimal(7,2) NOT NULL,
+  primary key (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE user IF NOT EXISTS dbadmin@localhost;
+GRANT all privileges ON comp2772.postage TO dbadmin@localhost;
+
+
+
+INSERT INTO `postage` (`id`, `name`, `cost`) VALUES
+('POST001', 'Express Delivery', '12.00'),
+('POST002', 'Standard Delivery', '9.00');

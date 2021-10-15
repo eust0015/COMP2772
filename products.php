@@ -7,7 +7,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="styles/menu.css">
-        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/productspageall.css" />
         <script src="scripts/script.js" defer></script>
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
@@ -19,9 +19,8 @@
         <?php 
             include_once 'menu.php'; 
         ?>
-        <br>
-        <br>
-        <h1>Products</h1>
+        
+        <div id='heading'><h1>Products</h1></div>
         <?php
             include_once 'db_functions.php';
             $conn = get_conn();
@@ -52,53 +51,42 @@
                     $results = get_products($conn);
                 }
 
-                // if ($results) { 
-                //     foreach ($results as $row) {
-                //         echo "<br/>---------------------------------------<br/>";
-                //         echo $row["id"]."<br/>";
-                //         echo $row["name"]."<br/>";
-                //         echo $row["description"]."<br/>";
-                //         echo $row["image"]."<br/>";
-                //         echo $row["price"]."<br/>";
-                //         echo $row["recommendedRetailPrice"]."<br/>";
-                //         echo $row["category"]."<br/>";
-                //         echo $row["keyWord"]."<br/>";
-                //       }
-                // }
-
                 if ($results) { 
                     foreach ($results as $row) {
-                        echo "<div class='products'>";
-                        echo "<ul class='items'>";
-                        echo "<li class='product-item'><div id='item'><a href='product.php?name=".$row["name"]."'>".$row["name"]."</a></div>";
-                        echo "<div id='item1' class='item-height'><a href='product.php?name=".$row["name"]."'><img src='images/".$row["image"]."' alt='".$row["name"]."'></a></div>";
-                        echo "<div id='product-details'>";
-                        echo "<span class='price-label'>Price:</span> <br>";
-                        echo "<span class='price'>$".$row["price"]."</span>";
-                        echo "</div>";
-                        echo "<div class='add'>";
-                        echo "<form action='products.php' id='formAddToCart' name='formAddToCart' method='POST'>";
-                        echo "<input type='hidden' id='cartProductId' name='cartProductId' value='".$row["id"]."'>";
-                        echo "<input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='1'>";
-                        if (isset($_SESSION["products"][$row["id"]])) {
-                            echo "<input type='hidden' id='cartAction' name='cartAction' value='remove'>";
-                            echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Remove From Cart'/>";
-                        }
-                        else{
-                            echo "<input type='hidden' id='cartAction' name='cartAction' value='update'>";
-                            echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Add To Cart'/>";                           
-                        }
-                        echo "</form>";
-                        // echo "<a href='' id='button1'><input id='add-to-wishlist' class='add-to-wishlist' type='button' value='Add To Wishlist'/></a>";
-                        echo "</div></li>";
-                        echo "</ul>";
-                        echo "</div>";
-                      }
+                        ?> 
+                        <div class="all-products">
+                            <div class="all-products__cards">
+                                <div class="all-products__card">
+                                    <div class="all-products__images">
+                                    <a href='product.php?name=<?php echo (isset($row["name"]) ? $row["name"] : ""); ?>'>
+                                        <img class='all-products__images-image' src='images/<?php echo (isset($row["image"]) ? $row["image"] : ""); ?>' alt='<?php echo (isset($row["name"]) ? $result["row"] : ""); ?>' />
+                                        </a>
+                                    </div>
+                    
+                                    <div class="all-products__detail">
+                                        <a href='product.php?name=<?php echo (isset($row["name"]) ? $row["name"] : ""); ?>'>    
+                                            <span class="all-products__heading"><?php echo (isset($row["name"]) ? $row["name"] : ""); ?></span>
+                                        </a>
+                                        <span class="all-products__description"><?php echo (isset($row["description"]) ? $row["description"] : ""); ?></span>
+                                        <div class="all-products__price">
+                                            <span class="all-products__old-price"><?php echo (isset($row["recommendedRetailPrice"]) ? $row["recommendedRetailPrice"] : ""); ?></span>
+                                            <span class="all-products__new-price"><?php echo (isset($row["price"]) ? $row["price"] : ""); ?></span>
+                                            <form action='products.php' id='formAddToCart' name='formAddToCart' method='POST'>
+                                                <input type='hidden' id='cartProductId' name='cartProductId' value='<?php echo (isset($row["id"]) ? $row["id"] : ""); ?>'>
+                                                <input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='1'>
+                                                <input type='hidden' id='cartAction' name='cartAction' value='<?php echo (isset($_SESSION["products"][$row["id"]]) ? "remove" : "update"); ?>'>
+                                                <input id='add-to-cart' name='add-to-cart' class='add-to-cart' class="all-products__add-to-cart-button" type='submit' value='<?php echo (isset($_SESSION["products"][$row["id"]]) ? "Remove From Cart" : "Add To Cart"); ?>'/>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php  
+                    }
                 }
-
                 mysqli_close($conn);
-            }
-            
+            }           
         ?>
     </body>
 </html>
