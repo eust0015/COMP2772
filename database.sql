@@ -40,15 +40,9 @@ CREATE TABLE `product` (
   `price` decimal(7,2) NOT NULL,
   `recommendedRetailPrice` decimal(7,2) NOT NULL,
   `category` varchar(255) NOT NULL,
-  `keyWord` varchar(255) NOT NULL
+  `keyWord` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Add User
---
-
-CREATE user IF NOT EXISTS dbadmin@localhost;
-GRANT all privileges ON comp2772.product TO dbadmin@localhost;
 
 --
 -- Dumping data for table `product`
@@ -77,17 +71,6 @@ INSERT INTO `product` (`id`, `name`, `description`, `image`, `price`, `recommend
 ('P000000009', 'Theragun Mini White Massage Gun', '', 'massageegun.png', '400', '349.00', 'hfw', 'mini`, `white`, `massage`, `gun`, `health`, `fitness'),
 ('P000000010', 'Google - Nest Learning Smart Wifi Thermostat - Stainless Steel', '', 'googlenest.png', '350', '299.00', 'dcgha', 'nest`, `thermostat`, `home`, `appliances`, `stainless-steel');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`);
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -97,22 +80,34 @@ CREATE TABLE `postage` (
   `id` varchar(10) NOT NULL,
   `name` varchar(255) NOT NULL,
   `cost` decimal(7,2) NOT NULL,
-  primary key (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `postage` (`id`, `name`, `cost`) VALUES
 ('POST001', 'Express Delivery', '12.00'),
 ('POST002', 'Standard Delivery', '9.00');
 
-
-CREATE TABLE `orders` (
+CREATE TABLE `creditCard` (
   `id` varchar(10) NOT NULL,
-  `accountId` varchar(10) NOT NULL,
-  `creditCardId` varchar(10) NOT NULL,
-  `billingAddressId` varchar(10) NOT NULL,
-  `deliveryAddressId` varchar(10) NOT NULL,
-  primary key (`id`),
-  FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+  `nameOnCard` varchar(255) NOT NULL,
+  `cardNumber` varchar(255) NOT NULL,
+  `expirationMonth` int NOT NULL,
+  `expirationYear` int NOT NULL,
+  `cvc` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `address` (
+  `id` varchar(10) NOT NULL,
+  `firstName` varchar(255) NOT NULL,
+  `lastName` varchar(255) NOT NULL,
+  `mobileNumber` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `streetAddress` varchar(255) NOT NULL,
+  `suburb` varchar(255) NOT NULL,
+  `province` varchar(255) NOT NULL,
+  `postcode` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `account` (
@@ -123,16 +118,42 @@ CREATE TABLE `account` (
   `password` varchar(255) NOT NULL, 
   `billingAddressId` varchar(10) NOT NULL,
   `deliveryAddressId` varchar(10) NOT NULL,
-  primary key (`id`)
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (billingAddressId) REFERENCES address(id),
+  FOREIGN KEY (deliveryAddressId) REFERENCES address(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `creditCard` (
+CREATE TABLE `orders` (
   `id` varchar(10) NOT NULL,
-  `nameOnCard` varchar(255) NOT NULL,
-  `cardNumber` varchar(255) NOT NULL,
-  `expiration` varchar(255) NOT NULL,
-  primary key (`id`)
+  `accountId` varchar(10) NULL,
+  `creditCardId` varchar(10) NOT NULL,
+  `billingAddressId` varchar(10) NOT NULL,
+  `deliveryAddressId` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (accountID) REFERENCES account(id),
+  FOREIGN KEY (creditCardId) REFERENCES creditCard(id),
+  FOREIGN KEY (billingAddressId) REFERENCES address(id),
+  FOREIGN KEY (deliveryAddressId) REFERENCES address(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `orderProduct` (
+  `orderId` varchar(10) NOT NULL,
+  `productId` varchar(10) NOT NULL,
+  `quanity` int NOT NULL,
+  PRIMARY KEY (`orderId`, `productId`),
+  FOREIGN KEY (productId) REFERENCES product(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+--
+-- Add User
+--
 
 CREATE user IF NOT EXISTS dbadmin@localhost;
+GRANT all privileges ON comp2772.product TO dbadmin@localhost;
 GRANT all privileges ON comp2772.postage TO dbadmin@localhost;
+GRANT all privileges ON comp2772.creditCard TO dbadmin@localhost;
+GRANT all privileges ON comp2772.address TO dbadmin@localhost;
+GRANT all privileges ON comp2772.account TO dbadmin@localhost;
+GRANT all privileges ON comp2772.orders TO dbadmin@localhost;
+GRANT all privileges ON comp2772.orderProduct TO dbadmin@localhost;
