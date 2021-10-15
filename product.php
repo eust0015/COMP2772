@@ -30,7 +30,6 @@
 
           
                     
-                    
                     echo "<img src='images/".$result["image"]."' alt='".$result["name"]."'></a></div>", "</br>";
                     echo  "Product id:  " , $result["id"]."<br/>";
                     echo  $result["name"]."<br/>";

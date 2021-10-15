@@ -1,0 +1,618 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@100;300;500;700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+  overflow-x: hidden;
+  /* overflow-y: scroll; */
+  min-height: 100vh;
+}
+
+/* Header - Top and Bottom */
+
+.first-header {
+  position: none;
+  width: 100%;
+  height: 42px;
+  background-color: white;
+  border-bottom: 1px solid #dcdcdc;
+  padding-left: 100px;
+}
+
+.second-header {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* First Section - Carousel */
+
+.first-section-carousels-container {
+  display: flex;
+  flex-direction: row;
+  margin: 75px 170px;
+}
+
+.first-section-carousel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 385px;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+/* Second Section - Categories */
+
+.second-section-categories-container {
+  display: flex;
+  flex-direction: row;
+  margin: 75px 170px;
+  gap: 15px;
+}
+
+.second-section-categorie {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 125px;
+  background-color: #b11127;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.second-section-categorie-image {
+  height: 40px;
+}
+
+.second-section-categorie-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px;
+}
+
+#second-section-headphones {
+  background-image: url(..//images/headphone.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#second-section-phones {
+  background-image: url(..//images/mobile.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#second-section-cameras {
+  background-image: url(..//images/camera.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#second-section-computers {
+  background-image: url(..//images/computer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Third Section - What's Hot */
+
+.third-section-whats-hot-container {
+  display: flex;
+  flex-direction: row;
+  margin: 75px 170px;
+  gap: 15px;
+}
+
+.third-section-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.whats-hot-section-image {
+  height: 200px;
+  /* background-image: url(images/bg.jpeg); */
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.whats-hot-section-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.third-section-product-description {
+  position: relative;
+  bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0px 5px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.third-section-buy-now-product {
+  position: relative;
+  top: 20px;
+  border: none;
+  background-color: #6a4eff;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.third-section-buy-now-product:hover {
+  background-color: #eb9133;
+}
+
+/* Fourth Section - Product Overview */
+
+.fourth-section-product-overview-container {
+  display: flex;
+  flex-direction: row;
+  margin: 75px 170px;
+  gap: 15px;
+}
+
+.fourth-section-product {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 450px;
+  background-color: pink;
+  border-radius: 8px;
+  padding: 0px 60px;
+}
+
+#fourth-section-product-overview-left {
+  background-image: url(..//images/iphone13.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fourth-section-product-heading {
+  position: relative;
+  top: 280px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  color: white;
+  padding-bottom: 12px;
+}
+
+.fourth-section-product-subheading {
+  position: relative;
+  top: 280px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.fourth-section-buy-now-button {
+  position: relative;
+  top: 280px;
+  width: 110px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  background-color: #eb9133;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 5px 10px;
+}
+
+.fourth-section-buy-now-button:hover {
+  background-color: #6a4eff;
+}
+
+.fourth-section-product-overview-container-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 450px;
+  gap: 15px;
+}
+
+#fourth-section-right-top {
+  background-image: url(..//images/beats.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fourth-section-right-top-product-heading {
+  position: relative;
+  top: 70px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.fourth-section-right-top-product-subheading {
+  position: relative;
+  top: 70px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.fourth-section-right-top-buy-now-button {
+  position: relative;
+  top: 70px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border: none;
+  background-color: #eb9133;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.fourth-section-right-top-buy-now-button:hover {
+  background-color: #6a4eff;
+}
+
+#fourth-section-right-bottom {
+  background-image: url(..//images/galaxywatch4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.fourth-section-right-bottom-product-heading {
+  position: relative;
+  top: 70px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.fourth-section-right-bottom-product-subheading {
+  position: relative;
+  top: 70px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.fourth-section-right-bottom-buy-now-button {
+  position: relative;
+  top: 70px;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border: none;
+  background-color: #6a4eff;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.fourth-section-right-bottom-buy-now-button:hover {
+  background-color: #eb9133;
+}
+
+/* Fifth Section - Featured Products */
+
+.fifth-section-whats-hot-container {
+  display: flex;
+  flex-direction: row;
+  margin: 75px 170px;
+  gap: 15px;
+}
+
+.fifth-section-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.featured-product-section-image {
+  height: 200px;
+  /* background-image: url(images/bg.jpeg); */
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.featured-product-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.fifth-section-product-description {
+  position: relative;
+  bottom: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0px 5px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.fifth-section-buy-now-product {
+  position: relative;
+  top: 20px;
+  border: none;
+  background-color: #eb9133;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.fifth-section-buy-now-product:hover {
+  background-color: #6a4eff;
+}
+
+/* Sixth Section - Sharing Values */
+
+.sixth-section-sharing-values-container {
+  display: flex;
+  flex-direction: row;
+  margin: 75px 170px;
+  gap: 15px;
+}
+
+.sharing-value-cards {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 385px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #cfcfd0;
+  box-shadow: 5px 10px 8px #cfcfd0;
+  border-radius: 8px;
+}
+
+.sharing-value-image-left {
+  width: 100%;
+  height: 235px;
+  background-image: url(..//images/forest.jpeg);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sharing-value-information-left {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 45px;
+}
+
+.sharing-value-heading-left {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+.sharing-value-subheading-left {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  padding-bottom: 30px;
+  font-weight: 300;
+}
+
+.sharing-value-learn-more-button-left {
+  font-family: "Montserrat", sans-serif;
+  width: 150px;
+  color: white;
+  font-size: 10px;
+  padding: 8px 20px;
+  background-color: #6a4eff;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.sharing-value-learn-more-button-left:hover {
+  background-color: #5d3fd3;
+}
+
+.sharing-value-image-right {
+  width: 100%;
+  height: 235px;
+  background-image: url(..//images/blm.jpeg);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sharing-value-information-right {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 45px;
+}
+
+.sharing-value-heading-right {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+.sharing-value-subheading-right {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  padding-bottom: 30px;
+  font-weight: 300;
+}
+
+.sharing-value-learn-more-button-right {
+  font-family: "Montserrat", sans-serif;
+  width: 150px;
+  color: white;
+  font-size: 10px;
+  padding: 8px 20px;
+  background-color: #ff4655;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.sharing-value-learn-more-button-right:hover {
+  background-color: #de3163;
+}
+
+/* Seventh Section - Company Information/Delivery */
+
+.seventh-section-company-information-container {
+  display: flex;
+  flex-direction: row;
+  margin: 75px 170px;
+  gap: 15px;
+}
+
+.company-delivery-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.company-delivery-card-left-image {
+  width: 64px;
+  height: 64px;
+}
+
+.company-deliver-card-left-info {
+  padding: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.company-delivery-card-middle-image {
+  width: 64px;
+  height: 64px;
+}
+
+.company-deliver-card-middle-headings {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-deliver-card-middle-info {
+  padding: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.company-deliver-card-middle-info-subheading {
+  position: relative;
+  bottom: 22px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: none;
+  padding-left: 25px;
+}
+
+.company-delivery-card-right-image {
+  width: 64px;
+  height: 64px;
+}
+
+.company-deliver-card-right-headings {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-deliver-card-right-info {
+  padding: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: none;
+}
+
+.company-deliver-card-right-info-subheading {
+  position: relative;
+  bottom: 22px;
+  padding-left: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: none;
+}
+
+/* Eigth Section - Footer */
+
+.sticky-footer {
+  position: sticky;
+  top: 100%;
+  width: 100%;
+  height: 260px;
+  background-color: darkorange;
+}

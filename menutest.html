@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/menutest.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="first-header" id="first-header"></div>
+    <header>
+      <div class="second-header-container">
+        <nav>
+          <!-- <a href="index.php"><img src="images/header-logo.png" alt="" /></a> -->
+          <ul class="nav-links">
+            <li class="second-header-links" id="list">Shop</li>
+            <li class="second-header-links" id="list">Explore</li>
+            <li class="second-header-links" id="list">Support</li>
+
+            <li id="list">
+              <form action="products.php" id="formSearch" name="formSearch" method="POST">
+                <input type="text" id="textSearch" name="search" placeholder="Search" />
+                <select id="selectCategory" name="category">
+                  <option value="all categories">All Categories</option>
+                  <option value="computers">Computers</option>
+                  <option value="tvs">TVs</option>
+                  <option value="headphones">Headphones</option>
+                  <option value="mobile-phones">Mobile Phones</option>
+                  <option value="gaming">Gaming</option>
+                  <option value="camears">Cameras</option>
+                  <option value="dcgha">Drones / Car Gear / Home Appliances</option>
+                  <!-- dcgha = drones / car gear / home appliances -->
+                  <option value="hfw">Health Fitness & Wearables</option>
+                  <!-- hfw = health fitness & wearables -->
+                </select>
+                <input type="submit" value="Search" />
+              </form>
+            </li>
+
+            <li id="list">
+              <a class="my-cart-button-anchor" href="cart.php"><button class="my-cart-button">My Cart</button></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>
