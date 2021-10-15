@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once 'account_functions.php';
+    include_once 'order_functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +28,9 @@
         WE NEED GENERATE AN ORDER CONFIRMATION NUMBER FROM DATABASE
     </body>
 </html>
+<?php
+    include_once 'cart_functions.php';
+?>
 <script>
     // Prevent issues if the page is refreshed
     if ( window.history.replaceState ) {

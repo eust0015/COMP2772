@@ -93,9 +93,6 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
-
--- DROP TABLE `postage`;
-
 CREATE TABLE `postage` (
   `id` varchar(10) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -103,13 +100,39 @@ CREATE TABLE `postage` (
   primary key (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
-
-CREATE user IF NOT EXISTS dbadmin@localhost;
-GRANT all privileges ON comp2772.postage TO dbadmin@localhost;
-
-
-
 INSERT INTO `postage` (`id`, `name`, `cost`) VALUES
 ('POST001', 'Express Delivery', '12.00'),
 ('POST002', 'Standard Delivery', '9.00');
+
+
+CREATE TABLE `orders` (
+  `id` varchar(10) NOT NULL,
+  `accountId` varchar(10) NOT NULL,
+  `creditCardId` varchar(10) NOT NULL,
+  `billingAddressId` varchar(10) NOT NULL,
+  `deliveryAddressId` varchar(10) NOT NULL,
+  primary key (`id`),
+  FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `account` (
+  `id` varchar(10) NOT NULL,
+  `firstName` varchar(255) NOT NULL,
+  `lastName` varchar(255) NOT NULL, 
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL, 
+  `billingAddressId` varchar(10) NOT NULL,
+  `deliveryAddressId` varchar(10) NOT NULL,
+  primary key (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `creditCard` (
+  `id` varchar(10) NOT NULL,
+  `nameOnCard` varchar(255) NOT NULL,
+  `cardNumber` varchar(255) NOT NULL,
+  `expiration` varchar(255) NOT NULL,
+  primary key (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE user IF NOT EXISTS dbadmin@localhost;
+GRANT all privileges ON comp2772.postage TO dbadmin@localhost;

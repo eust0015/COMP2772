@@ -238,12 +238,12 @@
         mysqli_stmt_bind_param($stmt, "s", $postage_id);
 
         if (mysqli_stmt_execute($stmt)) {
-            mysqli_stmt_bind_result($stmt, $id, $name, $price);
+            mysqli_stmt_bind_result($stmt, $id, $name, $cost);
             if (mysqli_stmt_fetch($stmt)) {
                 $result = array();
                 $result["id"] = $id;
                 $result["name"] = $name;
-                $result["price"] = $price;
+                $result["cost"] = $cost;
             }
         }
         mysqli_stmt_close($stmt);
