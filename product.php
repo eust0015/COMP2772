@@ -1,13 +1,15 @@
 <?php
     session_start();
+    include_once 'cart_functions.php';
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles/menu.css">
-        <link rel="stylesheet" href="styles/style.css">
-        <meta charset="utf-8">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/productspageall.css" />
         <meta name="author" content="Group-07" />
         <meta name="description" content="Assignment02" />
         <title>Product</title>
@@ -26,30 +28,42 @@
                 
                 $result = get_product_by_name($conn, htmlspecialchars($_GET["name"]));
                 if ($result) { 
-                    echo "<center>","<br/>","<br/>";
-                    echo "<img src='images/".$result["image"]."' alt='".$result["name"]."'></a></div>", "</br>";
-                    echo  "Product id:  " , $result["id"]."<br/>";
-                    echo  $result["name"]."<br/>";
-                    echo $result["description"]."<br/>";
-                    echo "Price : " , $result["price"]."<br/>";
-                    echo "Recommended Retail Price : " , $result["recommendedRetailPrice"]."<br/>";
-                    echo "Category: ", $result["category"]."<br/>";
-                    echo "Description:", $result["keyWord"]."<br/>";
-                    echo "</center>";
-                    echo "<form action='product.php' id='formAddToCart' name='formAddToCart' method='POST'>";
-                        echo "<input type='hidden' id='cartProductId' name='cartProductId' value='".$result["id"]."'>";
-                        echo "<input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='1'>";
-                        if (isset($_SESSION["products"][$result["id"]])) {
-                            echo "<input type='hidden' id='cartAction' name='cartAction' value='remove'>";
-                            echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Remove From Cart'/>";
-                        }
-                        else{
-                            echo "<input type='hidden' id='cartAction' name='cartAction' value='update'>";
-                            echo "<input id='add-to-cart' name='add-to-cart' class='add-to-cart' type='submit' value='Add To Cart'/>";                           
-                        }
-                        echo "</form>";
+        ?>            
+                    <div class="all-products">
+                        <div class="all-products__cards">
+                            <div class="all-products__card">
+                                <div class="all-products__images">
+                                <a href="">
+                                    <img class='all-products__images-image' src='images/<?php echo (isset($result["image"]) ? $result["image"] : ""); ?>' alt='<?php echo (isset($result["name"]) ? $result["name"] : ""); ?>' />
+                                    </a>
+                                </div>
+                
+                                <div class="all-products__detail">
+                                    <span class="all-products__heading"><?php echo (isset($result["name"]) ? $result["name"] : ""); ?></span>
+                                    <span class="all-products__description"><?php echo (isset($result["description"]) ? $result["description"] : ""); ?></span>
+                                    <div class="all-products__price">
+                                        <span class="all-products__old-price"><?php echo (isset($result["recommendedRetailPrice"]) ? $result["recommendedRetailPrice"] : ""); ?></span>
+                                        <span class="all-products__new-price"><?php echo (isset($result["price"]) ? $result["price"] : ""); ?></span>
+                                        <form action='product.php?name=<?php echo (isset($result["name"]) ? $result["name"] : ""); ?>' id='formAddToCart' name='formAddToCart' method='POST'>
+                                            <input type='hidden' id='cartProductId' name='cartProductId' value='<?php echo (isset($result["id"]) ? $result["id"] : ""); ?>'>
+                                            <input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='1'>
+                                            <input type='hidden' id='cartAction' name='cartAction' value='<?php echo (isset($_SESSION["products"][$result["id"]]) ? "remove" : "update"); ?>'>
+                                            <input id='add-to-cart' name='add-to-cart' class='add-to-cart' class="all-products__add-to-cart-button" type='submit' value='<?php echo (isset($_SESSION["products"][$result["id"]]) ? "Remove From Cart" : "Add To Cart"); ?>'/>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
                 }
             } 
         ?>
     </body>
 </html>
+<script>
+    // Prevent issues if the page is refreshed
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
