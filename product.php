@@ -7,7 +7,6 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles/productspageall.css" />
         <meta name="author" content="Group-07" />
@@ -33,9 +32,7 @@
                         <div class="all-products__cards">
                             <div class="all-products__card">
                                 <div class="all-products__images">
-                                <a href="">
                                     <img class='all-products__images-image' src='images/<?php echo (isset($result["image"]) ? $result["image"] : ""); ?>' alt='<?php echo (isset($result["name"]) ? $result["name"] : ""); ?>' />
-                                    </a>
                                 </div>
                 
                                 <div class="all-products__detail">
@@ -57,7 +54,8 @@
                     </div>
                     <?php
                 }
-            } 
+            }
+            mysqli_close($conn); 
         ?>
     </body>
 </html>
