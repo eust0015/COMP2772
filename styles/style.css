@@ -83,7 +83,7 @@ a:hover{
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  background-color: #eb9133;
+  background-color: #6a4eff;
   width: 280px;
   border: none;
   margin-left: 511px;
@@ -93,7 +93,7 @@ a:hover{
   transition: all 0.3s ease 0s;
 }
 #empty-cart:hover{
-  background-color: #6a4eff;
+  background-color: #eb9133;
 }
 
 #proceed-to-checkout{
