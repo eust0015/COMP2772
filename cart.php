@@ -104,7 +104,7 @@
                         <tr class='gst'>
                             <th class='amount-label'>GST Included:</th>
                             <td class='amount'>
-                                <span class='price' id='summaryGST'>$<?php echo number_format((float)$gst, 2, '.', '') ?></span>
+                            <span class='price' id='summaryGST'>$<?php echo (isset($gst) ? number_format((float)$gst, 2, '.', '') : "") ?></span>
                             </td>
                         </tr>
                         <tr class='total-amount'>
