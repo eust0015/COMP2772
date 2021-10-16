@@ -68,7 +68,6 @@
         <h3>Payment Details</h3>
 
         <form id='payment-form' name='paymentDetails' class='payment-form' action="confirmation.php" method="POST">
-
             <div name='paymentDetails'>
                 <ul class='paymentDetails'>
                     <li><label id='name-on-card' for='name-on-card'>Name On Card: </label><input type='name' id='name-on-card' name='nameOnCard' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["name-on-card"]) ? $_SESSION["account"]["name-on-card"] : ""); ?>' required></li>
