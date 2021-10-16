@@ -25,14 +25,14 @@
 
         <div name='customerDetails'>
             <ul class='customerDetails'>
-                <li>First Name: <?php echo $_POST["billing-fname"] ?></li>
-                <li>Last Name: <?php echo $_POST["billing-lname"] ?></li>
-                <li>Mobile Number: <?php echo $_POST["billing-mobilenumber"] ?></li>
-                <li>Email Address: <?php echo $_POST["billing-email"] ?></li>
-                <li>Street Address: <?php echo $_POST["billing-streetAddress"] ?></li>
-                <li>Suburb: <?php echo $_POST["billing-suburb"] ?></li>
-                <li>State: <?php echo $_POST["billing-state"] ?></li>
-                <li>Post Code: <?php echo $_POST["billing-postcode"] ?></li>
+                <li>First Name: <?php echo (isset($_POST["billing-fname"]) ? $_POST["billing-fname"] : "") ?></li>
+                <li>Last Name: <?php echo (isset($_POST["billing-lname"]) ? $_POST["billing-lname"] : "") ?></li>
+                <li>Mobile Number: <?php echo (isset($_POST["billing-mobilenumber"]) ? $_POST["billing-mobilenumber"] : "") ?></li>
+                <li>Email Address: <?php echo (isset($_POST["billing-email"]) ? $_POST["billing-email"] : "") ?></li>
+                <li>Street Address: <?php echo (isset($_POST["billing-streetAddress"]) ? $_POST["billing-streetAddress"] : "") ?></li>
+                <li>Suburb: <?php echo (isset($_POST["billing-suburb"]) ? $_POST["billing-suburb"] : "") ?></li>
+                <li>State: <?php echo (isset($_POST["billing-state"]) ? $_POST["billing-state"] : "") ?></li>
+                <li>Post Code: <?php echo (isset($_POST["billing-postcode"]) ? $_POST["billing-postcode"] : "") ?></li>
             </ul>
         </div>
         <br><br><br>
@@ -50,13 +50,16 @@
                     $postageCost = $result["cost"];
                 }
 
-                foreach($_SESSION["products"] as $productId => $productQuantity) {
-                    $result = get_product_by_id($conn, htmlspecialchars($productId));
-                    if ($result) {
-                        $subTotal = $productQuantity * $result["price"];
-                        $total += $subTotal;
+                if(isset($_SESSION["products"])){
+                    foreach($_SESSION["products"] as $productId => $productQuantity) {
+                        $result = get_product_by_id($conn, htmlspecialchars($productId));
+                        if ($result) {
+                            $subTotal = $productQuantity * $result["price"];
+                            $total += $subTotal;
+                        }
                     }
                 }
+
                 echo "<ul class='paymentAmount'>";
                 echo "<li>";
                 echo "$" . number_format((float)$total + (float)$postageCost, 2, '.', '');
