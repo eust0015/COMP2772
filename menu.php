@@ -75,7 +75,7 @@
             </li>
 
             <li class="second-header-links" id="list">
-              <a id="menuCartLink" href="cart.php"><?php echo (isset($_SESSION["products"]) ? " (" . count($_SESSION["products"]) . ")" : ""); ?><button class="my-cart-button">My Cart</button></a>
+              <a id="menuCartLink" href="cart.php"><button class="my-cart-button">My Cart<?php echo (isset($_SESSION["products"]) ? " (" . count($_SESSION["products"]) . ")" : ""); ?></button></a>
             </li>
           </ul>
         </nav>
