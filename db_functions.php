@@ -250,8 +250,8 @@
         return $result;
     }
 
-    function get_last_id($conn, $table, $noOfNumericChar) {
-        $stmt = mysqli_prepare($conn, "SELECT MAX(CAST(RIGHT(id,{$noOfNumericChar}) AS int)) AS lastID FROM {$table}");
+    function get_next_id($conn, $table, $prefix) {
+        $stmt = mysqli_prepare($conn, "SELECT MAX(CAST(RIGHT(id, 7) AS int)) AS lastID FROM {$table}");
         
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_bind_result($stmt, $lastID);
@@ -260,12 +260,14 @@
             }
         }
         mysqli_stmt_close($stmt);
+        $result = (int)$result + 1;
+        $result = $prefix . str_pad($result, 7, "0", STR_PAD_LEFT);
         return $result;
     }
 
     function insert_into_creditCard($conn, $nameOnCard, $cardNumber, $expirationMonth, $expirationYear, $cvc) {
-        $id = get_last_id($conn, "creditCard", 7);
-
+        $id = get_next_id($conn, "creditCard", "ccd");
+  
         $stmt = mysqli_prepare($conn, "INSERT INTO creditCard VALUES (?, ?, ?, ?, ?, ?)");
         
         mysqli_stmt_bind_param($stmt, "ssssss", $id, $nameOnCard, $cardNumber, $expirationMonth, $expirationYear, $cvc);
@@ -277,8 +279,7 @@
     }
 
     function insert_into_address($conn, $firstName, $lastName, $mobileNumber, $email, $streetAddress, $suburb, $province, $postcode) {
-        $id = get_last_id($conn, "address", 7);
-        $id = "add" . str_pad($id, 7, "0", STR_PAD_LEFT);
+        $id = get_next_id($conn, "address", "add");
 
         $stmt = mysqli_prepare($conn, "INSERT INTO address VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
@@ -291,8 +292,7 @@
     }
 
     function insert_into_account($conn, $firstName, $lastName, $email, $password) {
-        $id = get_last_id($conn, "account", 7);
-        $id = "acc" . str_pad($id, 7, "0", STR_PAD_LEFT);
+        $id = get_next_id($conn, "account", "acc");
 
         $stmt = mysqli_prepare($conn, "INSERT INTO account VALUES (?, ?, ?, ?, ?)");
         
@@ -305,16 +305,15 @@
     }
 
     function insert_into_orders($conn, $creditCardId, $postageId, $quotedPostageCost, $billingAddressId, $shippingAddressId, $accountId = NULL) {
-        $id = get_last_id($conn, "orders", 7);
-        $id = "ord" . str_pad($id, 7, "0", STR_PAD_LEFT);
+        $id = get_next_id($conn, "orders", "ord");
 
         if($accountId){
             $stmt = mysqli_prepare($conn, "INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?, ?)");
-            mysqli_stmt_bind_param($stmt, "sssdsss", $id, $creditCardId, postageId, $quotedPostageCost, $billingAddressId, $shippingAddressId, $accountId);
+            mysqli_stmt_bind_param($stmt, "sssdsss", $id, $creditCardId, $postageId, $quotedPostageCost, $billingAddressId, $shippingAddressId, $accountId);
         }
         else{
             $stmt = mysqli_prepare($conn, "INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?, NULL)");
-            mysqli_stmt_bind_param($stmt, "sssdss", $id, $creditCardId, postageId, $quotedPostageCost, $billingAddressId, $shippingAddressId);
+            mysqli_stmt_bind_param($stmt, "sssdss", $id, $creditCardId, $postageId, $quotedPostageCost, $billingAddressId, $shippingAddressId);
         }
        
         mysqli_stmt_execute($stmt);
