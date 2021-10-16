@@ -127,17 +127,14 @@ a:hover{
 #subtractFromCartButton, #addToCartButton{
   width: 30px;
   height: 20px;
-  background-color: rgb(55, 170, 247);
+  background-color: #eb9133;
   color: white;
   border: none;
   margin: 8px;
   font-size: 16px;
 }
-#subtractFromCartButton:hover{
-  background-color: rgb(0, 69, 218);
-}
-#addToCartButton:hover{
-  background-color: rgb(0, 69, 218);
+#subtractFromCartButton:hover, #addToCartButton:hover{
+  background-color: #6a4eff;
 }
 input[id=confirm-payment], input[id=proceed-to-payment]{
   background-color: #6a4eff;
