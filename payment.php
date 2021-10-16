@@ -36,7 +36,7 @@
             </ul>
         </div>
         <br>
-        <h3 id='paymentAmount-header'>Payment Amount</h3>
+        <h3 id='paymentAmount-header'>Payment Amount</h3><br>
         <?php
             include_once 'db_functions.php';
             $conn = get_conn();
