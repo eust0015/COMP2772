@@ -122,11 +122,11 @@ CREATE TABLE `account` (
   `lastName` varchar(255) NOT NULL, 
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL, 
-  `billingAddressId` varchar(10) NOT NULL,
-  `deliveryAddressId` varchar(10) NOT NULL,
+  `billingAddressId` varchar(10) NULL,
+  `shippingAddressId` varchar(10) NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (billingAddressId) REFERENCES address(id),
-  FOREIGN KEY (deliveryAddressId) REFERENCES address(id)
+  FOREIGN KEY (shippingAddressId) REFERENCES address(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `account` VALUES
@@ -135,15 +135,16 @@ INSERT INTO `account` VALUES
 CREATE TABLE `orders` (
   `id` varchar(10) NOT NULL,
   `creditCardId` varchar(10) NOT NULL,
-  `deliveryId` varchar(10) NOT NULL,
-  `quotedDeliveryCost` decimal(7,2) NOT NULL,
+  `postageId` varchar(10) NOT NULL,
+  `quotedPostageCost` decimal(7,2) NOT NULL,
   `billingAddressId` varchar(10) NOT NULL,
-  `deliveryAddressId` varchar(10) NOT NULL,
+  `shippingAddressId` varchar(10) NOT NULL,
   `accountId` varchar(10) NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (creditCardId) REFERENCES creditCard(id),
+  FOREIGN KEY (postageId) REFERENCES postage(id),
   FOREIGN KEY (billingAddressId) REFERENCES address(id),
-  FOREIGN KEY (deliveryAddressId) REFERENCES address(id),
+  FOREIGN KEY (shippingAddressId) REFERENCES address(id),
   FOREIGN KEY (accountID) REFERENCES account(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
