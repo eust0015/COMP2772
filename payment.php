@@ -73,7 +73,7 @@
                 <ul class='paymentDetails'>
                     <li><label id='name-on-card' for='name-on-card'>Name On Card: </label><input type='name' id='name-on-card' name='nameOnCard' placeholder='Required' value='' required></li>
                     <li><label id='card-number' for='card-number'>Card Number: </label><input type='text' id='card-number' name='cardNumber' minlength='16' maxlength='16' placeholder='Required' value=''required></li>
-                    <li><label id='expiration-date' for='expiration-date'>Expiration Date: </label><input type='month' id='expiration-date' name='expirationDate' placeholder='Required' min='2021-10' value=''required></li>                    
+                    <li><label id='expiration-date' for='expiration-date'>Expiration Date: </label><input type='month' id='expiration-date' name='expirationDate' placeholder='Required' min='2021-10' onkeydown='return false' value=''required></li>                    
                     <li><label id='cvc' for='cvc'>CVC: </label><input type='text' id='cvc' name='cvc' placeholder='Required' minlength='3' maxlength='3' value='' required></li>
                 </ul>
             </div>
