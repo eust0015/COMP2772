@@ -155,10 +155,10 @@ input[id=confirm-payment], input[id=proceed-to-payment]{
 input[id=confirm-payment]:hover, input[id=proceed-to-payment]:hover{
   background-color: #eb9133;
 }
-#heading{
-  padding-top: 50px;
+#heading, #shipping-header, #postage-header, #paymentAmount-header, #paymentDetails-header{
+  padding-top: 70px;
   padding-bottom: 20px;
 }
-#shipping-header, #postage-header{
-padding-top: 50px;
+#billing-header{
+  padding-bottom: 20px;
 }

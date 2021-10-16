@@ -21,7 +21,7 @@
       
       <div id='heading'><h1>Payment</h1></div>
 
-      <h3>Billing Details</h3>
+      <h3 id='billing-header'>Billing Details</h3>
 
         <div name='customerDetails'>
             <ul class='customerDetails'>
@@ -35,9 +35,8 @@
                 <li>Post Code: <?php echo (isset($_POST["billing-postcode"]) ? $_POST["billing-postcode"] : "") ?></li>
             </ul>
         </div>
-        <br><br><br>
-
-        <h3>Payment Amount</h3>
+        <br>
+        <h3 id='paymentAmount-header'>Payment Amount</h3>
         <?php
             include_once 'db_functions.php';
             $conn = get_conn();
@@ -67,8 +66,7 @@
                 echo "</ul>";
             }
         ?>
-        <br><br>
-        <h3>Payment Details</h3>
+        <h3 id='paymentDetails-header'>Payment Details</h3>
 
         <form id='payment-form' name='paymentDetails' class='payment-form' action="confirmation.php" method="POST">
             <div name='paymentDetails'>
