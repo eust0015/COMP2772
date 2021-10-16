@@ -2,7 +2,8 @@
     session_start();
     
     include_once 'order_functions.php';
-
+    $orderNumber = insert();
+    include_once 'cart_functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +28,10 @@
         
         <br><br>
     
-        YOUR ORDER REFERENCE NUMBER IS: <?php echo substr(insert(), -7); ?> 
+        YOUR ORDER REFERENCE NUMBER IS: <?php echo substr($orderNumber, -7); ?> 
     </body>
 </html>
-<?php
-    include_once 'cart_functions.php';
-?>
+
 <script>
     // Prevent issues if the page is refreshed
     if ( window.history.replaceState ) {
