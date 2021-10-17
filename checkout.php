@@ -32,7 +32,7 @@
         
         <!-- Billing informormation -->
         <form id='checkout-form' name='customerDetails' class='checkout-form' action='payment.php' method='POST'>
-            <h3 id='billing'>Billing Information</h3>
+            <h3>Billing Information</h3>
                 <div name='customerDetails'>
                     <ul class='customerDetails'>
                         <li><label id='billing-fname' for='billing-fname'>First Name: </label><input type='text' name='billing-fname' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-fname"]) ? $_SESSION["account"]["billing-fname"] : ""); ?>'></li>
@@ -56,8 +56,7 @@
 
             <!-- Shipping information -->
             <h3 id='shipping-header'>Shipping Information</h3>
-                <li><input type='checkbox' id='shippingAddressCheckBox' name='shipToBillingAddress' <?php echo (isset($_SESSION["account"]["shipToBillingAddress"]) && $_SESSION["account"]["shipToBillingAddress"] ? "checked" : ""); ?>><label id='shippingAddress' for='shippingAddress'> Shipping Address Same As Billing Address</li><br><br><br>
-                <br>
+                <li><input type='checkbox' id='shippingAddressCheckBox' name='shipToBillingAddress' <?php echo (isset($_SESSION["account"]["shipToBillingAddress"]) && $_SESSION["account"]["shipToBillingAddress"] ? "checked" : ""); ?>><label id='shippingAddress' for='shippingAddress'>Shipping Address Same As Billing Address</li><br><br><br>
                 <div id='shippingAddressDiv' name='shippingAddressDiv'>
                     <div name='customerDetails'>
                         <ul class='customerDetails'>

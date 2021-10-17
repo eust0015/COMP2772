@@ -21,22 +21,23 @@
       
       <div id='heading'><h1>Payment</h1></div>
 
-      <h3 id='billing-header'>Billing Details</h3>
+      <h3>Billing Details</h3>
 
         <div name='customerDetails'>
             <ul class='customerDetails'>
-                <li>First Name: <?php echo (isset($_POST["billing-fname"]) ? $_POST["billing-fname"] : "") ?></li>
-                <li>Last Name: <?php echo (isset($_POST["billing-lname"]) ? $_POST["billing-lname"] : "") ?></li>
-                <li>Mobile Number: <?php echo (isset($_POST["billing-mobilenumber"]) ? $_POST["billing-mobilenumber"] : "") ?></li>
-                <li>Email Address: <?php echo (isset($_POST["billing-email"]) ? $_POST["billing-email"] : "") ?></li>
-                <li>Street Address: <?php echo (isset($_POST["billing-streetAddress"]) ? $_POST["billing-streetAddress"] : "") ?></li>
-                <li>Suburb: <?php echo (isset($_POST["billing-suburb"]) ? $_POST["billing-suburb"] : "") ?></li>
-                <li>State: <?php echo (isset($_POST["billing-state"]) ? $_POST["billing-state"] : "") ?></li>
-                <li>Post Code: <?php echo (isset($_POST["billing-postcode"]) ? $_POST["billing-postcode"] : "") ?></li>
+                <li>First Name: <?php echo $_POST["billing-fname"] ?></li>
+                <li>Last Name: <?php echo $_POST["billing-lname"] ?></li>
+                <li>Mobile Number: <?php echo $_POST["billing-mobilenumber"] ?></li>
+                <li>Email Address: <?php echo $_POST["billing-email"] ?></li>
+                <li>Street Address: <?php echo $_POST["billing-streetAddress"] ?></li>
+                <li>Suburb: <?php echo $_POST["billing-suburb"] ?></li>
+                <li>State: <?php echo $_POST["billing-state"] ?></li>
+                <li>Post Code: <?php echo $_POST["billing-postcode"] ?></li>
             </ul>
         </div>
-        <br>
-        <h3 id='paymentAmount-header'>Payment Amount</h3><br>
+        <br><br><br>
+
+        <h3 id='paymentAmount-header'>Payment Amount</h3>
         <?php
             include_once 'db_functions.php';
             $conn = get_conn();
@@ -49,16 +50,13 @@
                     $postageCost = $result["cost"];
                 }
 
-                if(isset($_SESSION["products"])){
-                    foreach($_SESSION["products"] as $productId => $productQuantity) {
-                        $result = get_product_by_id($conn, htmlspecialchars($productId));
-                        if ($result) {
-                            $subTotal = $productQuantity * $result["price"];
-                            $total += $subTotal;
-                        }
+                foreach($_SESSION["products"] as $productId => $productQuantity) {
+                    $result = get_product_by_id($conn, htmlspecialchars($productId));
+                    if ($result) {
+                        $subTotal = $productQuantity * $result["price"];
+                        $total += $subTotal;
                     }
                 }
-
                 echo "<ul class='paymentAmount'>";
                 echo "<li>";
                 echo "$" . number_format((float)$total + (float)$postageCost, 2, '.', '');
@@ -66,15 +64,17 @@
                 echo "</ul>";
             }
         ?>
+        <br><br>
         <h3 id='paymentDetails-header'>Payment Details</h3>
 
         <form id='payment-form' name='paymentDetails' class='payment-form' action="confirmation.php" method="POST">
+
             <div name='paymentDetails'>
                 <ul class='paymentDetails'>
-                    <li><label id='name-on-card' for='name-on-card'>Name On Card: </label><input type='name' id='name-on-card' name='nameOnCard' placeholder='Required' value='' required></li>
-                    <li><label id='card-number' for='card-number'>Card Number: </label><input type='text' id='card-number' name='cardNumber' minlength='16' maxlength='16' placeholder='Required' value=''required></li>
-                    <li><label id='expiration-date' for='expiration-date'>Expiration Date: </label><input type='month' id='expiration-date' name='expirationDate' placeholder='Required' min='2021-10' onkeydown='return false' value=''required></li>                    
-                    <li><label id='cvc' for='cvc'>CVC: </label><input type='text' id='cvc' name='cvc' placeholder='Required' minlength='3' maxlength='3' value='' required></li>
+                    <li><label id='name-on-card' for='name-on-card'>Name On Card: </label><input type='name' id='name-on-card' placeholder='Required' value='<?php echo (isset($_SESSION["account"]["name-on-card"]) ? $_SESSION["account"]["name-on-card"] : ""); ?>' required></li>
+                    <li><label id='card-number' for='card-number'>Card Number: </label><input type='text' id='card-number' placeholder='Required' minlength='16' maxlength='16' value='<?php echo (isset($_SESSION["account"]["card-number"]) ? $_SESSION["account"]["card-number"] : ""); ?>'required></li>
+                    <li><label id='expiration-date' for='expiration-date'>Expiration Date: </label><input type='month' id='expiration-date' placeholder='Required' min='2021-10' onkeydown='return false' value='<?php echo (isset($_SESSION["account"]["expiration-date"]) ? $_SESSION["account"]["expiration-date"] : ""); ?>'required></li>
+                    <li><label id='cvc' for='cvc'>CVC: </label><input type='text' id='cvc' placeholder='Required' minlength='3' maxlength='3' value='<?php echo (isset($_SESSION["account"]["cvc"]) ? $_SESSION["account"]["cvc"] : ""); ?>' required></li>
                 </ul>
             </div>
 

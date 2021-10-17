@@ -58,7 +58,7 @@
                                             echo "<td class='col-item-description'><strong class='product-item-name'>" . $result["name"] . "</strong></td>";
                                             echo "<td class='col-price' data-th='Price' id='product-price'>$" . $result["price"] . "</td>";
                                             echo "<td class='col-quantity' data-th='Quantity'>";
-                                            echo "<div class='quantity-control'>";
+                                            echo "<div class='quantity-control' id='quantity-control'>";
                                             echo "<form action='cart.php' id='formSubtractFromCart' name='formSubtractFromCart' method='POST'>";
                                             echo "<input type='hidden' id='cartProductId' name='cartProductId' value='".$result["id"]."'>";
                                             echo "<input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='-1'>";
@@ -104,7 +104,7 @@
                         <tr class='gst'>
                             <th class='amount-label'>GST Included:</th>
                             <td class='amount'>
-                            <span class='price' id='summaryGST'>$<?php echo (isset($gst) ? number_format((float)$gst, 2, '.', '') : "") ?></span>
+                                <span class='price' id='summaryGST'>$<?php echo number_format((float)$gst, 2, '.', '') ?></span>
                             </td>
                         </tr>
                         <tr class='total-amount'>
