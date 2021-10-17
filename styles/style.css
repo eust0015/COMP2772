@@ -57,13 +57,13 @@ a:hover{
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  background-color: rgb(55, 170, 247);
+  background-color: #6a4eff;
   padding: 10px;
   width: 282px;
   border: none;
 }
 .add-to-cart:hover{
-  background-color: rgb(0, 69, 218);
+  background-color: #eb9133;
 }
 .item-height{
   height: 270px;
@@ -79,33 +79,37 @@ a:hover{
   border-spacing: 50px 0;
 }
 #empty-cart{
-  padding-top: 10px;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  background-color: rgb(55, 170, 247);
-  padding: 10px;
+  background-color: #6a4eff;
   width: 280px;
   border: none;
   margin-left: 511px;
   margin-top: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 9px 25px;
+  transition: all 0.3 ease 0s;
 }
 #empty-cart:hover{
-  background-color: rgb(0, 69, 218);
+  background-color: #eb9133;
 }
 #proceed-to-checkout{
-  padding-top: 10px;
   font-weight: bold;
   text-transform: uppercase;
   color: white;
-  background-color: rgb(55, 170, 247);
-  padding: 10px;
+  background-color: #6a4eff;
   width: 280px;
   border: none;
   margin-left: 511px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 9px 25px;
+  transition: all 0.3 ease 0s;
 }
 #proceed-to-checkout:hover{
-  background-color: rgb(0, 69, 218);
+  background-color: #eb9133;
 }
 #cart-totals{
   padding: 30px 80px;
@@ -121,28 +125,36 @@ a:hover{
 #subtractFromCartButton, #addToCartButton{
   width: 30px;
   height: 20px;
-  background-color: rgb(55, 170, 247);
+  background-color: #6a4eff;
   color: white;
   border: none;
   margin: 8px;
   font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3 ease 0s;
+  font-weight: bold;
 }
 #subtractFromCartButton:hover{
-  background-color: rgb(0, 69, 218);
+  background-color: #eb9133;
 }
 #addToCartButton:hover{
-  background-color: rgb(0, 69, 218);
+  background-color: #eb9133;
 }
 input[id=confirm-payment], input[id=proceed-to-payment]{
-  background-color: rgb(55, 170, 247);
+  background-color: #6a4eff;
   color: white;
   padding: 10px;
   text-transform: uppercase;
   border: 0px;
   margin-top: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3 ease 0s;
 }
 input[id=confirm-payment]:hover, input[id=proceed-to-payment]:hover{
-  background-color: rgb(0, 69, 218);
+  background-color: #eb9133;
 }
 #heading{
   padding-top: 50px;
