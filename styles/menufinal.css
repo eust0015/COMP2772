@@ -4,12 +4,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  list-style: none;
+  /* list-style: none; */
   text-decoration: none;
 }
 
 body {
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   overflow-x: hidden;
   /* overflow-y: scroll; */
 }
@@ -54,7 +54,7 @@ header {
   height: 100%;
 }
 
-li,
+li.second-header-links,
 a,
 button.my-cart-button,
 .second-header-search-button {

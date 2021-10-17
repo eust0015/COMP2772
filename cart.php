@@ -18,9 +18,9 @@
         <?php 
             include_once 'menu.php'; 
         ?>       
-       
+<!--        
        <div id='heading'><h1>Shopping Cart</h1></div>
-        
+         -->
 
         <div class='cart-container' id='cart-container'>
             <div id='cart-table' class='cart-table'>

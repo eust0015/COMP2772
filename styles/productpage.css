@@ -40,9 +40,19 @@ body {
 }
 
 .first-section-product-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   height: 385px;
-  background-color: red;
+  /* background-color: white; */
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.2))), url("..//images/kupono-kuwamura-LzgK6IMoSZM-unsplash.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("..//images/kupono-kuwamura-LzgK6IMoSZM-unsplash.jpg");
+  background-position: center;
+}
+
+.all-products__image-image {
 }
 
 .first-section-product-decription {
@@ -66,16 +76,24 @@ body {
   padding: 20px 0px;
 }
 
+ul.a {
+  list-style-type: disc;
+  display: list-item;
+  margin-left: 20px;
+}
+
 .first-section-sample-description-features {
+  display: list-item;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  text-transform: none;
   padding: 6px 0px;
 }
 
 .first-section-add-to-cart-container {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   margin-top: 95px;
 }
@@ -92,8 +110,6 @@ body {
   border: none;
   border-radius: 50%;
   padding: 8px 13px;
-  margin-right: 15px;
-  margin-left: 200px;
 }
 
 .first-section-increase-quantity {
@@ -102,10 +118,9 @@ body {
   border: none;
   border-radius: 50%;
   padding: 8px 13px;
-  margin-right: 15px;
 }
 
-.first-section-add-to-cart-button {
+/* .first-section-add-to-cart-button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   background-color: #6a4eff;
@@ -115,6 +130,19 @@ body {
   border-radius: 10px;
   padding: 10px;
   margin-right: 15px;
+} */
+
+#add-to-cart {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  background-color: #6a4eff;
+  color: white;
+  width: 185px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 15px;
+  cursor: pointer;
 }
 
 .second-section-product-container {
@@ -162,7 +190,7 @@ body {
   text-align: justify;
 }
 
-.third-section-recommended-products-container {
+/* .third-section-recommended-products-container {
   display: flex;
   flex-direction: column;
   margin: 75px 170px;
@@ -186,4 +214,4 @@ body {
   width: 100%;
   height: 400px;
   background-color: purple;
-}
+} */
