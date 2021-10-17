@@ -1,9 +1,6 @@
 <?php
     session_start();
-    
     include_once 'order_functions.php';
-    $orderNumber = insert();
-    include_once 'cart_functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +16,7 @@
     </head>
     <body>
         <?php 
-            include_once 'menu.php';
+            include_once 'menu.php'; 
         ?>       
        <div id='heading'><h1>Payment Confirmation</h1></div>
         
@@ -28,10 +25,12 @@
         
         <br><br>
     
-        YOUR ORDER REFERENCE NUMBER IS: <?php echo substr($orderNumber, -7); ?> 
+        WE NEED GENERATE AN ORDER CONFIRMATION NUMBER FROM DATABASE
     </body>
 </html>
-
+<?php
+    include_once 'cart_functions.php';
+?>
 <script>
     // Prevent issues if the page is refreshed
     if ( window.history.replaceState ) {

@@ -56,8 +56,7 @@
 
             <!-- Shipping information -->
             <h3 id='shipping-header'>Shipping Information</h3>
-                <li><input type='checkbox' id='shippingAddressCheckBox' name='shipToBillingAddress' <?php echo (isset($_SESSION["account"]["shipToBillingAddress"]) && $_SESSION["account"]["shipToBillingAddress"] ? "checked" : ""); ?>><label id='shippingAddress' for='shippingAddress'> Shipping Address Same As Billing Address</li><br><br><br>
-                <br>
+                <li><input type='checkbox' id='shippingAddressCheckBox' name='shipToBillingAddress' <?php echo (isset($_SESSION["account"]["shipToBillingAddress"]) && $_SESSION["account"]["shipToBillingAddress"] ? "checked" : ""); ?>><label id='shippingAddress' for='shippingAddress'>Shipping Address Same As Billing Address</li><br><br><br>
                 <div id='shippingAddressDiv' name='shippingAddressDiv'>
                     <div name='customerDetails'>
                         <ul class='customerDetails'>

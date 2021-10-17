@@ -15,8 +15,6 @@ function update(){
     }
     if (isset($_POST["logged-in"])){ $_SESSION["account"]["logged-in"] = $_POST["logged-in"]; }
     if (isset($_POST["account-id"])){ $_SESSION["account"]["account-id"] = $_POST["account-id"]; }
-    if (isset($_POST["firstName"])){ $_SESSION["account"]["firstName"] = $_POST["firstName"]; }
-    if (isset($_POST["lastName"])){ $_SESSION["account"]["lastName"] = $_POST["lastName"]; }
     if (isset($_POST["billing-fname"])){ $_SESSION["account"]["billing-fname"] = $_POST["billing-fname"];}
     if (isset($_POST["billing-lname"])){ $_SESSION["account"]["billing-lname"] = $_POST["billing-lname"];}
     if (isset($_POST["billing-mobilenumber"])){ $_SESSION["account"]["billing-mobilenumber"] = $_POST["billing-mobilenumber"];}

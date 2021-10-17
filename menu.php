@@ -51,7 +51,7 @@
         <a class="header-logo-link" href="index.php"><img class="header-logo" src="images/header-logo.png" alt="" /></a>
         <nav>
           <ul class="nav--links">
-            <li class="second-header-links" id="list"><a href="products.php">Products</a></li>
+            <li class="second-header-links" id="list"><a href=""></a>Products</li>
 
             <li id="list">
               <form action="products.php" id="formSearch" name="formSearch" method="POST">
@@ -75,7 +75,10 @@
             </li>
 
             <li class="second-header-links" id="list">
-              <a id="menuCartLink" href="cart.php"><button class="my-cart-button">My Cart<?php echo (isset($_SESSION["products"]) ? " (" . count($_SESSION["products"]) . ")" : ""); ?></button></a>
+              <a id="menuCartLink" href="cart.php"><?php echo (isset($_SESSION["products"]) ? " (" . count($_SESSION["products"]) . ")" : ""); ?><button class="my-cart-button">My Cart</button></a>
+            </li>
+            <li class="second-header-links" id="list">
+              <a id="menuCartLink" href="login.php"><?php echo (isset($_SESSION["products"]) ? " (" . count($_SESSION["products"]) . ")" : ""); ?><button class="my-cart-button">Login</button></a>
             </li>
           </ul>
         </nav>
