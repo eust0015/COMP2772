@@ -168,5 +168,8 @@ label{
   padding-left: 10px;
   padding-right: 5px;
 }
+#quantity-control{
+  float: right;
+}
 
 /* //////////////login style//////////// */

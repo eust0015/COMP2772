@@ -58,7 +58,7 @@
                                             echo "<td class='col-item-description'><strong class='product-item-name'>" . $result["name"] . "</strong></td>";
                                             echo "<td class='col-price' data-th='Price' id='product-price'>$" . $result["price"] . "</td>";
                                             echo "<td class='col-quantity' data-th='Quantity'>";
-                                            echo "<div class='quantity-control'>";
+                                            echo "<div class='quantity-control' id='quantity-control'>";
                                             echo "<form action='cart.php' id='formSubtractFromCart' name='formSubtractFromCart' method='POST'>";
                                             echo "<input type='hidden' id='cartProductId' name='cartProductId' value='".$result["id"]."'>";
                                             echo "<input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='-1'>";
