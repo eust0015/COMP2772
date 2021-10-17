@@ -32,7 +32,7 @@
         
         <!-- Billing informormation -->
         <form id='checkout-form' name='customerDetails' class='checkout-form' action='payment.php' method='POST'>
-            <h3 id='billing'>Billing Information</h3>
+            <h3>Billing Information</h3>
                 <div name='customerDetails'>
                     <ul class='customerDetails'>
                         <li><label id='billing-fname' for='billing-fname'>First Name: </label><input type='text' name='billing-fname' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-fname"]) ? $_SESSION["account"]["billing-fname"] : ""); ?>'></li>

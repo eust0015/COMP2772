@@ -37,7 +37,7 @@
         </div>
         <br><br><br>
 
-        <h3>Payment Amount</h3>
+        <h3 id='paymentAmount-header'>Payment Amount</h3>
         <?php
             include_once 'db_functions.php';
             $conn = get_conn();
@@ -65,7 +65,7 @@
             }
         ?>
         <br><br>
-        <h3>Payment Details</h3>
+        <h3 id='paymentDetails-header'>Payment Details</h3>
 
         <form id='payment-form' name='paymentDetails' class='payment-form' action="confirmation.php" method="POST">
 
