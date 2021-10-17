@@ -164,5 +164,9 @@ h3{
 padding-top: 50px;
 padding-bottom: 20px;
 }
+label{
+  padding-left: 10px;
+  padding-right: 5px;
+}
 
 /* //////////////login style//////////// */
