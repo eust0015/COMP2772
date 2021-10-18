@@ -1,207 +1,172 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: #f8f8f8;
-  overflow-x: hidden;
-}
-
-html {
+html{
+  margin: 15px;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
-h1 {
-  font-size: 30px;
-  font-weight: bolder;
-  margin-bottom: 10px;
-  margin-left: 50px;
-  color: black;
+h1{
+font-size: 30px;
+font-weight: bolder;
+margin-bottom: 10px;
+margin-left: 50px;
+color: black;
 }
-
 /* li{
-  list-style-type: none;
-  padding-bottom: 10px;
-  margin: 10px;
+list-style-type: none;
+float: left;
+padding-bottom: 10px;
+margin: 10px;
 } */
-
-a {
-  margin-right: 15px;
-  color: black;
-  text-decoration: none;
+a{
+margin-right: 15px;
+color: black;
+text-decoration: none; 
+}
+a:hover{
+color: orange;
+}
+#h1:hover{
+color: black;
 }
 
-a:hover {
-  color: orange;
+.products{
+width: 75%;
+margin: auto;
 }
-#h1:hover {
-  color: black;
+.product-item{
+text-align: center;
+border: 1px solid #9e9e9e;
+font-weight: bold;
+font-size: 19px;
+padding-top: 10px;
+padding-bottom: 0px !important;
+width: 282px;
 }
+#product-details{
+font-size: 16px;
+font-weight: bold;
+padding-top: 20px;
+padding-bottom: 10px;
+}
+#button1{
+margin: 0px !important;
+border: 1px solid white;
+}
+.add-to-cart{
+padding-top: 10px;
+float: left;
+font-weight: bold;
+text-transform: uppercase;
+color: white;
+background-color: #6a4eff;
+padding: 10px;
+width: 282px;
+border: none;
+}
+.add-to-cart:hover{
+background-color: #eb9133;
+}
+.item-height{
+height: 270px;
+}
+.cart-container{
+border: 1px solid #9e9e9e;
+width: 791px;
+margin: auto;
+margin-top: 50px;
+}
+.shopping-cart-table{
+border-collapse: separate;
+border-spacing: 50px 0;
+}
+#empty-cart{
+font-weight: bold;
+text-transform: uppercase;
+color: white;
+background-color: #6a4eff;
+width: 280px;
+border: none;
+margin-left: 511px;
+margin-top: 30px;
+border-radius: 5px;
+cursor: pointer;
+padding: 9px 25px;
+transition: all 0.3 ease 0s;
+}
+#empty-cart:hover{
+background-color: #eb9133;
+}
+#proceed-to-checkout{
+font-weight: bold;
+text-transform: uppercase;
+color: white;
+background-color: #6a4eff;
+width: 280px;
+border: none;
+margin-left: 511px;
+border-radius: 5px;
+cursor: pointer;
+padding: 9px 25px;
+transition: all 0.3 ease 0s;
+}
+#proceed-to-checkout:hover{
+background-color: #eb9133;
+}
+#cart-totals{
+padding: 30px 80px;
+float: right;
 
-.products {
-  width: 75%;
-  margin: auto;
 }
-.product-item {
-  text-align: center;
-  border: 1px solid #9e9e9e;
-  font-weight: bold;
-  font-size: 19px;
-  padding-top: 10px;
-  padding-bottom: 0px !important;
-  width: 282px;
+#quantity-amount{
+width: 60px;
 }
-#product-details {
-  font-size: 16px;
-  font-weight: bold;
-  padding-top: 20px;
-  padding-bottom: 10px;
+.table-head{
+padding-top: 10px;
 }
-#button1 {
-  margin: 0px !important;
-  border: 1px solid white;
-}
-.add-to-cart {
-  padding-top: 10px;
-  float: left;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  background-color: #6a4eff;
-  padding: 10px;
-  width: 282px;
-  border: none;
-}
-.add-to-cart:hover {
-  background-color: #eb9133;
-}
-.item-height {
-  height: 270px;
-}
-.cart-container {
-  border: 1px solid #9e9e9e;
-  width: 791px;
-  margin: auto;
-  margin-top: 50px;
-}
-.shopping-cart-table {
-  border-collapse: separate;
-  border-spacing: 50px 0;
-}
-#empty-cart {
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  background-color: #6a4eff;
-  width: 280px;
-  border: none;
-  margin-left: 511px;
-  margin-top: 30px;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 9px 25px;
-  transition: all 0.3 ease 0s;
-}
-#empty-cart:hover {
-  background-color: #eb9133;
-}
-#proceed-to-checkout {
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  background-color: #6a4eff;
-  width: 280px;
-  border: none;
-  margin-left: 511px;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 9px 25px;
-  transition: all 0.3 ease 0s;
-}
-#proceed-to-checkout:hover {
-  background-color: #eb9133;
-}
-#cart-totals {
-  padding: 30px 80px;
-  float: right;
-}
-#quantity-amount {
-  width: 60px;
-}
-.table-head {
-  padding-top: 10px;
-}
-
-#subtractFromCartButton {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  border: none;
-  border-radius: 50%;
-  padding: 9px 15px;
-}
-
-#addToCartButton {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  border: none;
-  border-radius: 50%;
-  padding: 9px 13px;
-}
-
-#subtractFromCartButton,
-#addToCartButton {
-  width: 30px;
-  height: 20px;
-  background-color: #6a4eff;
-  color: white;
-  border: none;
-  margin: 8px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3 ease 0s;
-  font-weight: bold;
+#subtractFromCartButton, #addToCartButton{
+width: 30px;
+height: 20px;
+background-color: #6a4eff;
+color: white;
+border: none;
+margin: 8px;
+font-size: 16px;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0.3 ease 0s;
+font-weight: bold;
 }
 #subtractFromCartButton:hover{
-  background-color: #eb9133;
+background-color: #eb9133;
 }
 #addToCartButton:hover{
-  background-color: #eb9133;
+background-color: #eb9133;
 }
-input[id="confirm-payment"],
-input[id="proceed-to-payment"] {
-  background-color: #6a4eff;
-  color: white;
-  padding: 10px;
-  text-transform: uppercase;
-  border: 0px;
-  margin-top: 30px;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3 ease 0s;
+input[id=confirm-payment], input[id=proceed-to-payment]{
+background-color: #6a4eff;
+color: white;
+padding: 10px;
+text-transform: uppercase;
+border: 0px;
+margin-top: 30px;
+font-weight: bold;
+border-radius: 5px;
+cursor: pointer;
+transition: all 0.3 ease 0s;
 }
-input[id="confirm-payment"]:hover,
-input[id="proceed-to-payment"]:hover {
-  background-color: #eb9133;
+input[id=confirm-payment]:hover, input[id=proceed-to-payment]:hover{
+background-color: #eb9133;
 }
 #heading{
-  padding-top: 50px;
-  padding-bottom: 20px;
+padding-top: 50px;
+padding-bottom: 20px;
 }
 h3{
 padding-top: 50px;
 padding-bottom: 20px;
-padding-left: 10px;
 }
 label{
-  padding-left: 30px;
-  padding-right: 5px;
-}
-#quantity-control{
-  float: right;
+padding-left: 10px;
+padding-right: 5px;
 }
 
 /* //////////////login style////////////
