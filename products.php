@@ -85,8 +85,12 @@
                     <?php  
                     }
                 }
+                else{
+                    echo "<br><br>";
+                    echo "No products in '" . ucwords($_POST["category"]) . "' matching search for '" . $_POST["search"] . "'";
+                }
                 mysqli_close($conn);
-            }           
+            }         
         ?>
     </body>
 </html>
