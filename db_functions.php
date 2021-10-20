@@ -18,9 +18,7 @@
         else {
             mysqli_set_charset($conn, "utf8mb4");
         }
-        return $conn; 
-
-        
+        return $conn;  
     }
 
     function get_product_by_id($conn, $product_id) {
@@ -252,55 +250,98 @@
         return $result;
     }
 
-    if ($_POST){
-        if ($_POST[0] = "login"){
-            $dbhost = "localhost";
-            $dbuser = "dbadmin";
-            $dbpassword = "";
-            $db = "comp2772";  
-
-            // Create connection
-            $conn = new mysqli($dbhost, $dbuser, $dbpassword, $db);
-            // Check connection    
-
-            if (!$conn) {
-                echo "Database connection failed!";
-                error_log(mysqli_connect_error());
+    function get_next_id($conn, $table, $prefix) {
+        $stmt = mysqli_prepare($conn, "SELECT MAX(CAST(RIGHT(id, 7) AS int)) AS lastID FROM {$table}");
+        
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_bind_result($stmt, $lastID);
+            if (mysqli_stmt_fetch($stmt)) {
+                $result = $lastID;
             }
-            else {
-                $email = $_POST["email"];
-                $password = $_POST["password"];
-                $sql = "SELECT email FROM account WHERE email = '$email'";
-              
-                $result = $conn->query($sql);
-               
-                if($result->num_rows > 0){
-                    $sql = "SELECT `password` FROM account WHERE email = 'tony@gmail.com'";
-                    $result = $conn->query($sql);
-                    $row = $result -> fetch_assoc();
-                    $savedPass = $row["password"];
-                    if($password == $savedPass){
-                        
-                        $returnV = "1";
-                        echo json_encode($returnV);
-                        return $returnV;
-
-                    }else{
-                        $returnV = "0";
-                        echo json_encode($returnV);
-                        return $returnV;
-                    }
-                }else{
-                    $returnV = "0";
-                    echo json_encode($returnV);
-                    return $returnV;
-                }
-            
-               
-            }
-            
         }
+        mysqli_stmt_close($stmt);
+        $result = (int)$result + 1;
+        $result = $prefix . str_pad($result, 7, "0", STR_PAD_LEFT);
+        return $result;
     }
-    
+
+    function insert_into_creditCard($conn, $nameOnCard, $cardNumber, $expirationMonth, $expirationYear, $cvc) {
+        $id = get_next_id($conn, "creditCard", "ccd");
+  
+        $stmt = mysqli_prepare($conn, "INSERT INTO creditCard VALUES (?, ?, ?, ?, ?, ?)");
+        
+        mysqli_stmt_bind_param($stmt, "ssssss", $id, $nameOnCard, $cardNumber, $expirationMonth, $expirationYear, $cvc);
+        
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        return $id;
+    }
+
+    function insert_into_address($conn, $firstName, $lastName, $mobileNumber, $email, $streetAddress, $suburb, $province, $postcode) {
+        $id = get_next_id($conn, "address", "add");
+
+        $stmt = mysqli_prepare($conn, "INSERT INTO address VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        
+        mysqli_stmt_bind_param($stmt, "sssssssss", $id, $firstName, $lastName, $mobileNumber, $email, $streetAddress, $suburb, $province, $postcode);
+        
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        return $id;
+    }
+
+    function insert_into_account($conn, $firstName, $lastName, $email, $password) {
+        $id = get_next_id($conn, "account", "acc");
+
+        $stmt = mysqli_prepare($conn, "INSERT INTO account VALUES (?, ?, ?, ?, ?)");
+        
+        mysqli_stmt_bind_param($stmt, "sssss", $id, $firstName, $lastName, $email, $password);
+        
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        return $id;
+    }
+
+    function insert_into_orders($conn, $creditCardId, $postageId, $quotedPostageCost, $billingAddressId, $shippingAddressId, $accountId = NULL) {
+        $id = get_next_id($conn, "orders", "ord");
+
+        if($accountId){
+            $stmt = mysqli_prepare($conn, "INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?, ?)");
+            mysqli_stmt_bind_param($stmt, "sssdsss", $id, $creditCardId, $postageId, $quotedPostageCost, $billingAddressId, $shippingAddressId, $accountId);
+        }
+        else{
+            $stmt = mysqli_prepare($conn, "INSERT INTO orders VALUES (?, ?, ?, ?, ?, ?, NULL)");
+            mysqli_stmt_bind_param($stmt, "sssdss", $id, $creditCardId, $postageId, $quotedPostageCost, $billingAddressId, $shippingAddressId);
+        }
+       
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        return $id;
+    }
+
+    function insert_into_orderProduct($conn, $orderId, $productId, $quantity, $quotedProductCost) {
+        $stmt = mysqli_prepare($conn, "INSERT INTO orderProduct VALUES (?, ?, ?, ?)");
+        
+        mysqli_stmt_bind_param($stmt, "ssid", $orderId, $productId, $quantity, $quotedProductCost);
+        
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        return $orderId;
+    }
+
+    function update_account_addresses($conn, $accountId, $billingAddressId, $shippingAddressId) {
+        $stmt = mysqli_prepare($conn, "UPDATE account SET billingAddressId = ?, shippingAddressId = ? WHERE id = ?");
+        
+        mysqli_stmt_bind_param($stmt, "sss", $billingAddressId, $shippingAddressId, $id);
+        
+        mysqli_stmt_execute($stmt);
+
+        mysqli_stmt_close($stmt);
+        return $accountId;
+    }
 
 ?>
