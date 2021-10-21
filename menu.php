@@ -8,7 +8,9 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="first-header" id="first-header"></div>
+  <div class="first-header" id="first-header">
+      <span class="first-header-information">orders are shipping weekly - please expect minor delays due to covid-19 safety restrictions</span>
+    </div>
 
     <header>
       <div class="second-header-container">
