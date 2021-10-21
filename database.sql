@@ -84,18 +84,21 @@ CREATE TABLE `postage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `postage` (`id`, `name`, `cost`) VALUES
-('POST001', 'Express Delivery', '12.00'),
-('POST002', 'Standard Delivery', '9.00');
+('PST0000001', 'Express Delivery', '12.00'),
+('PST0000002', 'Standard Delivery', '9.00');
 
 CREATE TABLE `creditCard` (
   `id` varchar(10) NOT NULL,
   `nameOnCard` varchar(255) NOT NULL,
-  `cardNumber` varchar(255) NOT NULL,
-  `expirationMonth` int NOT NULL,
-  `expirationYear` int NOT NULL,
+  `cardNumber` varchar(16) NOT NULL,
+  `expirationMonth` varchar(2) NOT NULL,
+  `expirationYear` varchar(4) NOT NULL,
   `cvc` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `creditCard` VALUES
+('ccd0000001', 'Sam Sample', '0000000000000000', '01', '2100', '000');
 
 CREATE TABLE `address` (
   `id` varchar(10) NOT NULL,
@@ -110,31 +113,43 @@ CREATE TABLE `address` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `address` VALUES
+('add0000001', 'Sam', 'Sample', '0000000000', 'sam@sample.com', '1 Sam Street', 'SAMPLE', 'SA', '5000');
+
 CREATE TABLE `account` (
   `id` varchar(10) NOT NULL,
   `firstName` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL, 
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL, 
-  `billingAddressId` varchar(10) NOT NULL,
-  `deliveryAddressId` varchar(10) NOT NULL,
+  `billingAddressId` varchar(10) NULL,
+  `shippingAddressId` varchar(10) NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (billingAddressId) REFERENCES address(id),
-  FOREIGN KEY (deliveryAddressId) REFERENCES address(id)
+  FOREIGN KEY (shippingAddressId) REFERENCES address(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `account` VALUES
+('acc0000001', 'Sam', 'Sample', 'sam@sample.com', 'password', 'add0000001', 'add0000001');
 
 CREATE TABLE `orders` (
   `id` varchar(10) NOT NULL,
-  `accountId` varchar(10) NULL,
   `creditCardId` varchar(10) NOT NULL,
+  `postageId` varchar(10) NOT NULL,
+  `quotedPostageCost` decimal(7,2) NOT NULL,
   `billingAddressId` varchar(10) NOT NULL,
-  `deliveryAddressId` varchar(10) NOT NULL,
+  `shippingAddressId` varchar(10) NOT NULL,
+  `accountId` varchar(10) NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY (accountID) REFERENCES account(id),
   FOREIGN KEY (creditCardId) REFERENCES creditCard(id),
+  FOREIGN KEY (postageId) REFERENCES postage(id),
   FOREIGN KEY (billingAddressId) REFERENCES address(id),
-  FOREIGN KEY (deliveryAddressId) REFERENCES address(id)
+  FOREIGN KEY (shippingAddressId) REFERENCES address(id),
+  FOREIGN KEY (accountID) REFERENCES account(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `orders` VALUES
+('ord0000001', 'ccd0000001', 'PST0000001', 12.00, 'add0000001', 'add0000001', 'acc0000001');
 
 CREATE TABLE `orderProduct` (
   `orderId` varchar(10) NOT NULL,
@@ -145,6 +160,8 @@ CREATE TABLE `orderProduct` (
   FOREIGN KEY (productId) REFERENCES product(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `orderProduct` VALUES
+('ord0000001', 'PDT0000001', 1, 499.00);
 
 --
 -- Add User
