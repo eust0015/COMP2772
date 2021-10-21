@@ -60,16 +60,16 @@ INSERT INTO `product` (`id`, `name`, `description`, `image`, `price`, `recommend
 -- ('P000000009', 'Screen Protector', '', 'Screen Protector.png', '35.00', '35.00', 'screen protector', 'screen, protector'),
 -- ('P000000010', 'Phone Holder', '', 'Phone Holder.png', '49.00', '49.00', 'holder', 'holder'),
 -- ('P000000011', 'Airpods Pro', '', 'appleairpodsproduct.png', '299.00', '299.00', 'earphone', 'earphone`, `earphone`, `wireless`, `audio`, `apple'),
-('P000000001', 'Bose QuietComfort 45 Wireless Noise Cancelling Headphones', '', 'qc45.png', '550', '499.00', 'headphones', 'earphone`, `headphones`, `wireless`, `audio`, `bose'),
-('P000000002', 'Xbox Elite Wireless Controller Series 2', '', 'xbox.png', '275', '249.00', 'gaming', 'controller`, `gaming`, `wireless`, `elite'),
-('P000000003', 'Sony ZV-1 Digital Camera (White)', '', 'cameraimage.png', '1049', '899.00', 'cameras', 'digital`, `camera`, `white'),
-('P000000004', 'iPhone 12 Mini 128GB Black', '', 'mb1.png', '1079', '1079.00', 'mobile-phones', 'iPhone`, `mobile`, `phone`, `wireless`, `mini'),
-('P000000005', 'DJI Air 2S 4K Drone Fly More Combo', '', 'djdrone.png', '3050', '2099.00', 'dcgha', 'air`, `drone`, `4k`, `fly`, `combo'),
-('P000000006', 'Apple TV 4K 32GB [2021]', '', 'appletv.png', '249', '249.00', 'tvs', 'tv`, `4k`, `32GB`, `remote`, `2021'),
+('P000000001', 'Bose QuietComfort 45 Wireless Noise Cancelling Headphones', '', 'qc45.png', '499', '550.00', 'headphones', 'earphone`, `headphones`, `wireless`, `audio`, `bose'),
+('P000000002', 'Xbox Elite Wireless Controller Series 2', '', 'xbox.png', '249', '275.00', 'gaming', 'controller`, `gaming`, `wireless`, `elite'),
+('P000000003', 'Sony CyberShot ZV-1 4K Vlog Camera (White)', '', 'cameraimage.png', '899', '1049.00', 'cameras', 'digital`, `camera`, `white'),
+('P000000004', 'Apple iPhone 12 mini 128GB (Black)', '', 'mb1.png', '1079', '1079.00', 'mobile-phones', 'iPhone`, `mobile`, `phone`, `wireless`, `mini'),
+('P000000005', 'DJI Air 2S 4K Drone Fly More Combo', '', 'djdrone.png', '2099', '3050.00', 'dcgha', 'air`, `drone`, `4k`, `fly`, `combo'),
+('P000000006', 'Apple TV 4K 32GB [2021] - [Dolby Atmos]', '', 'appletv.png', '249', '249.00', 'tvs', 'tv`, `4k`, `32GB`, `remote`, `2021'),
 ('P000000007', 'Apple Watch Series 3 38mm Silver Aluminium Case GPS', '', 'applewatch.png', '299', '299.00', 'hfw', 'watch`, `silver`, `aluminium`, `health`, `fitness'),
-('P000000008', 'Microsoft Surface Laptop 4 13.5" i7 512GB/16GB (Matte Black)', '', 'MicrosoftGo.png', '2600', '2549.00', 'computers', 'surface`, `laptop`, `matte`, `black`, `512GB'),
-('P000000009', 'Theragun Mini White Massage Gun', '', 'massageegun.png', '400', '349.00', 'hfw', 'mini`, `white`, `massage`, `gun`, `health`, `fitness'),
-('P000000010', 'Google - Nest Learning Smart Wifi Thermostat - Stainless Steel', '', 'googlenest.png', '350', '299.00', 'dcgha', 'nest`, `thermostat`, `home`, `appliances`, `stainless-steel');
+('P000000008', 'Microsoft Surface Laptop 4 13.5" i7 512GB/16GB (Matte Black)', '', 'MicrosoftGo.png', '2549', '2600.00', 'computers', 'surface`, `laptop`, `matte`, `black`, `512GB'),
+('P000000009', 'Theragun Mini White Massage Gun', '', 'massageegun.png', '349', '400.00', 'hfw', 'mini`, `white`, `massage`, `gun`, `health`, `fitness'),
+('P000000010', 'Google - Nest Learning Smart Wifi Thermostat - Stainless Steel', '', 'googlenest.png', '299', '350.00', 'dcgha', 'nest`, `thermostat`, `home`, `appliances`, `stainless-steel');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
