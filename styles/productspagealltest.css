@@ -1,14 +1,12 @@
 * {
   margin: 0px;
   padding: 0px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 body {
   background-color: #f8f8f8;
   overflow-x: hidden;
-  /* overflow-y: scroll; */
 }
 
 .first-header {
@@ -34,18 +32,10 @@ body {
 }
 
 .all-products__cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 25px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   position: relative;
   top: 0px;
@@ -64,14 +54,8 @@ body {
 }
 
 .all-products__images {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   height: 325px;
@@ -80,12 +64,7 @@ body {
 }
 
 .all-products__detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 10px;
 }
