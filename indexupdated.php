@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,8 +12,9 @@
     <link rel="stylesheet" href="styles/indexupdated.css" />
   </head>
   <body>
-    <div class="first-header"></div>
-    <div class="second-header"></div>
+  <?php 
+              include_once 'menu.php'; 
+  ?> 
 
     <div class="first-section-carousels-container">
       <div class="first-section-carousel"></div>
@@ -17,20 +22,28 @@
 
     <div class="second-section-categories-container">
       <div class="second-section-categorie" id="second-section-headphones">
+        <a class="second-section-categorie-redirect" href="products.php">
         <img class="second-section-categorie-image" src="images/headphones-8-32.png" alt="#" />
         <span class="second-section-categorie-description">headphones</span>
+        </a>
       </div>
       <div class="second-section-categorie" id="second-section-phones">
+        <a class="second-section-categorie-redirect" href="products.php">
         <img class="second-section-categorie-image" src="images/iphone-32.png" alt="#" />
         <span class="second-section-categorie-description">phones</span>
+        </a>
       </div>
       <div class="second-section-categorie" id="second-section-cameras">
+        <a class="second-section-categorie-redirect" href="products.php">
         <img class="second-section-categorie-image" src="images/camera-4-32.png" alt="#" />
         <span class="second-section-categorie-description">cameras</span>
+        </a>
       </div>
       <div class="second-section-categorie" id="second-section-computers">
+        <a class="second-section-categorie-redirect" href="products.php">
         <img class="second-section-categorie-image" src="images/laptop-3-32.png" alt="#" />
         <span class="second-section-categorie-description">computers</span>
+        </a>
       </div>
     </div>
 

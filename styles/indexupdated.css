@@ -72,6 +72,12 @@ body {
   padding: 15px;
 }
 
+.second-section-categorie-redirect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .second-section-categorie-image {
   height: 40px;
 }
