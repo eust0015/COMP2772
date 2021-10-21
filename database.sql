@@ -60,16 +60,16 @@ INSERT INTO `product` (`id`, `name`, `description`, `image`, `price`, `recommend
 -- ('PDT0000009', 'Screen Protector', '', 'Screen Protector.png', '35.00', '35.00', 'screen protector', 'screen, protector'),
 -- ('PDT0000010', 'Phone Holder', '', 'Phone Holder.png', '49.00', '49.00', 'holder', 'holder'),
 -- ('PDT0000011', 'Airpods Pro', '', 'appleairpodsproduct.png', '299.00', '299.00', 'earphone', 'earphone`, `earphone`, `wireless`, `audio`, `apple'),
-('PDT0000001', 'Bose QuietComfort 45 Wireless Noise Cancelling Headphones', '', 'qc45.png', '550', '499.00', 'headphones', 'earphone, headphones, wireless, audio, bose'),
-('PDT0000002', 'Xbox Elite Wireless Controller Series 2', '', 'xbox.png', '275', '249.00', 'gaming', 'controller, gaming, wireless, elite, xbox'),
-('PDT0000003', 'Sony ZV-1 Digital Camera (White)', '', 'cameraimage.png', '1049', '899.00', 'cameras', 'digital, camera, white'),
-('PDT0000004', 'iPhone 12 Mini 128GB Black', '', 'mb1.png', '1079', '1079.00', 'mobile-phones', 'iPhone, mobile, phone, wireless, mini'),
-('PDT0000005', 'DJI Air 2S 4K Drone Fly More Combo', '', 'djdrone.png', '3050', '2099.00', 'dcgha', 'air, drone, 4k, fly, combo'),
-('PDT0000006', 'Apple TV 4K 32GB [2021]', '', 'appletv.png', '249', '249.00', 'tvs', 'tv, 4k, 32GB, remote, 2021'),
-('PDT0000007', 'Apple Watch Series 3 38mm Silver Aluminium Case GPS', 'hfw', 'applewatch.png', '299', '299.00', 'hfw', 'watch, silver, aluminium, health, fitness'),
-('PDT0000008', 'Microsoft Surface Laptop 4 13.5" i7 512GB/16GB (Matte Black)', 'computers', 'MicrosoftGo.png', '2600', '2549.00', 'computers', 'surface, laptop, matte, black, 512GB'),
-('PDT0000009', 'Theragun Mini White Massage Gun', '', 'massageegun.png', '400', '349.00', 'hfw', 'mini, white, massage, gun, health, fitness'),
-('PDT0000010', 'Google - Nest Learning Smart Wifi Thermostat - Stainless Steel', 'dcgha', 'googlenest.png', '350', '299.00', 'dcgha', 'nest, thermostat, home, appliances, stainless-steel');
+('PDT0000001', 'BOSE QUIETCOMFORT 45 NOISE CANCELLING HEADPHONES', '', 'qc45.png', '499', '550.00', 'headphones', 'earphone, headphones, wireless, audio, bose'),
+('PDT0000002', 'XBOX ELITE WIRELESS CONTROLLER SERIES 2', '', 'xbox.png', '249', '275.00', 'gaming', 'controller, gaming, wireless, elite, xbox'),
+('PDT0000003', 'SONY CYBERSHOT ZV-1 4K VLOG CAMERA (WHITE)', '', 'cameraimage.png', '899', '1049.00', 'cameras', 'digital, camera, white'),
+('PDT0000004', 'APPLE IPHONE 12 MINI 128GB (BLACK)', '', 'mb1.png', '1079', '1079.00', 'mobile-phones', 'iPhone, mobile, phone, wireless, mini'),
+('PDT0000005', 'DJI AIR 2S 4K DRONE FLY MORE COMBO', '', 'djdrone.png', '2099', '3050.00', 'dcgha', 'air, drone, 4k, fly, combo'),
+('PDT0000006', 'APPLE TV 4K 32GB [2021] - [DOLBY ATMOS]', '', 'appletv.png', '249', '249.00', 'tvs', 'tv, 4k, 32GB, remote, 2021'),
+('PDT0000007', 'APPLE WATCH SERIES 3 38MM SILVER ALUMINIUM CASE GPS', 'hfw', 'applewatch.png', '299', '299.00', 'hfw', 'watch, silver, aluminium, health, fitness'),
+('PDT0000008', 'MICROSOFT SURFACE LAPTOP 4 I7 512GB/16GB (MATTE BLACK)', 'computers', 'MicrosoftGo.png', '2549', '2600.00', 'computers', 'surface, laptop, matte, black, 512GB'),
+('PDT0000009', 'THERAGUN MINI WHITE MASSAGE GUN', '', 'massageegun.png', '349', '400.00', 'hfw', 'mini, white, massage, gun, health, fitness'),
+('PDT0000010', 'GOOGLE - NEST LEARNING SMART WIFI THERMOSTAT', 'dcgha', 'googlenest.png', '299', '350.00', 'dcgha', 'nest, thermostat, home, appliances, stainless-steel');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

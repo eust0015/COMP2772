@@ -63,7 +63,7 @@
                             </div>
 
                             <div class="all-products__detail">
-                                <span class="all-products__heading"><?php echo (isset($row["name"]) ? $row["name"] : ""); ?></span>
+                                <a href='product.php?name=<?php echo (isset($row["name"]) ? $row["name"] : ""); ?>'><span class="all-products__heading"><?php echo (isset($row["name"]) ? $row["name"] : ""); ?></span></a>
                                 <div class="all-products__price">
                                 <span class="all-products__old-price"><?php echo (isset($row["recommendedRetailPrice"]) ? $row["recommendedRetailPrice"] : ""); ?></span>
                                 <span class="all-products__new-price"><?php echo (isset($row["price"]) ? $row["price"] : ""); ?></span>
