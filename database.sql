@@ -140,6 +140,7 @@ CREATE TABLE `orderProduct` (
   `orderId` varchar(10) NOT NULL,
   `productId` varchar(10) NOT NULL,
   `quanity` int NOT NULL,
+  `quotedProductCost` decimal(7,2) NOT NULL,
   PRIMARY KEY (`orderId`, `productId`),
   FOREIGN KEY (productId) REFERENCES product(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
