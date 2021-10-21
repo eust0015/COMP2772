@@ -25,6 +25,7 @@
             if($conn){
                 if(isset($_SESSION["products"])){
                     $postageCost = 0;
+                    $total = 0;
                 
         ?>
         
@@ -59,7 +60,9 @@
                     </select>
                     <span class="first-section-shipping-form">Postcode </span>
                     <input class="billing-address" type="text" name='billing-postcode' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-postcode"]) ? $_SESSION["account"]["billing-postcode"] : ""); ?>' />
+                    <li><input type='checkbox' id='shippingAddressCheckBox' name='shipToBillingAddress' <?php echo (isset($_SESSION["account"]["shipToBillingAddress"]) && $_SESSION["account"]["shipToBillingAddress"] ? "checked" : ""); ?>><label id='shippingAddress' for='shippingAddress'> Shipping Address Same As Billing Address</li>
                   </div>
+                  <!-- Postage options -->
                   <div class="first-section-shipping-information-postage-options">
                     <span class="section-subheadings">Postage Options</span>
                     <?php
@@ -77,7 +80,7 @@
                                     echo "<input id='" . $results[$row]["id"] . "' type='radio' name='postage' value='" . $results[$row]["id"] . "'>";
                                 }
                                 echo "<label for='" . $results[$row]["id"] . "'>" . $results[$row]["name"] . ": $" . $results[$row]["cost"] . "</label>";
-                                echo "<input type='hidden' id='cost_'" . $results[$row]["id"] . "' value='" . $results[$row]["cost"] . "'>";
+                                echo "<input type='hidden' id='cost_" . $results[$row]["id"] . "' value='" . $results[$row]["cost"] . "'>";
                                 echo "<br><br>";
                             }
                         }
@@ -85,6 +88,7 @@
                   </div>
                 </div>
               </div>
+              <!-- Order summary -->
               <div class="first-section-order-summary">
                   <?php
                     foreach($_SESSION["products"] as $productId => $productQuantity) {
@@ -136,9 +140,9 @@
                 </select>
                 <span class="first-section-shipping-form">Postcode </span>
                 <input class="shipping-address" type="text" name='shipping-postcode' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-postcode"]) ? $_SESSION["account"]["shipping-postcode"] : ""); ?>' />
-                <input type="hidden" id="accountAction" name="accountAction" value="update" />
-                <input class="section-section-button-proceed-to-payment" type="submit" id="proceed-to-payment" value="Proceed To Payment" />
               </div>
+              <input type="hidden" id="accountAction" name="accountAction" value="update" />
+              <input class="section-section-button-proceed-to-payment" type="submit" id="proceed-to-payment" value="Proceed To Payment" />
             </div>
         </form>
   </body>
