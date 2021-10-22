@@ -62,14 +62,14 @@
                     echo '</span>';
 
                     echo '<span class="first-section-sample-description">';
-                    echo "Description:", $result["keyWord"]."<br/>";
+                    echo "", $result["description"]."<br/>";
                     echo '</span>';
                     
-                    echo '<ul class="a">';
-                    echo '<li class="first-section-sample-description-features">World-class noise cancelling and high fidelity audio</li>';
-                    echo '<li class="first-section-sample-description-features">Up to 24-hour battery life</li>';
-                    echo '<li class="first-section-sample-description-features">Strong, reliable wireless connection with Bluetooth® 5.1</li>';
-                    echo '</ul>';
+                    // echo '<ul class="a">';
+                    // echo '<li class="first-section-sample-description-features">World-class noise cancelling and high fidelity audio</li>';
+                    // echo '<li class="first-section-sample-description-features">Up to 24-hour battery life</li>';
+                    // echo '<li class="first-section-sample-description-features">Strong, reliable wireless connection with Bluetooth® 5.1</li>';
+                    // echo '</ul>';
 
                     echo '<div class="first-section-add-to-cart-container">';
                     
