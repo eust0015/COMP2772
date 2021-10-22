@@ -78,8 +78,8 @@
                     echo "Price : " , $result["recommendedRetailPrice"]."<br/>";
                     echo '</span>';
 
-                    echo '<a href="#"><button class="first-section-decrease-quantity">-</button></a>';
-                    echo '<a href="#"><button class="first-section-increase-quantity">+</button></a>';
+                    // echo '<a href="#"><button class="first-section-decrease-quantity">-</button></a>';
+                    // echo '<a href="#"><button class="first-section-increase-quantity">+</button></a>';
                     echo "<form action='product.php?name=".$result["name"]."' id='formAddToCart' name='formAddToCart' method='POST'>";
                         echo "<input type='hidden' id='cartProductId' name='cartProductId' value='".$result["id"]."'>";
                         echo "<input type='hidden' id='cartProductQuantity' name='cartProductQuantity' value='1'>";
