@@ -270,7 +270,7 @@
   
         $stmt = mysqli_prepare($conn, "INSERT INTO creditCard VALUES (?, ?, ?, ?, ?, ?)");
         
-        mysqli_stmt_bind_param($stmt, "ssssss", $id, $nameOnCard, $cardNumber, $expirationMonth, $expirationYear, $cvc);
+        mysqli_stmt_bind_param($stmt, "ssssss", $id, base64_encode($nameOnCard), base64_encode($cardNumber), base64_encode($expirationMonth), base64_encode($expirationYear), base64_encode($cvc));
         
         mysqli_stmt_execute($stmt);
 
