@@ -43,6 +43,11 @@
                     <input class="billing-address" type="text" name='billing-fname' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-fname"]) ? $_SESSION["account"]["billing-fname"] : ""); ?>' />
                     <span class="first-section-shipping-form">Last Name </span>
                     <input class="billing-address" type="text" name='billing-lname' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-lname"]) ? $_SESSION["account"]["billing-lname"] : ""); ?>' />
+                    <span class="first-section-shipping-form">Email Address </span>
+                    <input type='email' name='billing-email' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-email"]) ? $_SESSION["account"]["billing-email"] : ""); ?>' />
+                    <span class="first-section-shipping-form">Mobile Number </span>
+                    <input type='text' name='billing-mobilenumber' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-mobilenumber"]) ? $_SESSION["account"]["billing-mobilenumber"] : ""); ?>' />
+                    
                     <span class="first-section-shipping-form">Address </span>
                     <input class="billing-address" type="text" name='billing-streetAddress' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-streetAddress"]) ? $_SESSION["account"]["billing-streetAddress"] : ""); ?>' />
                     <span class="first-section-shipping-form">Suburb </span>
@@ -60,8 +65,9 @@
                     </select>
                     <span class="first-section-shipping-form">Postcode </span>
                     <input class="billing-address" type="text" name='billing-postcode' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-postcode"]) ? $_SESSION["account"]["billing-postcode"] : ""); ?>' />
-                    <li><input type='checkbox' id='shippingAddressCheckBox' name='shipToBillingAddress' <?php echo (isset($_SESSION["account"]["shipToBillingAddress"]) && $_SESSION["account"]["shipToBillingAddress"] ? "checked" : ""); ?>><label id='shippingAddress' for='shippingAddress'> Shipping Address Same As Billing Address</li>
+                    <input type='checkbox' id='shippingAddressCheckBox' name='shipToBillingAddress' <?php echo (isset($_SESSION["account"]["shipToBillingAddress"]) && $_SESSION["account"]["shipToBillingAddress"] ? "checked" : ""); ?>><label id='shippingAddressBoxLabel' for='shippingAddress'> Shipping Address Same As Billing Address</label>
                   </div>
+                  
                   <!-- Postage options -->
                   <div class="first-section-shipping-information-postage-options">
                     <span class="section-subheadings">Postage Options</span>
@@ -79,7 +85,7 @@
                                 else{
                                     echo "<input id='" . $results[$row]["id"] . "' type='radio' name='postage' value='" . $results[$row]["id"] . "'>";
                                 }
-                                echo "<label for='" . $results[$row]["id"] . "'>" . $results[$row]["name"] . ": $" . $results[$row]["cost"] . "</label>";
+                                echo "<label class='postageName' for='" . $results[$row]["id"] . "'>" . $results[$row]["name"] . ": $" . $results[$row]["cost"] . "</label>";
                                 echo "<input type='hidden' id='cost_" . $results[$row]["id"] . "' value='" . $results[$row]["cost"] . "'>";
                                 echo "<br><br>";
                             }
@@ -123,6 +129,11 @@
                 <input class="shipping-address" type="text" name='shipping-fname' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-fname"]) ? $_SESSION["account"]["shipping-fname"] : ""); ?>' />
                 <span class="first-section-shipping-form">Last Name </span>
                 <input class="shipping-address" type="text" name='shipping-lname' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-lname"]) ? $_SESSION["account"]["shipping-lname"] : ""); ?>' />
+                <span class="first-section-shipping-form">Email Address </span>
+                <input type='email' name='shipping-email' class='shipping-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-email"]) ? $_SESSION["account"]["shipping-email"] : ""); ?>' />
+                <span class="first-section-shipping-form">Mobile Number Name </span>
+                <input type='text' class='shipping-address' name='shipping-mobilenumber' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-mobilenumber"]) ? $_SESSION["account"]["shipping-mobilenumber"] : ""); ?>' />
+                
                 <span class="first-section-shipping-form">Address </span>
                 <input class="shipping-address" type="text" name='shipping-streetAddress' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-streetAddress"]) ? $_SESSION["account"]["shipping-streetAddress"] : ""); ?>' />
                 <span class="first-section-shipping-form">Suburb </span>
@@ -141,8 +152,18 @@
                 <span class="first-section-shipping-form">Postcode </span>
                 <input class="shipping-address" type="text" name='shipping-postcode' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-postcode"]) ? $_SESSION["account"]["shipping-postcode"] : ""); ?>' />
               </div>
-              <input type="hidden" id="accountAction" name="accountAction" value="update" />
+
+            <!-- Contact information -->
+            <div class="third-section-checkout-container">
+              <div class="third-section-billing-information" id="shippingAddressDiv" name="shippingAddressDiv">
+                <input type="hidden" id="accountAction" name="accountAction" value="update" />
+                <input class="section-section-button-proceed-to-payment" type="submit" id="proceed-to-payment" value="Proceed To Payment" />
+              </div>
+
+            <!-- <div class="fourth-section-proceed-to-payment" >
+            <input type="hidden" id="accountAction" name="accountAction" value="update" />
               <input class="section-section-button-proceed-to-payment" type="submit" id="proceed-to-payment" value="Proceed To Payment" />
+            </div> -->
             </div>
         </form>
   </body>

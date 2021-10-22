@@ -38,7 +38,7 @@ body {
   display: flex;
   flex-direction: row;
   margin: 75px 170px;
-  height: 700px;
+  height: 885px;
 }
 
 .first-section-shipping-information {
@@ -82,6 +82,7 @@ body {
 }
 
 .section-subheadings {
+  display: block;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 19px;
@@ -95,7 +96,8 @@ body {
   padding: 7px 0px;
 }
 
-.first-section-shipping-form-input-fields {
+.billing-address,
+.shipping-address {
   /* font-family: "Roboto", sans-serif; */
   /* font-weight: 100px; */
   width: 100%;
@@ -105,6 +107,17 @@ body {
   margin-bottom: 19px;
   margin-right: 15px;
   padding: 0px 12px;
+}
+
+#shippingAddressCheckBox {
+  position: relative;
+  /* bottom: 500px; */
+}
+
+#shippingAddressBoxLabel {
+  position: relative;
+  top: -15px;
+  left: 20px;
 }
 
 .first-section-shipping-information-postage-options {
@@ -119,7 +132,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 55%;
-  height: 205%;
+  height: 300%;
   background-color: white;
   border: 2px solid #c5cbd5;
   padding: 15px;
@@ -135,7 +148,8 @@ body {
 .second-section-billing-information {
   display: flex;
   flex-direction: column;
-  width: 64%;
+  width: 63%;
+  /* width: 695px; */
   /* height: 385px; */
   background-color: #ffffff;
   padding-left: 15px;
@@ -148,7 +162,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 14px;
-  width: 100%;
+  width: 50%;
   height: 40px;
   border: none;
   border-radius: 5px;
@@ -159,6 +173,33 @@ body {
 
 .section-section-button-proceed-to-payment:hover {
   background-color: #eb9133;
+}
+
+.third-section-checkout-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px;
+}
+
+.third-section-billing-information {
+  display: flex;
+  flex-direction: column;
+  width: 63%;
+  /* height: 385px; */
+  background-color: #ffffff;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.fourth-section-proceed-to-payment {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px;
+  width: 100%;
+  height: 300px;
+  background-color: white;
 }
 
 .checkoutSummary {
@@ -183,7 +224,7 @@ body {
   justify-content: center;
 }
 
-.postageCostText {
+.postageName {
   position: relative;
   left: 20px;
   top: -16px;
