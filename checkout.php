@@ -46,7 +46,7 @@
                     <span class="first-section-shipping-form">Email Address </span>
                     <input type='email' name='billing-email' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-email"]) ? $_SESSION["account"]["billing-email"] : ""); ?>' />
                     <span class="first-section-shipping-form">Mobile Number </span>
-                    <input type='text' name='billing-mobilenumber' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-mobilenumber"]) ? $_SESSION["account"]["billing-mobilenumber"] : ""); ?>' />
+                    <input type='number' name='billing-mobilenumber' class='billing-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-mobilenumber"]) ? $_SESSION["account"]["billing-mobilenumber"] : ""); ?>' />
                     
                     <span class="first-section-shipping-form">Address </span>
                     <input class="billing-address" type="text" name='billing-streetAddress' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["billing-streetAddress"]) ? $_SESSION["account"]["billing-streetAddress"] : ""); ?>' />
@@ -132,7 +132,7 @@
                 <span class="first-section-shipping-form">Email Address </span>
                 <input type='email' name='shipping-email' class='shipping-address' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-email"]) ? $_SESSION["account"]["shipping-email"] : ""); ?>' />
                 <span class="first-section-shipping-form">Mobile Number Name </span>
-                <input type='text' class='shipping-address' name='shipping-mobilenumber' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-mobilenumber"]) ? $_SESSION["account"]["shipping-mobilenumber"] : ""); ?>' />
+                <input type='number' class='shipping-address' name='shipping-mobilenumber' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-mobilenumber"]) ? $_SESSION["account"]["shipping-mobilenumber"] : ""); ?>' />
                 
                 <span class="first-section-shipping-form">Address </span>
                 <input class="shipping-address" type="text" name='shipping-streetAddress' placeholder='Required' required value='<?php echo (isset($_SESSION["account"]["shipping-streetAddress"]) ? $_SESSION["account"]["shipping-streetAddress"] : ""); ?>' />
