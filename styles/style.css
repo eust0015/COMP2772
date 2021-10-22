@@ -167,5 +167,8 @@ label{
 padding-left: 10px;
 padding-right: 5px;
 }
-
-/* //////////////login style////////////
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
