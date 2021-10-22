@@ -7,7 +7,7 @@ function insert(){
     $orderId = "";
     if($conn){
     
-        $creditCardId = insert_into_creditCard($conn, $_POST["nameOnCard"], $_POST["cardNumber"], substr($_POST["expirationDate"], -2), substr($_POST["expirationDate"], 4), $_POST["cvc"]);
+        $creditCardId = insert_into_creditCard($conn, $_POST["nameOnCard"], $_POST["cardNumber"], substr($_POST["expirationDate"], -2), substr($_POST["expirationDate"], 0, 4), $_POST["cvc"]);
         
         $billingAddressId = insert_into_address($conn, $_SESSION["account"]["billing-fname"], $_SESSION["account"]["billing-lname"], $_SESSION["account"]["billing-mobilenumber"], $_SESSION["account"]["billing-email"], $_SESSION["account"]["billing-streetAddress"], $_SESSION["account"]["billing-suburb"], $_SESSION["account"]["billing-state"], $_SESSION["account"]["billing-postcode"]);
         
