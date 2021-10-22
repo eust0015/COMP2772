@@ -65,7 +65,6 @@
                 }
             } 
 
-            // "<form action='product.php?name=".$result["name"]."' id='formAddToCart' name='formAddToCart' method='POST'>";
         ?>
     </body>
 </html>
