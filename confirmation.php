@@ -11,7 +11,6 @@
     <head>
         <link rel="stylesheet" href="styles/menu.css">
         <link rel="stylesheet" href="styles/style.css">
-        <!-- <script src="scripts/script.js" defer></script> -->
         <meta charset="utf-8">
         <meta name="author" content="Group-07" />
         <meta name="description" content="Assignment02" />
