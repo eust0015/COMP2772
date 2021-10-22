@@ -17,7 +17,9 @@
   ?> 
 
     <div class="first-section-carousels-container">
-      <div class="first-section-carousel"></div>
+      <div class="first-section-carousel">
+        <!-- <img class="first-section-carousel-image" src="images/bigsale.jpg" alt=""> -->
+      </div>
     </div>
 
     <div class="second-section-categories-container">
@@ -159,6 +161,6 @@
       </div>
     </div>
 
-    <footer class="sticky-footer"></footer>
+    <!-- <footer class="sticky-footer"></footer> -->
   </body>
 </html>
