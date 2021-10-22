@@ -160,10 +160,6 @@
                 <input class="section-section-button-proceed-to-payment" type="submit" id="proceed-to-payment" value="Proceed To Payment" />
               </div>
 
-            <!-- <div class="fourth-section-proceed-to-payment" >
-            <input type="hidden" id="accountAction" name="accountAction" value="update" />
-              <input class="section-section-button-proceed-to-payment" type="submit" id="proceed-to-payment" value="Proceed To Payment" />
-            </div> -->
             </div>
         </form>
   </body>
@@ -174,81 +170,7 @@
         window.history.replaceState( null, null, window.location.href );
     }
 </script>
-    
-    <!-- <div class="first-header"></div>
-    <div class="second-header"></div>
-
-    <div class="first-section-checkout-container">
-      <div class="first-section-shipping-information">
-        <div class="first-section-checkout-container-heading">
-          <span class="first-section-checkout-heading">Getting your order </span>
-        </div>
-        <div class="first-section-shipping">
-          <div class="first-section-shipping-details">
-            <span class="section-subheadings">Shipping Information </span>
-            <span class="first-section-shipping-form">First Name </span>
-            <input class="first-section-shipping-form-input-fields" type="text" />
-            <span class="first-section-shipping-form">Last Name </span>
-            <input class="first-section-shipping-form-input-fields" type="text" />
-            <span class="first-section-shipping-form">Address </span>
-            <input class="first-section-shipping-form-input-fields" type="text" />
-            <span class="first-section-shipping-form">City </span>
-            <input class="first-section-shipping-form-input-fields" type="text" />
-            <span class="first-section-shipping-form">State </span>
-            <select class="first-section-shipping-form-input-fields" name="" id="">
-              <option value="NSW">NSW</option>
-              <option value="ACT">ACT</option>
-              <option value="VIC">VIC</option>
-              <option value="QLD">QLD</option>
-              <option value="TAS">TAS</option>
-              <option value="NT">NT</option>
-              <option value="SA">SA</option>
-              <option value="WA">WA</option>
-            </select>
-            <span class="first-section-shipping-form">Zipcode </span>
-            <input class="first-section-shipping-form-input-fields" type="text" />
-          </div>
-          <div class="first-section-shipping-information-postage-options">
-            <span class="section-subheadings">Postage Options</span>
-          </div>
-        </div>
-      </div>
-      <div class="first-section-order-summary"></div>
-    </div>
-
-    <div class="second-section-checkout-container">
-      <div class="second-section-billing-information">
-        <span class="section-subheadings">Billing Information </span>
-        <span class="first-section-shipping-form">First Name </span>
-        <input class="first-section-shipping-form-input-fields" type="text" />
-        <span class="first-section-shipping-form">Last Name </span>
-        <input class="first-section-shipping-form-input-fields" type="text" />
-        <span class="first-section-shipping-form"> Address </span>
-        <input class="first-section-shipping-form-input-fields" type="text" />
-        <span class="first-section-shipping-form">City </span>
-        <input class="first-section-shipping-form-input-fields" type="text" />
-        <span class="first-section-shipping-form">State </span>
-        <select class="first-section-shipping-form-input-fields" name="" id="">
-          <option value="NSW">NSW</option>
-          <option value="ACT">ACT</option>
-          <option value="VIC">VIC</option>
-          <option value="QLD">QLD</option>
-          <option value="TAS">TAS</option>
-          <option value="NT">NT</option>
-          <option value="SA">SA</option>
-          <option value="WA">WA</option>
-        </select>
-        <span class="first-section-shipping-form">Zipcode </span>
-        <input class="first-section-shipping-form-input-fields" type="text" />
-        <input type="hidden" id="accountAction" name="accountAction" value="update" />
-        <input class="section-section-button-proceed-to-payment" type="submit" id="proceed-to-payment" value="Proceed To Payment" />
-      </div>
-    </div> -->
-
-
-
-
-
+  
 
   </body>
 </html>
