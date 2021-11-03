@@ -14,7 +14,7 @@
 
     <header>
       <div class="second-header-container">
-        <a class="header-logo-link" href="indexupdated.php"><img class="header-logo" src="images/header-logo.png" alt="" /></a>
+        <a class="header-logo-link" href="index.php"><img class="header-logo" src="images/header-logo.png" alt="" /></a>
         <nav>
           <ul class="nav--links">
             <li class="second-header-links" id="list"><a href="products.php">Products</a></li>
